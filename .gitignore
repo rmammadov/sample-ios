@@ -1,0 +1,16 @@
+*.bak
+*.generated.swift
+*.mode1v3
+*.mode2v3
+*.pbxuser
+*.perspectivev3
+*.xcuserstate
+*.xcworkspace/
+.DS_Store
+fastlane/README.md
+fastlane/report.xml
+fastlane/screenshots
+fastlane/test_output
+Pods/
+project.xcworkspace/
+xcuserdata/
