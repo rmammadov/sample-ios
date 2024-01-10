@@ -1,0 +1,1098 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		05D693F32B4E14C6000B4E2E /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05D693F22B4E14C6000B4E2E /* R.generated.swift */; };
+		0F2BD2DFA15EA330326D7BB4 /* Pods_VersalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BAB566B3FBA5708EA21A87A /* Pods_VersalTests.framework */; };
+		B349C9EC257DF755EA805CB7 /* Pods_Versal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F2ACC1033BF1B4A2114C426B /* Pods_Versal.framework */; };
+		D47FF9132B4C3E4500C03D7D /* EnvType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47FF9122B4C3E4500C03D7D /* EnvType.swift */; };
+		D47FF9282B4C581100C03D7D /* CodableWrappers in Frameworks */ = {isa = PBXBuildFile; productRef = D47FF9272B4C581100C03D7D /* CodableWrappers */; };
+		D47FF92B2B4C585100C03D7D /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D47FF92A2B4C585100C03D7D /* Then */; };
+		D47FF93A2B4DA01200C03D7D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47FF9392B4DA01200C03D7D /* Log.swift */; };
+		D4F52AD12B4C0B52009B8A24 /* VersalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */; };
+		D4F52AD32B4C0B52009B8A24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AD22B4C0B52009B8A24 /* ContentView.swift */; };
+		D4F52AD52B4C0B54009B8A24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F52AD42B4C0B54009B8A24 /* Assets.xcassets */; };
+		D4F52AD82B4C0B54009B8A24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F52AD72B4C0B54009B8A24 /* Preview Assets.xcassets */; };
+		D4F52AE22B4C0B54009B8A24 /* VersalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AE12B4C0B54009B8A24 /* VersalTests.swift */; };
+		D4F52AEC2B4C0B55009B8A24 /* VersalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AEB2B4C0B55009B8A24 /* VersalUITests.swift */; };
+		D4F52AEE2B4C0B55009B8A24 /* VersalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AED2B4C0B55009B8A24 /* VersalUITestsLaunchTests.swift */; };
+		D4F52AFB2B4C1417009B8A24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AFA2B4C1417009B8A24 /* AppDelegate.swift */; };
+		FC379D5FF0A496E2448EF3C8 /* Pods_Versal_VersalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2856322BA884EC67F10DDC9F /* Pods_Versal_VersalUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D4F52ADE2B4C0B54009B8A24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4F52AC52B4C0B52009B8A24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4F52ACC2B4C0B52009B8A24;
+			remoteInfo = Versal;
+		};
+		D4F52AE82B4C0B55009B8A24 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D4F52AC52B4C0B52009B8A24 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D4F52ACC2B4C0B52009B8A24;
+			remoteInfo = Versal;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05D693F22B4E14C6000B4E2E /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
+		2856322BA884EC67F10DDC9F /* Pods_Versal_VersalUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Versal_VersalUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39F67EE3D4100CAA3A160B4A /* Pods-Versal.sandbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Versal.sandbox.xcconfig"; path = "Target Support Files/Pods-Versal/Pods-Versal.sandbox.xcconfig"; sourceTree = "<group>"; };
+		3B44534DB966686240EE211E /* Pods-Versal.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Versal.development.xcconfig"; path = "Target Support Files/Pods-Versal/Pods-Versal.development.xcconfig"; sourceTree = "<group>"; };
+		43DCC3927FA7DF96D6C19DE6 /* Pods-Versal.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Versal.production.xcconfig"; path = "Target Support Files/Pods-Versal/Pods-Versal.production.xcconfig"; sourceTree = "<group>"; };
+		47818B827D0AC740AA8B9539 /* Pods-Versal-VersalUITests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Versal-VersalUITests.development.xcconfig"; path = "Target Support Files/Pods-Versal-VersalUITests/Pods-Versal-VersalUITests.development.xcconfig"; sourceTree = "<group>"; };
+		582630A8E06B43D0FD2811C5 /* Pods-Versal-VersalUITests.sandbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Versal-VersalUITests.sandbox.xcconfig"; path = "Target Support Files/Pods-Versal-VersalUITests/Pods-Versal-VersalUITests.sandbox.xcconfig"; sourceTree = "<group>"; };
+		5E86CD4ED7D53EB1CF3965A0 /* Pods-Versal-VersalUITests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Versal-VersalUITests.production.xcconfig"; path = "Target Support Files/Pods-Versal-VersalUITests/Pods-Versal-VersalUITests.production.xcconfig"; sourceTree = "<group>"; };
+		66479FA1CC8F38687E1557E2 /* Pods-VersalTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersalTests.development.xcconfig"; path = "Target Support Files/Pods-VersalTests/Pods-VersalTests.development.xcconfig"; sourceTree = "<group>"; };
+		8BAB566B3FBA5708EA21A87A /* Pods_VersalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D47FF9122B4C3E4500C03D7D /* EnvType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvType.swift; sourceTree = "<group>"; };
+		D47FF9392B4DA01200C03D7D /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
+		D47FF93B2B4DA0A500C03D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4F52ACD2B4C0B52009B8A24 /* Versal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Versal.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalApp.swift; sourceTree = "<group>"; };
+		D4F52AD22B4C0B52009B8A24 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D4F52AD42B4C0B54009B8A24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D4F52AD72B4C0B54009B8A24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D4F52ADD2B4C0B54009B8A24 /* VersalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VersalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F52AE12B4C0B54009B8A24 /* VersalTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalTests.swift; sourceTree = "<group>"; };
+		D4F52AE72B4C0B55009B8A24 /* VersalUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VersalUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D4F52AEB2B4C0B55009B8A24 /* VersalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalUITests.swift; sourceTree = "<group>"; };
+		D4F52AED2B4C0B55009B8A24 /* VersalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D4F52AFA2B4C1417009B8A24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D555D75C100C31C0EFA194CD /* Pods-VersalTests.sandbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersalTests.sandbox.xcconfig"; path = "Target Support Files/Pods-VersalTests/Pods-VersalTests.sandbox.xcconfig"; sourceTree = "<group>"; };
+		D62E3C084BAB76B4AE05EE4F /* Pods-VersalTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersalTests.production.xcconfig"; path = "Target Support Files/Pods-VersalTests/Pods-VersalTests.production.xcconfig"; sourceTree = "<group>"; };
+		F2ACC1033BF1B4A2114C426B /* Pods_Versal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Versal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D4F52ACA2B4C0B52009B8A24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D47FF92B2B4C585100C03D7D /* Then in Frameworks */,
+				D47FF9282B4C581100C03D7D /* CodableWrappers in Frameworks */,
+				B349C9EC257DF755EA805CB7 /* Pods_Versal.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4F52ADA2B4C0B54009B8A24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0F2BD2DFA15EA330326D7BB4 /* Pods_VersalTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4F52AE42B4C0B55009B8A24 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FC379D5FF0A496E2448EF3C8 /* Pods_Versal_VersalUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1B76F43B89E64BE78C9E1ABB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F2ACC1033BF1B4A2114C426B /* Pods_Versal.framework */,
+				2856322BA884EC67F10DDC9F /* Pods_Versal_VersalUITests.framework */,
+				8BAB566B3FBA5708EA21A87A /* Pods_VersalTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3DA87FF68A411C2FEE5E362D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				39F67EE3D4100CAA3A160B4A /* Pods-Versal.sandbox.xcconfig */,
+				3B44534DB966686240EE211E /* Pods-Versal.development.xcconfig */,
+				43DCC3927FA7DF96D6C19DE6 /* Pods-Versal.production.xcconfig */,
+				582630A8E06B43D0FD2811C5 /* Pods-Versal-VersalUITests.sandbox.xcconfig */,
+				47818B827D0AC740AA8B9539 /* Pods-Versal-VersalUITests.development.xcconfig */,
+				5E86CD4ED7D53EB1CF3965A0 /* Pods-Versal-VersalUITests.production.xcconfig */,
+				D555D75C100C31C0EFA194CD /* Pods-VersalTests.sandbox.xcconfig */,
+				66479FA1CC8F38687E1557E2 /* Pods-VersalTests.development.xcconfig */,
+				D62E3C084BAB76B4AE05EE4F /* Pods-VersalTests.production.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D47FF9382B4D9C2800C03D7D /* App */ = {
+			isa = PBXGroup;
+			children = (
+				D4F52AFA2B4C1417009B8A24 /* AppDelegate.swift */,
+				D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		D4F52AC42B4C0B52009B8A24 = {
+			isa = PBXGroup;
+			children = (
+				D4F52ACF2B4C0B52009B8A24 /* Versal */,
+				D4F52AE02B4C0B54009B8A24 /* VersalTests */,
+				D4F52AEA2B4C0B55009B8A24 /* VersalUITests */,
+				D4F52ACE2B4C0B52009B8A24 /* Products */,
+				3DA87FF68A411C2FEE5E362D /* Pods */,
+				1B76F43B89E64BE78C9E1ABB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D4F52ACE2B4C0B52009B8A24 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D4F52ACD2B4C0B52009B8A24 /* Versal.app */,
+				D4F52ADD2B4C0B54009B8A24 /* VersalTests.xctest */,
+				D4F52AE72B4C0B55009B8A24 /* VersalUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D4F52ACF2B4C0B52009B8A24 /* Versal */ = {
+			isa = PBXGroup;
+			children = (
+				D47FF9382B4D9C2800C03D7D /* App */,
+				D4F52AFC2B4C146E009B8A24 /* Enums */,
+				D4F52AFD2B4C147A009B8A24 /* Extensions */,
+				D4F52AFE2B4C1487009B8A24 /* Helpers */,
+				D4F52AFF2B4C1490009B8A24 /* Modules */,
+				D4F52B002B4C1498009B8A24 /* Resources */,
+				D4F52B012B4C14A5009B8A24 /* UI */,
+			);
+			path = Versal;
+			sourceTree = "<group>";
+		};
+		D4F52AE02B4C0B54009B8A24 /* VersalTests */ = {
+			isa = PBXGroup;
+			children = (
+				D4F52AE12B4C0B54009B8A24 /* VersalTests.swift */,
+			);
+			path = VersalTests;
+			sourceTree = "<group>";
+		};
+		D4F52AEA2B4C0B55009B8A24 /* VersalUITests */ = {
+			isa = PBXGroup;
+			children = (
+				D4F52AEB2B4C0B55009B8A24 /* VersalUITests.swift */,
+				D4F52AED2B4C0B55009B8A24 /* VersalUITestsLaunchTests.swift */,
+			);
+			path = VersalUITests;
+			sourceTree = "<group>";
+		};
+		D4F52AFC2B4C146E009B8A24 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				D47FF9122B4C3E4500C03D7D /* EnvType.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
+		D4F52AFD2B4C147A009B8A24 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		D4F52AFE2B4C1487009B8A24 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D47FF9392B4DA01200C03D7D /* Log.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D4F52AFF2B4C1490009B8A24 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		D4F52B002B4C1498009B8A24 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D4F52AD42B4C0B54009B8A24 /* Assets.xcassets */,
+				D47FF93B2B4DA0A500C03D7D /* Info.plist */,
+				D4F52AD72B4C0B54009B8A24 /* Preview Assets.xcassets */,
+				05D693F22B4E14C6000B4E2E /* R.generated.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D4F52B012B4C14A5009B8A24 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D4F52AD22B4C0B52009B8A24 /* ContentView.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D4F52ACC2B4C0B52009B8A24 /* Versal */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4F52AF12B4C0B55009B8A24 /* Build configuration list for PBXNativeTarget "Versal" */;
+			buildPhases = (
+				3D1A606C581BE21B28C26928 /* [CP] Check Pods Manifest.lock */,
+				059AC8A72B4E0AB600C94B29 /* SwiftFormat */,
+				D47FF9312B4D1FF800C03D7D /* SwiftLint */,
+				D47FF9352B4D746300C03D7D /* R.swift */,
+				D4F52AC92B4C0B52009B8A24 /* Sources */,
+				D4F52ACA2B4C0B52009B8A24 /* Frameworks */,
+				D4F52ACB2B4C0B52009B8A24 /* Resources */,
+				2AE60D4BAC05D2E8215AA827 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Versal;
+			packageProductDependencies = (
+				D47FF9272B4C581100C03D7D /* CodableWrappers */,
+				D47FF92A2B4C585100C03D7D /* Then */,
+			);
+			productName = Versal;
+			productReference = D4F52ACD2B4C0B52009B8A24 /* Versal.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D4F52ADC2B4C0B54009B8A24 /* VersalTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4F52AF42B4C0B55009B8A24 /* Build configuration list for PBXNativeTarget "VersalTests" */;
+			buildPhases = (
+				C350289BD9C99288B1EDAB14 /* [CP] Check Pods Manifest.lock */,
+				D4F52AD92B4C0B54009B8A24 /* Sources */,
+				D4F52ADA2B4C0B54009B8A24 /* Frameworks */,
+				D4F52ADB2B4C0B54009B8A24 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4F52ADF2B4C0B54009B8A24 /* PBXTargetDependency */,
+			);
+			name = VersalTests;
+			productName = VersalTests;
+			productReference = D4F52ADD2B4C0B54009B8A24 /* VersalTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D4F52AE62B4C0B55009B8A24 /* VersalUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D4F52AF72B4C0B55009B8A24 /* Build configuration list for PBXNativeTarget "VersalUITests" */;
+			buildPhases = (
+				7553934229BF69675C8A14A4 /* [CP] Check Pods Manifest.lock */,
+				D4F52AE32B4C0B55009B8A24 /* Sources */,
+				D4F52AE42B4C0B55009B8A24 /* Frameworks */,
+				D4F52AE52B4C0B55009B8A24 /* Resources */,
+				243089D0987ECDF9B5C131BE /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D4F52AE92B4C0B55009B8A24 /* PBXTargetDependency */,
+			);
+			name = VersalUITests;
+			productName = VersalUITests;
+			productReference = D4F52AE72B4C0B55009B8A24 /* VersalUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D4F52AC52B4C0B52009B8A24 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					D4F52ACC2B4C0B52009B8A24 = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					D4F52ADC2B4C0B54009B8A24 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = D4F52ACC2B4C0B52009B8A24;
+					};
+					D4F52AE62B4C0B55009B8A24 = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = D4F52ACC2B4C0B52009B8A24;
+					};
+				};
+			};
+			buildConfigurationList = D4F52AC82B4C0B52009B8A24 /* Build configuration list for PBXProject "Versal" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D4F52AC42B4C0B52009B8A24;
+			packageReferences = (
+				D47FF9262B4C581100C03D7D /* XCRemoteSwiftPackageReference "CodableWrappers" */,
+				D47FF9292B4C585100C03D7D /* XCRemoteSwiftPackageReference "Then" */,
+			);
+			productRefGroup = D4F52ACE2B4C0B52009B8A24 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D4F52ACC2B4C0B52009B8A24 /* Versal */,
+				D4F52ADC2B4C0B54009B8A24 /* VersalTests */,
+				D4F52AE62B4C0B55009B8A24 /* VersalUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D4F52ACB2B4C0B52009B8A24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F52AD82B4C0B54009B8A24 /* Preview Assets.xcassets in Resources */,
+				D4F52AD52B4C0B54009B8A24 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4F52ADB2B4C0B54009B8A24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4F52AE52B4C0B55009B8A24 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		059AC8A72B4E0AB600C94B29 /* SwiftFormat */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftFormat;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftFormat/CommandLineTool/swiftformat\" \"$SRCROOT\"\n";
+		};
+		243089D0987ECDF9B5C131BE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Versal-VersalUITests/Pods-Versal-VersalUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Versal-VersalUITests/Pods-Versal-VersalUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Versal-VersalUITests/Pods-Versal-VersalUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2AE60D4BAC05D2E8215AA827 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Versal/Pods-Versal-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Versal/Pods-Versal-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Versal/Pods-Versal-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3D1A606C581BE21B28C26928 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Versal-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7553934229BF69675C8A14A4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Versal-VersalUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C350289BD9C99288B1EDAB14 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VersalTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D47FF9312B4D1FF800C03D7D /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		D47FF9352B4D746300C03D7D /* R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = R.swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/Versal/Resources/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/Versal/Resources/R.generated.swift\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D4F52AC92B4C0B52009B8A24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F52AFB2B4C1417009B8A24 /* AppDelegate.swift in Sources */,
+				D4F52AD32B4C0B52009B8A24 /* ContentView.swift in Sources */,
+				D47FF93A2B4DA01200C03D7D /* Log.swift in Sources */,
+				D4F52AD12B4C0B52009B8A24 /* VersalApp.swift in Sources */,
+				D47FF9132B4C3E4500C03D7D /* EnvType.swift in Sources */,
+				05D693F32B4E14C6000B4E2E /* R.generated.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4F52AD92B4C0B54009B8A24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F52AE22B4C0B54009B8A24 /* VersalTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D4F52AE32B4C0B55009B8A24 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4F52AEC2B4C0B55009B8A24 /* VersalUITests.swift in Sources */,
+				D4F52AEE2B4C0B55009B8A24 /* VersalUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D4F52ADF2B4C0B54009B8A24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4F52ACC2B4C0B52009B8A24 /* Versal */;
+			targetProxy = D4F52ADE2B4C0B54009B8A24 /* PBXContainerItemProxy */;
+		};
+		D4F52AE92B4C0B55009B8A24 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D4F52ACC2B4C0B52009B8A24 /* Versal */;
+			targetProxy = D4F52AE82B4C0B55009B8A24 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D47FF9162B4C49F400C03D7D /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEVELOPMENT";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Development;
+		};
+		D47FF9172B4C49F400C03D7D /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B44534DB966686240EE211E /* Pods-Versal.development.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Versal/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.platform;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Development;
+		};
+		D47FF9182B4C49F400C03D7D /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 66479FA1CC8F38687E1557E2 /* Pods-VersalTests.development.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZJ688LZ3D6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.ios.VersalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Versal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Versal";
+			};
+			name = Development;
+		};
+		D47FF9192B4C49F400C03D7D /* Development */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 47818B827D0AC740AA8B9539 /* Pods-Versal-VersalUITests.development.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZJ688LZ3D6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.ios.VersalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = Versal;
+			};
+			name = Development;
+		};
+		D47FF91A2B4C49F700C03D7D /* Sandbox */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG SANDBOX";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Sandbox;
+		};
+		D47FF91B2B4C49F700C03D7D /* Sandbox */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39F67EE3D4100CAA3A160B4A /* Pods-Versal.sandbox.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Versal/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.platform;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Sandbox;
+		};
+		D47FF91C2B4C49F700C03D7D /* Sandbox */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D555D75C100C31C0EFA194CD /* Pods-VersalTests.sandbox.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZJ688LZ3D6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.ios.VersalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Versal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Versal";
+			};
+			name = Sandbox;
+		};
+		D47FF91D2B4C49F700C03D7D /* Sandbox */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 582630A8E06B43D0FD2811C5 /* Pods-Versal-VersalUITests.sandbox.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZJ688LZ3D6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.ios.VersalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = Versal;
+			};
+			name = Sandbox;
+		};
+		D4F52AF02B4C0B55009B8A24 /* Production */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PRODUCTION;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Production;
+		};
+		D4F52AF32B4C0B55009B8A24 /* Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 43DCC3927FA7DF96D6C19DE6 /* Pods-Versal.production.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Versal/Resources/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.platform;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Production;
+		};
+		D4F52AF62B4C0B55009B8A24 /* Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D62E3C084BAB76B4AE05EE4F /* Pods-VersalTests.production.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZJ688LZ3D6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.ios.VersalTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Versal.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Versal";
+			};
+			name = Production;
+		};
+		D4F52AF92B4C0B55009B8A24 /* Production */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5E86CD4ED7D53EB1CF3965A0 /* Pods-Versal-VersalUITests.production.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZJ688LZ3D6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.ios.VersalUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+				TEST_TARGET_NAME = Versal;
+			};
+			name = Production;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D4F52AC82B4C0B52009B8A24 /* Build configuration list for PBXProject "Versal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D47FF91A2B4C49F700C03D7D /* Sandbox */,
+				D47FF9162B4C49F400C03D7D /* Development */,
+				D4F52AF02B4C0B55009B8A24 /* Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+		D4F52AF12B4C0B55009B8A24 /* Build configuration list for PBXNativeTarget "Versal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D47FF91B2B4C49F700C03D7D /* Sandbox */,
+				D47FF9172B4C49F400C03D7D /* Development */,
+				D4F52AF32B4C0B55009B8A24 /* Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+		D4F52AF42B4C0B55009B8A24 /* Build configuration list for PBXNativeTarget "VersalTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D47FF91C2B4C49F700C03D7D /* Sandbox */,
+				D47FF9182B4C49F400C03D7D /* Development */,
+				D4F52AF62B4C0B55009B8A24 /* Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+		D4F52AF72B4C0B55009B8A24 /* Build configuration list for PBXNativeTarget "VersalUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D47FF91D2B4C49F700C03D7D /* Sandbox */,
+				D47FF9192B4C49F400C03D7D /* Development */,
+				D4F52AF92B4C0B55009B8A24 /* Production */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		D47FF9262B4C581100C03D7D /* XCRemoteSwiftPackageReference "CodableWrappers" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/GottaGetSwifty/CodableWrappers.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.7;
+			};
+		};
+		D47FF9292B4C585100C03D7D /* XCRemoteSwiftPackageReference "Then" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devxoul/Then";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		D47FF9272B4C581100C03D7D /* CodableWrappers */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D47FF9262B4C581100C03D7D /* XCRemoteSwiftPackageReference "CodableWrappers" */;
+			productName = CodableWrappers;
+		};
+		D47FF92A2B4C585100C03D7D /* Then */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D47FF9292B4C585100C03D7D /* XCRemoteSwiftPackageReference "Then" */;
+			productName = Then;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = D4F52AC52B4C0B52009B8A24 /* Project object */;
+}

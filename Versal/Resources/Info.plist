@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bugsnag</key>
+	<dict>
+		<key>apiKey</key>
+		<string>c64e70a0d8e74c2fa0ed256546873f12</string>
+		<key>enabledReleaseStages</key>
+		<array>
+			<string>ReleaseDevelopment</string>
+			<string>ReleaseProduction</string>
+			<string>ReleaseSandbox</string>
+		</array>
+		<key>redactedKeys</key>
+		<array>
+			<string>authorization</string>
+			<string>Authorization</string>
+			<string>confirmPassword</string>
+			<string>currentPassword</string>
+			<string>newPassword</string>
+			<string>password</string>
+			<string>securityAnswer</string>
+		</array>
+		<key>releaseStage</key>
+		<string>$(CONFIGURATION)</string>
+	</dict>
+</dict>
+</plist>
