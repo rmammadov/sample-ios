@@ -11,7 +11,7 @@ struct VersalApp: App {
     // MARK: Internal
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SplashView()
         }
     }
 
