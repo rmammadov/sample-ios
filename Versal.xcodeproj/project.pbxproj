@@ -10,6 +10,7 @@
 		5945DDB427D48F4B67020807 /* Pods_Versal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1855B52D0AA04B5FAEDDBD57 /* Pods_Versal.framework */; };
 		7F84FD4240D0AF5299C96093 /* Pods_VersalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC18FD4B74EA77773A014D0A /* Pods_VersalTests.framework */; };
 		801A587EFEF68BF16836D9B3 /* Pods_Versal_VersalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E4874E1E91F96DA7421C46 /* Pods_Versal_VersalUITests.framework */; };
+		D4686BB72B5187420048A1F6 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BB62B5187420048A1F6 /* TestViewModel.swift */; };
 		D475C8E82B501A25008FC94A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D475C8E72B501A25008FC94A /* R.generated.swift */; };
 		D475C8EA2B501C66008FC94A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D475C8E92B501C66008FC94A /* Colors.xcassets */; };
 		D475C8EC2B501C90008FC94A /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = D475C8EB2B501C90008FC94A /* Fonts */; };
@@ -37,13 +38,16 @@
 		D47FF92B2B4C585100C03D7D /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D47FF92A2B4C585100C03D7D /* Then */; };
 		D47FF93A2B4DA01200C03D7D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47FF9392B4DA01200C03D7D /* Log.swift */; };
 		D4F52AD12B4C0B52009B8A24 /* VersalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */; };
-		D4F52AD32B4C0B52009B8A24 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AD22B4C0B52009B8A24 /* ContentView.swift */; };
+		D4F52AD32B4C0B52009B8A24 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AD22B4C0B52009B8A24 /* TestView.swift */; };
 		D4F52AD52B4C0B54009B8A24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F52AD42B4C0B54009B8A24 /* Assets.xcassets */; };
 		D4F52AD82B4C0B54009B8A24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F52AD72B4C0B54009B8A24 /* Preview Assets.xcassets */; };
 		D4F52AE22B4C0B54009B8A24 /* VersalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AE12B4C0B54009B8A24 /* VersalTests.swift */; };
 		D4F52AEC2B4C0B55009B8A24 /* VersalUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AEB2B4C0B55009B8A24 /* VersalUITests.swift */; };
 		D4F52AEE2B4C0B55009B8A24 /* VersalUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AED2B4C0B55009B8A24 /* VersalUITestsLaunchTests.swift */; };
 		D4F52AFB2B4C1417009B8A24 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AFA2B4C1417009B8A24 /* AppDelegate.swift */; };
+		D4F849AC2B51667500C7ED83 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F849AB2B51667500C7ED83 /* SceneDelegate.swift */; };
+		D4F849AE2B516ACD00C7ED83 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F849AD2B516ACD00C7ED83 /* SplashView.swift */; };
+		D4F849B02B516AE100C7ED83 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F849AF2B516AE100C7ED83 /* SplashViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,10 +77,11 @@
 		A969B150D6A1031E61FC7C13 /* Pods-Versal-VersalUITests.sandbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Versal-VersalUITests.sandbox.xcconfig"; path = "Target Support Files/Pods-Versal-VersalUITests/Pods-Versal-VersalUITests.sandbox.xcconfig"; sourceTree = "<group>"; };
 		AC18FD4B74EA77773A014D0A /* Pods_VersalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6CBFF34C416A47A1DC75EB4 /* Pods-Versal.sandbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Versal.sandbox.xcconfig"; path = "Target Support Files/Pods-Versal/Pods-Versal.sandbox.xcconfig"; sourceTree = "<group>"; };
+		D4686BB62B5187420048A1F6 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		D475C8E72B501A25008FC94A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D475C8E92B501C66008FC94A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D475C8EB2B501C90008FC94A /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
-		D475C8F32B5020EC008FC94A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		D475C8F32B5020EC008FC94A /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; name = Localizable.xcstrings; path = Versal/Resources/Localizable.xcstrings; sourceTree = SOURCE_ROOT; };
 		D475C8F62B502459008FC94A /* Date+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		D475C8F82B502459008FC94A /* UIDevice+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Extensions.swift"; sourceTree = "<group>"; };
 		D475C8F92B502459008FC94A /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
@@ -100,7 +105,7 @@
 		D47FF93B2B4DA0A500C03D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4F52ACD2B4C0B52009B8A24 /* Versal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Versal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalApp.swift; sourceTree = "<group>"; };
-		D4F52AD22B4C0B52009B8A24 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		D4F52AD22B4C0B52009B8A24 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		D4F52AD42B4C0B54009B8A24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4F52AD72B4C0B54009B8A24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D4F52ADD2B4C0B54009B8A24 /* VersalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VersalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,6 +114,9 @@
 		D4F52AEB2B4C0B55009B8A24 /* VersalUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalUITests.swift; sourceTree = "<group>"; };
 		D4F52AED2B4C0B55009B8A24 /* VersalUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D4F52AFA2B4C1417009B8A24 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D4F849AB2B51667500C7ED83 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		D4F849AD2B516ACD00C7ED83 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
+		D4F849AF2B516AE100C7ED83 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
 		F43501787B25C1DA02660345 /* Pods-VersalTests.sandbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersalTests.sandbox.xcconfig"; path = "Target Support Files/Pods-VersalTests/Pods-VersalTests.sandbox.xcconfig"; sourceTree = "<group>"; };
 		FC0007439748EE718AD02CE6 /* Pods-VersalTests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersalTests.production.xcconfig"; path = "Target Support Files/Pods-VersalTests/Pods-VersalTests.production.xcconfig"; sourceTree = "<group>"; };
 		FDC30BF2DA7DAB5104DC9B82 /* Pods-VersalTests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VersalTests.development.xcconfig"; path = "Target Support Files/Pods-VersalTests/Pods-VersalTests.development.xcconfig"; sourceTree = "<group>"; };
@@ -170,11 +178,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D4686BB52B5186780048A1F6 /* TestView */ = {
+			isa = PBXGroup;
+			children = (
+				D4F52AD22B4C0B52009B8A24 /* TestView.swift */,
+				D4686BB62B5187420048A1F6 /* TestViewModel.swift */,
+			);
+			path = TestView;
+			sourceTree = "<group>";
+		};
 		D47FF9382B4D9C2800C03D7D /* App */ = {
 			isa = PBXGroup;
 			children = (
-				D4F52AFA2B4C1417009B8A24 /* AppDelegate.swift */,
 				D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */,
+				D4F52AFA2B4C1417009B8A24 /* AppDelegate.swift */,
+				D4F849AB2B51667500C7ED83 /* SceneDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -209,8 +227,8 @@
 				D4F52AFD2B4C147A009B8A24 /* Extensions */,
 				D4F52AFE2B4C1487009B8A24 /* Helpers */,
 				D4F52AFF2B4C1490009B8A24 /* Modules */,
-				D4F52B012B4C14A5009B8A24 /* UI */,
 				D4F52B002B4C1498009B8A24 /* Resources */,
+				D4F52B012B4C14A5009B8A24 /* UI */,
 			);
 			path = Versal;
 			sourceTree = "<group>";
@@ -297,9 +315,19 @@
 		D4F52B012B4C14A5009B8A24 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D4F52AD22B4C0B52009B8A24 /* ContentView.swift */,
+				D4686BB52B5186780048A1F6 /* TestView */,
+				D4F849AA2B5163B900C7ED83 /* SplashScreen */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		D4F849AA2B5163B900C7ED83 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D4F849AD2B516ACD00C7ED83 /* SplashView.swift */,
+				D4F849AF2B516AE100C7ED83 /* SplashViewModel.swift */,
+			);
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -618,22 +646,26 @@
 				D475C9112B50245A008FC94A /* UIImageView+Extensions.swift in Sources */,
 				D475C92A2B5034B1008FC94A /* Keychain.swift in Sources */,
 				D475C91F2B50245A008FC94A /* Bundle+Extensions.swift in Sources */,
+				D4F849AE2B516ACD00C7ED83 /* SplashView.swift in Sources */,
 				D475C92E2B5034D5008FC94A /* UserDefaults+Extensions.swift in Sources */,
 				D475C9242B50245A008FC94A /* CodableWrappers+Extensions.swift in Sources */,
 				D475C9202B50245A008FC94A /* UIScreen+Extensions.swift in Sources */,
 				D475C9102B50245A008FC94A /* UIDevice+Extensions.swift in Sources */,
 				D475C9232B50245A008FC94A /* DateFormatter+Extensions.swift in Sources */,
-				D4F52AD32B4C0B52009B8A24 /* ContentView.swift in Sources */,
+				D4F52AD32B4C0B52009B8A24 /* TestView.swift in Sources */,
 				D475C9162B50245A008FC94A /* NSObject+Extensions.swift in Sources */,
 				D47FF93A2B4DA01200C03D7D /* Log.swift in Sources */,
 				D475C9132B50245A008FC94A /* Data+Extensions.swift in Sources */,
+				D4F849B02B516AE100C7ED83 /* SplashViewModel.swift in Sources */,
 				D475C9122B50245A008FC94A /* Array+Extensions.swift in Sources */,
 				D475C9282B50349F008FC94A /* JSON.swift in Sources */,
 				D4F52AD12B4C0B52009B8A24 /* VersalApp.swift in Sources */,
+				D4686BB72B5187420048A1F6 /* TestViewModel.swift in Sources */,
 				D47FF9132B4C3E4500C03D7D /* EnvType.swift in Sources */,
 				D475C9262B503299008FC94A /* DeepLink.swift in Sources */,
 				D475C9212B50245A008FC94A /* UIColor+Extensions.swift in Sources */,
 				D475C8E82B501A25008FC94A /* R.generated.swift in Sources */,
+				D4F849AC2B51667500C7ED83 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -742,7 +774,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
-				DEVELOPMENT_TEAM = ZJ688LZ3D6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
@@ -763,6 +795,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -887,7 +920,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
-				DEVELOPMENT_TEAM = ZJ688LZ3D6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
@@ -908,6 +941,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1027,7 +1061,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
-				DEVELOPMENT_TEAM = ZJ688LZ3D6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
@@ -1049,6 +1083,7 @@
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
