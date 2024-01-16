@@ -6,7 +6,9 @@
 
 import Foundation
 
-class SplashViewModel: ObservableObject {
+protocol SplashViewModelProtocol {}
+
+class SplashViewModel: ObservableObject, SplashViewModelProtocol {
     static let TAG = "SPLASH_VIEW"
     static let splashDuration = 2.5
 

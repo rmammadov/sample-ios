@@ -6,6 +6,8 @@
 
 import Foundation
 
-class TestViewModel: ObservableObject {
-    static let TAG = "TEST_VIEW"
+protocol TestViewModelProtocol {}
+
+final class TestViewModel: ObservableObject, TestViewModelProtocol {
+    static let TAG: String = "TEST_VIEW"
 }

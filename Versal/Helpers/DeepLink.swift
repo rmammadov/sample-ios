@@ -13,7 +13,7 @@ public enum DeepLinkRequest {
 }
 
 extension DeepLinkRequest {
-    init?(_ components: URLComponents) { // swiftlint:disable:this cyclomatic_complexity
+    init?(_ components: URLComponents) {
         var elements = components.path.components(separatedBy: "/")
         if elements.first != nil, elements.first!.isEmpty { elements = Array(elements.dropFirst()) }
         if elements.last != nil, elements.last!.isEmpty { elements = Array(elements.dropLast()) }
