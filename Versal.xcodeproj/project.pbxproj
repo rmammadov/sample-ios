@@ -11,6 +11,8 @@
 		7F84FD4240D0AF5299C96093 /* Pods_VersalTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC18FD4B74EA77773A014D0A /* Pods_VersalTests.framework */; };
 		801A587EFEF68BF16836D9B3 /* Pods_Versal_VersalUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E4874E1E91F96DA7421C46 /* Pods_Versal_VersalUITests.framework */; };
 		D4686BB72B5187420048A1F6 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BB62B5187420048A1F6 /* TestViewModel.swift */; };
+		D4686BBA2B5520C20048A1F6 /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BB92B5520C10048A1F6 /* PrivacyView.swift */; };
+		D4686BBC2B5520D20048A1F6 /* PrivacyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BBB2B5520D20048A1F6 /* PrivacyViewModel.swift */; };
 		D475C8E82B501A25008FC94A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D475C8E72B501A25008FC94A /* R.generated.swift */; };
 		D475C8EA2B501C66008FC94A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D475C8E92B501C66008FC94A /* Colors.xcassets */; };
 		D475C8EC2B501C90008FC94A /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = D475C8EB2B501C90008FC94A /* Fonts */; };
@@ -78,6 +80,8 @@
 		AC18FD4B74EA77773A014D0A /* Pods_VersalTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VersalTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6CBFF34C416A47A1DC75EB4 /* Pods-Versal.sandbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Versal.sandbox.xcconfig"; path = "Target Support Files/Pods-Versal/Pods-Versal.sandbox.xcconfig"; sourceTree = "<group>"; };
 		D4686BB62B5187420048A1F6 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
+		D4686BB92B5520C10048A1F6 /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
+		D4686BBB2B5520D20048A1F6 /* PrivacyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewModel.swift; sourceTree = "<group>"; };
 		D475C8E72B501A25008FC94A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D475C8E92B501C66008FC94A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D475C8EB2B501C90008FC94A /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
@@ -187,12 +191,21 @@
 			path = TestView;
 			sourceTree = "<group>";
 		};
+		D4686BB82B55209F0048A1F6 /* PrivacyView */ = {
+			isa = PBXGroup;
+			children = (
+				D4686BB92B5520C10048A1F6 /* PrivacyView.swift */,
+				D4686BBB2B5520D20048A1F6 /* PrivacyViewModel.swift */,
+			);
+			path = PrivacyView;
+			sourceTree = "<group>";
+		};
 		D47FF9382B4D9C2800C03D7D /* App */ = {
 			isa = PBXGroup;
 			children = (
-				D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */,
 				D4F52AFA2B4C1417009B8A24 /* AppDelegate.swift */,
 				D4F849AB2B51667500C7ED83 /* SceneDelegate.swift */,
+				D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -315,8 +328,9 @@
 		D4F52B012B4C14A5009B8A24 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D4686BB52B5186780048A1F6 /* TestView */,
+				D4686BB82B55209F0048A1F6 /* PrivacyView */,
 				D4F849AA2B5163B900C7ED83 /* SplashScreen */,
+				D4686BB52B5186780048A1F6 /* TestView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -644,6 +658,7 @@
 				D475C9182B50245A008FC94A /* Extensions.swift in Sources */,
 				D475C90E2B50245A008FC94A /* Date+Extensions.swift in Sources */,
 				D475C9112B50245A008FC94A /* UIImageView+Extensions.swift in Sources */,
+				D4686BBA2B5520C20048A1F6 /* PrivacyView.swift in Sources */,
 				D475C92A2B5034B1008FC94A /* Keychain.swift in Sources */,
 				D475C91F2B50245A008FC94A /* Bundle+Extensions.swift in Sources */,
 				D4F849AE2B516ACD00C7ED83 /* SplashView.swift in Sources */,
@@ -657,6 +672,7 @@
 				D47FF93A2B4DA01200C03D7D /* Log.swift in Sources */,
 				D475C9132B50245A008FC94A /* Data+Extensions.swift in Sources */,
 				D4F849B02B516AE100C7ED83 /* SplashViewModel.swift in Sources */,
+				D4686BBC2B5520D20048A1F6 /* PrivacyViewModel.swift in Sources */,
 				D475C9122B50245A008FC94A /* Array+Extensions.swift in Sources */,
 				D475C9282B50349F008FC94A /* JSON.swift in Sources */,
 				D4F52AD12B4C0B52009B8A24 /* VersalApp.swift in Sources */,
@@ -779,7 +795,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -925,7 +940,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1066,7 +1080,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
-				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
