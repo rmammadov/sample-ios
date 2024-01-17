@@ -13,6 +13,12 @@
 		D4686BB72B5187420048A1F6 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BB62B5187420048A1F6 /* TestViewModel.swift */; };
 		D4686BBA2B5520C20048A1F6 /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BB92B5520C10048A1F6 /* PrivacyView.swift */; };
 		D4686BBC2B5520D20048A1F6 /* PrivacyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BBB2B5520D20048A1F6 /* PrivacyViewModel.swift */; };
+		D4686BBF2B569B5B0048A1F6 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BBE2B569B5B0048A1F6 /* PasscodeView.swift */; };
+		D4686BC12B569B740048A1F6 /* PasscodeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BC02B569B730048A1F6 /* PasscodeViewModel.swift */; };
+		D4686BC52B56C26A0048A1F6 /* KeyPadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BC42B56C26A0048A1F6 /* KeyPadButton.swift */; };
+		D4686BC72B56C2830048A1F6 /* KeyPadRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BC62B56C2830048A1F6 /* KeyPadRow.swift */; };
+		D4686BC92B56C2A00048A1F6 /* KeyPadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BC82B56C2A00048A1F6 /* KeyPadView.swift */; };
+		D4686BCE2B5915990048A1F6 /* PasscodeField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BCD2B5915990048A1F6 /* PasscodeField.swift */; };
 		D475C8E82B501A25008FC94A /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = D475C8E72B501A25008FC94A /* R.generated.swift */; };
 		D475C8EA2B501C66008FC94A /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D475C8E92B501C66008FC94A /* Colors.xcassets */; };
 		D475C8EC2B501C90008FC94A /* Fonts in Resources */ = {isa = PBXBuildFile; fileRef = D475C8EB2B501C90008FC94A /* Fonts */; };
@@ -39,6 +45,7 @@
 		D47FF9282B4C581100C03D7D /* CodableWrappers in Frameworks */ = {isa = PBXBuildFile; productRef = D47FF9272B4C581100C03D7D /* CodableWrappers */; };
 		D47FF92B2B4C585100C03D7D /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D47FF92A2B4C585100C03D7D /* Then */; };
 		D47FF93A2B4DA01200C03D7D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47FF9392B4DA01200C03D7D /* Log.swift */; };
+		D4D2D3502B5B3A080019E4B4 /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2D34F2B5B3A080019E4B4 /* View+Animation.swift */; };
 		D4F52AD12B4C0B52009B8A24 /* VersalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */; };
 		D4F52AD32B4C0B52009B8A24 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AD22B4C0B52009B8A24 /* TestView.swift */; };
 		D4F52AD52B4C0B54009B8A24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F52AD42B4C0B54009B8A24 /* Assets.xcassets */; };
@@ -82,6 +89,12 @@
 		D4686BB62B5187420048A1F6 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		D4686BB92B5520C10048A1F6 /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		D4686BBB2B5520D20048A1F6 /* PrivacyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewModel.swift; sourceTree = "<group>"; };
+		D4686BBE2B569B5B0048A1F6 /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
+		D4686BC02B569B730048A1F6 /* PasscodeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeViewModel.swift; sourceTree = "<group>"; };
+		D4686BC42B56C26A0048A1F6 /* KeyPadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadButton.swift; sourceTree = "<group>"; };
+		D4686BC62B56C2830048A1F6 /* KeyPadRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadRow.swift; sourceTree = "<group>"; };
+		D4686BC82B56C2A00048A1F6 /* KeyPadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyPadView.swift; sourceTree = "<group>"; };
+		D4686BCD2B5915990048A1F6 /* PasscodeField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeField.swift; sourceTree = "<group>"; };
 		D475C8E72B501A25008FC94A /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		D475C8E92B501C66008FC94A /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D475C8EB2B501C90008FC94A /* Fonts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Fonts; sourceTree = "<group>"; };
@@ -107,6 +120,7 @@
 		D47FF9122B4C3E4500C03D7D /* EnvType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnvType.swift; sourceTree = "<group>"; };
 		D47FF9392B4DA01200C03D7D /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		D47FF93B2B4DA0A500C03D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D4D2D34F2B5B3A080019E4B4 /* View+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Animation.swift"; sourceTree = "<group>"; };
 		D4F52ACD2B4C0B52009B8A24 /* Versal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Versal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalApp.swift; sourceTree = "<group>"; };
 		D4F52AD22B4C0B52009B8A24 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -200,6 +214,35 @@
 			path = PrivacyView;
 			sourceTree = "<group>";
 		};
+		D4686BBD2B569B240048A1F6 /* PasscodeView */ = {
+			isa = PBXGroup;
+			children = (
+				D4686BBE2B569B5B0048A1F6 /* PasscodeView.swift */,
+				D4686BC02B569B730048A1F6 /* PasscodeViewModel.swift */,
+				D4686BCA2B56E5010048A1F6 /* PasscodeField */,
+				D4686BC22B56C2350048A1F6 /* KeyPadView */,
+			);
+			path = PasscodeView;
+			sourceTree = "<group>";
+		};
+		D4686BC22B56C2350048A1F6 /* KeyPadView */ = {
+			isa = PBXGroup;
+			children = (
+				D4686BC82B56C2A00048A1F6 /* KeyPadView.swift */,
+				D4686BC62B56C2830048A1F6 /* KeyPadRow.swift */,
+				D4686BC42B56C26A0048A1F6 /* KeyPadButton.swift */,
+			);
+			path = KeyPadView;
+			sourceTree = "<group>";
+		};
+		D4686BCA2B56E5010048A1F6 /* PasscodeField */ = {
+			isa = PBXGroup;
+			children = (
+				D4686BCD2B5915990048A1F6 /* PasscodeField.swift */,
+			);
+			path = PasscodeField;
+			sourceTree = "<group>";
+		};
 		D47FF9382B4D9C2800C03D7D /* App */ = {
 			isa = PBXGroup;
 			children = (
@@ -288,6 +331,7 @@
 				D475C8F92B502459008FC94A /* UIImageView+Extensions.swift */,
 				D475C9082B50245A008FC94A /* UIScreen+Extensions.swift */,
 				D475C92D2B5034D5008FC94A /* UserDefaults+Extensions.swift */,
+				D4D2D34F2B5B3A080019E4B4 /* View+Animation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -331,6 +375,7 @@
 				D4686BB82B55209F0048A1F6 /* PrivacyView */,
 				D4F849AA2B5163B900C7ED83 /* SplashScreen */,
 				D4686BB52B5186780048A1F6 /* TestView */,
+				D4686BBD2B569B240048A1F6 /* PasscodeView */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -654,20 +699,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4F52AFB2B4C1417009B8A24 /* AppDelegate.swift in Sources */,
+				D4686BC72B56C2830048A1F6 /* KeyPadRow.swift in Sources */,
 				D475C9222B50245A008FC94A /* UIImage+Extensions.swift in Sources */,
 				D475C9182B50245A008FC94A /* Extensions.swift in Sources */,
 				D475C90E2B50245A008FC94A /* Date+Extensions.swift in Sources */,
 				D475C9112B50245A008FC94A /* UIImageView+Extensions.swift in Sources */,
 				D4686BBA2B5520C20048A1F6 /* PrivacyView.swift in Sources */,
 				D475C92A2B5034B1008FC94A /* Keychain.swift in Sources */,
+				D4686BC52B56C26A0048A1F6 /* KeyPadButton.swift in Sources */,
 				D475C91F2B50245A008FC94A /* Bundle+Extensions.swift in Sources */,
 				D4F849AE2B516ACD00C7ED83 /* SplashView.swift in Sources */,
 				D475C92E2B5034D5008FC94A /* UserDefaults+Extensions.swift in Sources */,
 				D475C9242B50245A008FC94A /* CodableWrappers+Extensions.swift in Sources */,
 				D475C9202B50245A008FC94A /* UIScreen+Extensions.swift in Sources */,
+				D4686BBF2B569B5B0048A1F6 /* PasscodeView.swift in Sources */,
 				D475C9102B50245A008FC94A /* UIDevice+Extensions.swift in Sources */,
 				D475C9232B50245A008FC94A /* DateFormatter+Extensions.swift in Sources */,
 				D4F52AD32B4C0B52009B8A24 /* TestView.swift in Sources */,
+				D4686BC12B569B740048A1F6 /* PasscodeViewModel.swift in Sources */,
 				D475C9162B50245A008FC94A /* NSObject+Extensions.swift in Sources */,
 				D47FF93A2B4DA01200C03D7D /* Log.swift in Sources */,
 				D475C9132B50245A008FC94A /* Data+Extensions.swift in Sources */,
@@ -676,11 +725,14 @@
 				D475C9122B50245A008FC94A /* Array+Extensions.swift in Sources */,
 				D475C9282B50349F008FC94A /* JSON.swift in Sources */,
 				D4F52AD12B4C0B52009B8A24 /* VersalApp.swift in Sources */,
+				D4686BC92B56C2A00048A1F6 /* KeyPadView.swift in Sources */,
 				D4686BB72B5187420048A1F6 /* TestViewModel.swift in Sources */,
 				D47FF9132B4C3E4500C03D7D /* EnvType.swift in Sources */,
 				D475C9262B503299008FC94A /* DeepLink.swift in Sources */,
 				D475C9212B50245A008FC94A /* UIColor+Extensions.swift in Sources */,
+				D4D2D3502B5B3A080019E4B4 /* View+Animation.swift in Sources */,
 				D475C8E82B501A25008FC94A /* R.generated.swift in Sources */,
+				D4686BCE2B5915990048A1F6 /* PasscodeField.swift in Sources */,
 				D4F849AC2B51667500C7ED83 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

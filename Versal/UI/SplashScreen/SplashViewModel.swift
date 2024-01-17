@@ -10,6 +10,7 @@ protocol SplashViewModelProtocol {}
 
 class SplashViewModel: ObservableObject, SplashViewModelProtocol {
     static let TAG = "SPLASH_VIEW"
+
     static let splashDuration = 2.5
 
     @Published var isActive = false

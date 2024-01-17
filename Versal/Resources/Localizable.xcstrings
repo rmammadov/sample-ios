@@ -11,6 +11,59 @@
           }
         }
       }
+    },
+    "REMOVE PASSCODE" : {
+
+    },
+    "SET PASSCODE" : {
+
+    },
+    "title_confirm_passcode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter the passcode to confirm"
+          }
+        }
+      }
+    },
+    "title_create_passcode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter a passcode"
+          }
+        }
+      }
+    },
+    "title_remove_passcode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter your passcode to remove it"
+          }
+        }
+      }
+    },
+    "title_verify_passcode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter your passcode to unlock"
+          }
+        }
+      }
+    },
+    "VERIFY PASSCODE" : {
+
     }
   },
   "version" : "1.0"

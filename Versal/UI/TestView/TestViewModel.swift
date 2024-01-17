@@ -6,8 +6,19 @@
 
 import Foundation
 
-protocol TestViewModelProtocol {}
+protocol TestViewModelProtocol {
+    func checkIfPasscodeSet()
+}
 
 final class TestViewModel: ObservableObject, TestViewModelProtocol {
     static let TAG: String = "TEST_VIEW"
+
+    @Published var isPasscodeViewPresenting = false
+    @Published var isPasscodeSet = false
+
+    var passcodePresentationMode: PasscodeMode = .verify
+
+    func checkIfPasscodeSet() {
+        isPasscodeSet = Keychain.get(.passcode) != nil
+    }
 }

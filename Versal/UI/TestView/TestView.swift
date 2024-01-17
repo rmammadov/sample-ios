@@ -10,13 +10,46 @@ struct TestView: View {
     // MARK: Internal
     var body: some View {
         VStack {
-            Button("btn_title") {
-                print("\(TestViewModel.TAG) Button Tapped!")
+            Button("SET PASSCODE") {
+                testViewModel.passcodePresentationMode = .create
+                testViewModel.isPasscodeViewPresenting.toggle()
             }
             .buttonStyle(.borderedProminent)
             .tint(Color.primary500)
+            .controlSize(.large)
+            .padding(.bottom, 16)
+            .disabled(testViewModel.isPasscodeSet)
+
+            Button("VERIFY PASSCODE") {
+                testViewModel.passcodePresentationMode = .verify
+                testViewModel.isPasscodeViewPresenting.toggle()
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(Color.information500)
+            .controlSize(.large)
+            .padding(.bottom, 16)
+            .disabled(!testViewModel.isPasscodeSet)
+
+            Button("REMOVE PASSCODE") {
+                testViewModel.passcodePresentationMode = .remove
+                testViewModel.isPasscodeViewPresenting.toggle()
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(Color.error500)
+            .controlSize(.large)
+            .padding(.bottom, 16)
+            .disabled(!testViewModel.isPasscodeSet)
         }
-        .padding()
+        .padding(48)
+        .sheet(isPresented: $testViewModel.isPasscodeViewPresenting, content: {
+            PasscodeView(mode: testViewModel.passcodePresentationMode, onPasscodeOperationCompleted: {
+                testViewModel.isPasscodeViewPresenting.toggle()
+                testViewModel.checkIfPasscodeSet()
+            })
+        })
+        .onAppear {
+            testViewModel.checkIfPasscodeSet()
+        }
     }
 
     // MARK: Private
