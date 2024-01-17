@@ -17,7 +17,9 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
 
     func sceneDidDisconnect(_: UIScene) {}
 
-    func sceneDidBecomeActive(_: UIScene) {}
+    func sceneDidBecomeActive(_: UIScene) {
+        hidePrivacyWindow()
+    }
 
     func sceneWillResignActive(_: UIScene) {
         showPrivacyWindow()
