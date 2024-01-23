@@ -8,4 +8,6 @@ import Foundation
 
 protocol PrivacyViewModelProtocol {}
 
-final class PrivacyViewModel: ObservableObject, PrivacyViewModelProtocol {}
+final class PrivacyViewModel: ObservableObject, PrivacyViewModelProtocol {
+    static let TAG = "PRIVACY_VIEW"
+}
