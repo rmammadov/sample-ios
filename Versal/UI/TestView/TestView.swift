@@ -10,35 +10,33 @@ struct TestView: View {
     // MARK: Internal
     var body: some View {
         VStack {
-            Button("SET PASSCODE") {
-                testViewModel.passcodePresentationMode = .create
-                testViewModel.isPasscodeViewPresenting.toggle()
-            }
-            .buttonStyle(.borderedProminent)
-            .tint(Color.primary500)
-            .controlSize(.large)
-            .padding(.bottom, 16)
-            .disabled(testViewModel.isPasscodeSet)
+            if #available(iOS 17.0, *) {
+                Toggle("Enable Passcode", isOn: $testViewModel.isPasscodeSet)
+                    .onChange(of: testViewModel.isPasscodeSet) { _, newValue in
+                        if newValue {
+                            testViewModel.passcodePresentationMode = .create
+                            testViewModel.isPasscodeViewPresenting.toggle()
+                        } else {
+                            testViewModel.passcodePresentationMode = .remove
+                            testViewModel.isPasscodeViewPresenting.toggle()
+                        }
+                    }
+                    .padding()
 
-            Button("VERIFY PASSCODE") {
-                testViewModel.passcodePresentationMode = .verify
-                testViewModel.isPasscodeViewPresenting.toggle()
-            }
-            .buttonStyle(.borderedProminent)
-            .tint(Color.information500)
-            .controlSize(.large)
-            .padding(.bottom, 16)
-            .disabled(!testViewModel.isPasscodeSet)
+                Toggle("Enable Face ID", isOn: $testViewModel.isFaceIDSet)
+                    .disabled(!testViewModel.isFaceIDSupported())
+                    .onChange(of: testViewModel.isFaceIDSet) { _, newValue in
+                        testViewModel.enableFaceID(yes: newValue)
+                    }
+                    .padding()
 
-            Button("REMOVE PASSCODE") {
-                testViewModel.passcodePresentationMode = .remove
-                testViewModel.isPasscodeViewPresenting.toggle()
+                Toggle("Enable Touch ID", isOn: $testViewModel.isTouchIDSet)
+                    .disabled(!testViewModel.isTouchIDSupported())
+                    .onChange(of: testViewModel.isTouchIDSet) { _, newValue in
+                        testViewModel.enableTouchID(yes: newValue)
+                    }
+                    .padding()
             }
-            .buttonStyle(.borderedProminent)
-            .tint(Color.error500)
-            .controlSize(.large)
-            .padding(.bottom, 16)
-            .disabled(!testViewModel.isPasscodeSet)
         }
         .padding(48)
         .sheet(isPresented: $testViewModel.isPasscodeViewPresenting, content: {
@@ -47,9 +45,6 @@ struct TestView: View {
                 testViewModel.checkIfPasscodeSet()
             })
         })
-        .onAppear {
-            testViewModel.checkIfPasscodeSet()
-        }
     }
 
     // MARK: Private

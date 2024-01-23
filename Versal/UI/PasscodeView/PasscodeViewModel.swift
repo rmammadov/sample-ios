@@ -64,6 +64,7 @@ final class PasscodeViewModel: ObservableObject, PasscodeViewModelProtocol {
         if passCode.count == maxDigits {
             if temporary == passCode {
                 Keychain.set(.passcode, passCode)
+                BiometricManager.shared.setPasscodeEnabled(true)
                 onPasscodeOperationCompleted()
             } else {
                 isPasscodeFailed.toggle()
@@ -76,6 +77,7 @@ final class PasscodeViewModel: ObservableObject, PasscodeViewModelProtocol {
         if passCode.count == maxDigits {
             if passCode == Keychain.get(.passcode) {
                 Keychain.reset()
+                BiometricManager.shared.setPasscodeEnabled(false)
                 onPasscodeOperationCompleted()
             } else {
                 isPasscodeFailed.toggle()

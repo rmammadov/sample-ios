@@ -12,11 +12,25 @@
         }
       }
     },
-    "REMOVE PASSCODE" : {
+    "Enable Face ID" : {
 
     },
-    "SET PASSCODE" : {
+    "Enable Passcode" : {
 
+    },
+    "Enable Touch ID" : {
+
+    },
+    "text_identify_yourself" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Identify yourself!"
+          }
+        }
+      }
     },
     "title_confirm_passcode" : {
       "extractionState" : "manual",
@@ -61,9 +75,6 @@
           }
         }
       }
-    },
-    "VERIFY PASSCODE" : {
-
     }
   },
   "version" : "1.0"

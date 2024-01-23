@@ -13,8 +13,6 @@ struct PasscodeView: View {
     }
 
     // MARK: Internal
-    typealias Completion = (_: Bool) -> Void
-
     var body: some View {
         VStack {
             Image(ImageResource.logoMarkGradient)

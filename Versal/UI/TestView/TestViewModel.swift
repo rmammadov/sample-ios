@@ -11,14 +11,56 @@ protocol TestViewModelProtocol {
 }
 
 final class TestViewModel: ObservableObject, TestViewModelProtocol {
+    // MARK: Internal
     static let TAG: String = "TEST_VIEW"
 
     @Published var isPasscodeViewPresenting = false
-    @Published var isPasscodeSet = false
+    @Published var isPasscodeSet = BiometricManager.shared.isPasscodeEnabled()
+    @Published var isFaceIDSet = BiometricManager.shared.isFaceIDEnabled()
+    @Published var isTouchIDSet = BiometricManager.shared.isTouchIDEnabled()
 
     var passcodePresentationMode: PasscodeMode = .verify
 
+    func isFaceIDSupported() -> Bool {
+        return BiometricManager.shared.isFaceIDSupported()
+    }
+
+    func isTouchIDSupported() -> Bool {
+        return BiometricManager.shared.isTouchIDSupported()
+    }
+
+    func enableFaceID(yes: Bool) {
+        BiometricManager.shared.verifyFaceID(verificationCompleted: { [self] success in
+            if yes {
+                BiometricManager.shared.setFaceIDEnabled(success)
+            } else {
+                BiometricManager.shared.setFaceIDEnabled(!success)
+            }
+            checkIfFaceIDSet()
+        })
+    }
+
+    func enableTouchID(yes: Bool) {
+        BiometricManager.shared.verifyTouchID(verificationCompleted: { [self] success in
+            if yes {
+                BiometricManager.shared.setTouchIDEnabled(success)
+            } else {
+                BiometricManager.shared.setTouchIDEnabled(!success)
+            }
+            checkIfTouchIDSet()
+        })
+    }
+
     func checkIfPasscodeSet() {
-        isPasscodeSet = Keychain.get(.passcode) != nil
+        isPasscodeSet = BiometricManager.shared.isPasscodeEnabled()
+    }
+
+    // MARK: Private
+    private func checkIfFaceIDSet() {
+        isFaceIDSet = BiometricManager.shared.isFaceIDEnabled()
+    }
+
+    private func checkIfTouchIDSet() {
+        isTouchIDSet = BiometricManager.shared.isTouchIDEnabled()
     }
 }
