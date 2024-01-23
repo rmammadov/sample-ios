@@ -23,6 +23,7 @@ struct KeyPadButton: View {
                 .overlay(Text(key)
                     .font(.title)
                     .foregroundColor(.primary500))
+                .opacity(key == "." ? 0.0 : 1.0)
         })
     }
 }
