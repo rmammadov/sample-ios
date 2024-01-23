@@ -12,7 +12,7 @@ struct KeyPadView: View {
     var keyWasPressed: () -> Void
 
     var body: some View {
-        VStack {
+        VStack(alignment: .trailing) {
             KeyPadRow(keys: ["1", "2", "3"])
             KeyPadRow(keys: ["4", "5", "6"])
             KeyPadRow(keys: ["7", "8", "9"])
@@ -24,9 +24,9 @@ struct KeyPadView: View {
     private func keyWasPressed(_ key: String) {
         switch key {
         case "⌫":
-            string.removeLast()
-            if string.isEmpty { string = "0" }
-        case _ where string == "0": string = key
+            if !string.isEmpty {
+                string.removeLast()
+            }
         default: string += key
         }
 

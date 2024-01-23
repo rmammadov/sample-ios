@@ -13,6 +13,7 @@ struct KeyPadRow: View {
         HStack {
             ForEach(keys, id: \.self) { key in
                 KeyPadButton(key: key)
+                    .frame(width: 90, height: 90)
             }
         }
     }

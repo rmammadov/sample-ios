@@ -16,14 +16,14 @@ struct KeyPadButton: View {
     @Environment(\.keyPadButtonAction) var action: (String) -> Void
 
     var body: some View {
-        Button(action: { action(key) }) {
+        Button(action: { action(key) }, label: {
             Color.clear
                 .overlay(RoundedRectangle(cornerRadius: 12)
                     .stroke(.primary500))
                 .overlay(Text(key)
                     .font(.title)
                     .foregroundColor(.primary500))
-        }
+        })
     }
 }
 
