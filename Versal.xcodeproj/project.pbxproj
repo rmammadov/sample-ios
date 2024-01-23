@@ -217,10 +217,10 @@
 		D4686BBD2B569B240048A1F6 /* PasscodeView */ = {
 			isa = PBXGroup;
 			children = (
-				D4686BBE2B569B5B0048A1F6 /* PasscodeView.swift */,
-				D4686BC02B569B730048A1F6 /* PasscodeViewModel.swift */,
 				D4686BCA2B56E5010048A1F6 /* PasscodeField */,
 				D4686BC22B56C2350048A1F6 /* KeyPadView */,
+				D4686BBE2B569B5B0048A1F6 /* PasscodeView.swift */,
+				D4686BC02B569B730048A1F6 /* PasscodeViewModel.swift */,
 			);
 			path = PasscodeView;
 			sourceTree = "<group>";
@@ -228,9 +228,9 @@
 		D4686BC22B56C2350048A1F6 /* KeyPadView */ = {
 			isa = PBXGroup;
 			children = (
-				D4686BC82B56C2A00048A1F6 /* KeyPadView.swift */,
-				D4686BC62B56C2830048A1F6 /* KeyPadRow.swift */,
 				D4686BC42B56C26A0048A1F6 /* KeyPadButton.swift */,
+				D4686BC62B56C2830048A1F6 /* KeyPadRow.swift */,
+				D4686BC82B56C2A00048A1F6 /* KeyPadView.swift */,
 			);
 			path = KeyPadView;
 			sourceTree = "<group>";
@@ -372,10 +372,10 @@
 		D4F52B012B4C14A5009B8A24 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D4686BBD2B569B240048A1F6 /* PasscodeView */,
 				D4686BB82B55209F0048A1F6 /* PrivacyView */,
 				D4F849AA2B5163B900C7ED83 /* SplashScreen */,
 				D4686BB52B5186780048A1F6 /* TestView */,
-				D4686BBD2B569B240048A1F6 /* PasscodeView */,
 			);
 			path = UI;
 			sourceTree = "<group>";

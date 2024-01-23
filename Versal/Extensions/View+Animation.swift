@@ -44,7 +44,7 @@ struct Shake<Content: View>: View {
             await backAndForthAnimation(duration: eachDuration, offset: offsetRange)
         }
 
-        let factor2 = 0.1
+        let factor2 = 0.5
         await animate(duration: duration * factor2) {
             xOffset = 0.0
         }
