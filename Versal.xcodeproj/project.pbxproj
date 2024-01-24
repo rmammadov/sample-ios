@@ -46,6 +46,7 @@
 		D47FF92B2B4C585100C03D7D /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D47FF92A2B4C585100C03D7D /* Then */; };
 		D47FF93A2B4DA01200C03D7D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47FF9392B4DA01200C03D7D /* Log.swift */; };
 		D4D2D3502B5B3A080019E4B4 /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2D34F2B5B3A080019E4B4 /* View+Animation.swift */; };
+		D4D2D3532B5FF86E0019E4B4 /* BiometricManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2D3522B5FF86E0019E4B4 /* BiometricManager.swift */; };
 		D4F52AD12B4C0B52009B8A24 /* VersalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */; };
 		D4F52AD32B4C0B52009B8A24 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AD22B4C0B52009B8A24 /* TestView.swift */; };
 		D4F52AD52B4C0B54009B8A24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F52AD42B4C0B54009B8A24 /* Assets.xcassets */; };
@@ -121,6 +122,7 @@
 		D47FF9392B4DA01200C03D7D /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		D47FF93B2B4DA0A500C03D7D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D4D2D34F2B5B3A080019E4B4 /* View+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Animation.swift"; sourceTree = "<group>"; };
+		D4D2D3522B5FF86E0019E4B4 /* BiometricManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricManager.swift; sourceTree = "<group>"; };
 		D4F52ACD2B4C0B52009B8A24 /* Versal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Versal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalApp.swift; sourceTree = "<group>"; };
 		D4F52AD22B4C0B52009B8A24 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				D475C92B2B5034B7008FC94A /* FormHelper */,
+				D4D2D3522B5FF86E0019E4B4 /* BiometricManager.swift */,
 				D475C9252B503299008FC94A /* DeepLink.swift */,
 				D475C9272B50349F008FC94A /* JSON.swift */,
 				D475C9292B5034B1008FC94A /* Keychain.swift */,
@@ -731,6 +734,7 @@
 				D475C9262B503299008FC94A /* DeepLink.swift in Sources */,
 				D475C9212B50245A008FC94A /* UIColor+Extensions.swift in Sources */,
 				D4D2D3502B5B3A080019E4B4 /* View+Animation.swift in Sources */,
+				D4D2D3532B5FF86E0019E4B4 /* BiometricManager.swift in Sources */,
 				D475C8E82B501A25008FC94A /* R.generated.swift in Sources */,
 				D4686BCE2B5915990048A1F6 /* PasscodeField.swift in Sources */,
 				D4F849AC2B51667500C7ED83 /* SceneDelegate.swift in Sources */,
@@ -839,7 +843,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
 				DEVELOPMENT_TEAM = "";
@@ -847,6 +852,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Need to verify your identity.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -984,7 +990,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
 				DEVELOPMENT_TEAM = "";
@@ -992,6 +999,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Need to verify your identity.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -1124,7 +1132,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
 				DEVELOPMENT_TEAM = "";
@@ -1132,6 +1140,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.finance";
+				INFOPLIST_KEY_NSFaceIDUsageDescription = "Need to verify your identity.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
