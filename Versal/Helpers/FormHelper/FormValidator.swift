@@ -197,59 +197,42 @@ extension FormValidator {
     }
 
     // Base Validation Function
-    func validateText(_ validateText: String?, _ rules: [FormValidError], _ existingText: String? = nil) throws -> String { // swiftlint:disable:this cyclomatic_complexity
+    func validateText(_ validateText: String?, _ rules: [FormValidError], _ existingText: String? = nil) throws -> String {
+        guard let text = validateText else {
+            return ""
+        }
+
         for rule in rules {
             switch rule {
-            case let .confirmPassword(matchText):
-                guard let text = validateText, text == matchText else {
-                    throw FormValidError.confirmPassword(password: matchText)
-                }
-            case let .empty(name):
-                guard let text = validateText, !text.isEmptyOrWhitespace else {
-                    throw FormValidError.empty(name: name)
-                }
-            case let .requiredWhenExisting(field):
-                if let existingText = existingText, !existingText.isEmptyOrWhitespace {
-                    if let text = validateText, text.isEmptyOrWhitespace {
-                        throw FormValidError.empty(name: field)
-                    }
-                }
-            case let .maximumLength(name, value):
-                guard let text = validateText, text.count <= value else {
-                    throw FormValidError.maximumLength(name: name, length: value)
-                }
-            case let .minimumLengthAccountNumber(name, value):
-                guard let text = validateText, text.count >= value else {
-                    throw FormValidError.minimumLengthAccountNumber(name: name, length: value)
-                }
-            case let .minimumLengthPassword(name, value):
-                guard let text = validateText, text.count >= value else {
-                    throw FormValidError.minimumLengthPassword(name: name, length: value)
-                }
-            case let .minimumLengthRoutingNumber(name, value):
-                guard let text = validateText, text.count >= value else {
-                    throw FormValidError.minimumLengthRoutingNumber(name: name, length: value)
-                }
-            case .validEmail:
-                guard let text = validateText, text.isValidEmailFormat else {
-                    throw FormValidError.validEmail
-                }
-            case .hasNumbers:
-                guard let text = validateText, text.containsNumbers else {
-                    throw FormValidError.hasNumbers
-                }
-            case .hasLowercase:
-                guard let text = validateText, text.containsLowercase else {
-                    throw FormValidError.hasLowercase
-                }
-            case .hasUppercase:
-                guard let text = validateText, text.containsUppercase else {
-                    throw FormValidError.hasUppercase
-                }
-            default: break
+            case let .confirmPassword(matchText) where text != matchText:
+                throw FormValidError.confirmPassword(password: matchText)
+
+            case let .empty(name) where text.isEmptyOrWhitespace:
+                throw FormValidError.empty(name: name)
+
+            case let .requiredWhenExisting(field) where existingText?.isEmptyOrWhitespace == false && text.isEmptyOrWhitespace:
+                throw FormValidError.empty(name: field)
+
+            case let .maximumLength(name, value),
+                 let .minimumLengthAccountNumber(name, value),
+                 let .minimumLengthPassword(name, value),
+                 let .minimumLengthRoutingNumber(name, value)
+                     where text.count < value || text.count > value:
+                throw FormValidError.minimumLengthAccountNumber(name: name, length: value)
+
+            case .validEmail where !text.isValidEmailFormat:
+                throw FormValidError.validEmail
+
+            case .hasNumbers where !text.containsNumbers,
+                 .hasLowercase where !text.containsLowercase,
+                 .hasUppercase where !text.containsUppercase:
+                throw rule
+
+            default:
+                break
             }
         }
 
-        return validateText ?? ""
+        return text
     }
 }

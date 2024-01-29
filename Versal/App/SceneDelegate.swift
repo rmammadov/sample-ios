@@ -6,6 +6,11 @@
 
 import SwiftUI
 
+protocol SceneDelegateProtocol {
+    func hidePrivacyWindow()
+    func showPrivacyWindow()
+}
+
 class SceneDelegate: NSObject, UIWindowSceneDelegate {
     // MARK: Internal
     var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
@@ -13,6 +18,7 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(windowScene: windowScene)
+        privacyViewController = UIHostingController(rootView: privacyView)
     }
 
     func sceneDidDisconnect(_: UIScene) {}
@@ -30,24 +36,28 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_: UIScene) {}
 
     // MARK: Private
+    private var privacyView: PrivacyView = .init()
     private var privacyWindow: UIWindow?
-    private let privacyViewController = UIHostingController(rootView: PrivacyView())
+    private var privacyViewController: UIHostingController<PrivacyView>?
 }
 
-extension SceneDelegate {
-    private func hidePrivacyWindow() {
+extension SceneDelegate: SceneDelegateProtocol {
+    func hidePrivacyWindow() {
         if let navigationController = privacyWindow?.rootViewController as? UINavigationController,
            privacyViewController == navigationController.viewControllers.first {
-            privacyWindow?.isHidden = true
-            privacyWindow = nil
+            privacyView.resign { [weak self] in
+                self?.privacyWindow?.isHidden = true
+                self?.privacyWindow = nil
+            }
         }
     }
 
-    private func showPrivacyWindow() {
+    func showPrivacyWindow() {
         guard let windowScene = window?.windowScene else {
             return
         }
 
+        guard let privacyViewController = privacyViewController else { return }
         let navigationController = UINavigationController(rootViewController: privacyViewController)
         navigationController.setNavigationBarHidden(true, animated: false)
 

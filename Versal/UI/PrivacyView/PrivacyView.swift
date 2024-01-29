@@ -10,22 +10,30 @@ struct PrivacyView: View {
     // MARK: Internal
     var body: some View {
         ZStack {
-            Color.primary25
-                .ignoresSafeArea()
-            Image(ImageResource.logoMarkGradient)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 150, height: 150)
+            if privacyViewModel.authenticationType == .passcode {
+                PasscodeView(mode: .verify, onPasscodeOperationCompleted: {
+                    privacyViewModel.authenticated()
+                })
+            } else {
+                Color.primary25
+                    .ignoresSafeArea()
+                Image(ImageResource.logoMarkGradient)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 150, height: 150)
+            }
         }
         .onAppear {}
     }
 
     // MARK: Private
-    @StateObject private var privacyViewModel = PrivacyViewModel()
+    @ObservedObject private var privacyViewModel = PrivacyViewModel()
 }
 
 extension PrivacyView {
-    func resign(_: @escaping () -> Void) {}
+    func resign(_ completion: @escaping () -> Void) {
+        privacyViewModel.verifyAuthentication(completion)
+    }
 }
 
 #Preview {

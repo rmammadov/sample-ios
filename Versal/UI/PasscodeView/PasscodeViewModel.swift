@@ -53,7 +53,7 @@ final class PasscodeViewModel: ObservableObject, PasscodeViewModelProtocol {
 
     func createPasscode() {
         if passCode.count == maxDigits {
-            temporary = passCode
+            temporaryPasscode = passCode
             passCode.removeAll()
             mode = .confirm
             confirmPasscode()
@@ -62,7 +62,7 @@ final class PasscodeViewModel: ObservableObject, PasscodeViewModelProtocol {
 
     func confirmPasscode() {
         if passCode.count == maxDigits {
-            if temporary == passCode {
+            if temporaryPasscode == passCode {
                 Keychain.set(.passcode, passCode)
                 BiometricManager.shared.setPasscodeEnabled(true)
                 onPasscodeOperationCompleted()
@@ -100,5 +100,5 @@ final class PasscodeViewModel: ObservableObject, PasscodeViewModelProtocol {
     // MARK: Private
     private var onPasscodeOperationCompleted: () -> Void
 
-    private var temporary = ""
+    private var temporaryPasscode = ""
 }

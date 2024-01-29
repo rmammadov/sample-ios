@@ -7,11 +7,16 @@
 import Foundation
 
 protocol TestViewModelProtocol {
+    func isFaceIDSupported() -> Bool
+    func isTouchIDSupported() -> Bool
+    func enableFaceID(yes: Bool)
+    func enableTouchID(yes: Bool)
     func checkIfPasscodeSet()
+    func checkIfFaceIDSet()
+    func checkIfTouchIDSet()
 }
 
 final class TestViewModel: ObservableObject, TestViewModelProtocol {
-    // MARK: Internal
     static let TAG: String = "TEST_VIEW"
 
     @Published var isPasscodeViewPresenting = false
@@ -55,12 +60,11 @@ final class TestViewModel: ObservableObject, TestViewModelProtocol {
         isPasscodeSet = BiometricManager.shared.isPasscodeEnabled()
     }
 
-    // MARK: Private
-    private func checkIfFaceIDSet() {
+    internal func checkIfFaceIDSet() {
         isFaceIDSet = BiometricManager.shared.isFaceIDEnabled()
     }
 
-    private func checkIfTouchIDSet() {
+    internal func checkIfTouchIDSet() {
         isTouchIDSet = BiometricManager.shared.isTouchIDEnabled()
     }
 }
