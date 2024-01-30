@@ -7,10 +7,5 @@
 import Combine
 
 class BaseViewModel: ObservableObject {
-    // Add common properties or methods shared by all view models
-    // ...
-
-    init() {
-        // Initialize any common properties or setup code
-    }
+    init() {}
 }

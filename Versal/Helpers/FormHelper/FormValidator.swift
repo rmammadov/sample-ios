@@ -204,32 +204,21 @@ extension FormValidator {
 
         for rule in rules {
             switch rule {
-            case let .confirmPassword(matchText) where text != matchText:
-                throw FormValidError.confirmPassword(password: matchText)
-
-            case let .empty(name) where text.isEmptyOrWhitespace:
-                throw FormValidError.empty(name: name)
+            case let .confirmPassword(matchText) where text != matchText,
+                 let .empty(name) where text.isEmptyOrWhitespace,
+                 .hasNumbers where !text.containsNumbers,
+                 .hasLowercase where !text.containsLowercase,
+                 .hasUppercase where !text.containsUppercase,
+                 let .maximumLength(name, value) where text.count > value,
+                 let .minimumLengthPassword(name, value) where text.count < value,
+                 .validEmail where !text.isValidEmailFormat:
+                throw rule
 
             case let .requiredWhenExisting(field) where existingText?.isEmptyOrWhitespace == false && text.isEmptyOrWhitespace:
                 throw FormValidError.empty(name: field)
 
-            case let .maximumLength(name, value),
-                 let .minimumLengthAccountNumber(name, value),
-                 let .minimumLengthPassword(name, value),
-                 let .minimumLengthRoutingNumber(name, value)
-                     where text.count < value || text.count > value:
-                throw FormValidError.minimumLengthAccountNumber(name: name, length: value)
-
-            case .validEmail where !text.isValidEmailFormat:
-                throw FormValidError.validEmail
-
-            case .hasNumbers where !text.containsNumbers,
-                 .hasLowercase where !text.containsLowercase,
-                 .hasUppercase where !text.containsUppercase:
-                throw rule
-
             default:
-                break
+                throw rule
             }
         }
 

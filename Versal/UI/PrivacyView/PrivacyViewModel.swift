@@ -8,14 +8,14 @@ import SwiftUI
 
 public enum AuthenticationType {
     case faceID
-    case touchID
-    case passcode
     case noAuthentication
+    case passcode
+    case touchID
 }
 
 protocol PrivacyViewModelProtocol {
-    func verifyAuthentication(_ authenticationCompleted: @escaping () -> Void)
     func authenticated()
+    func verifyAuthentication(_ authenticationCompleted: @escaping () -> Void)
 }
 
 final class PrivacyViewModel: ObservableObject, PrivacyViewModelProtocol {
@@ -28,6 +28,11 @@ final class PrivacyViewModel: ObservableObject, PrivacyViewModelProtocol {
     static let TAG = "PRIVACY_VIEW"
 
     @Published var authenticationType = AuthenticationType.noAuthentication
+
+    func authenticated() {
+        authenticationCompleted?()
+        authenticationType = .noAuthentication
+    }
 
     func verifyAuthentication(_ authenticationCompleted: @escaping () -> Void) {
         self.authenticationCompleted = authenticationCompleted
@@ -51,11 +56,6 @@ final class PrivacyViewModel: ObservableObject, PrivacyViewModelProtocol {
         } else {
             authenticated()
         }
-    }
-
-    func authenticated() {
-        authenticationCompleted?()
-        authenticationType = .noAuthentication
     }
 
     // MARK: Private

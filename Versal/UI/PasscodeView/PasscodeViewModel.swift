@@ -7,17 +7,17 @@
 import SwiftUI
 
 public enum PasscodeMode {
-    case create
     case confirm
+    case create
     case remove
     case verify
 }
 
 protocol PasscodeViewModelProtocol {
-    func setup()
-    func createPasscode()
     func confirmPasscode()
+    func createPasscode()
     func removePasscode()
+    func setup()
     func verifyPasscode()
 }
 
@@ -32,18 +32,53 @@ final class PasscodeViewModel: ObservableObject, PasscodeViewModelProtocol {
     // MARK: Internal
     static let TAG: String = "PASSCODE_VIEW"
 
-    @Published var passCode = ""
     @Published var isPasscodeFailed = false
-    let maxDigits = 6
+    @Published var passcode = ""
 
+    let maxDigits = 6
     var mode: PasscodeMode = .create
+
+    func confirmPasscode() {
+        if passcode.count == maxDigits {
+            if temporaryPasscode == passcode {
+                Keychain.set(.passcode, passcode)
+                BiometricManager.shared.setPasscodeEnabled(true)
+                onPasscodeOperationCompleted()
+            } else {
+                isPasscodeFailed.toggle()
+            }
+            passcode.removeAll()
+        }
+    }
+
+    func createPasscode() {
+        if passcode.count == maxDigits {
+            temporaryPasscode = passcode
+            passcode.removeAll()
+            mode = .confirm
+            confirmPasscode()
+        }
+    }
+
+    func removePasscode() {
+        if passcode.count == maxDigits {
+            if passcode == Keychain.get(.passcode) {
+                Keychain.reset()
+                BiometricManager.shared.setPasscodeEnabled(false)
+                onPasscodeOperationCompleted()
+            } else {
+                isPasscodeFailed.toggle()
+            }
+            passcode.removeAll()
+        }
+    }
 
     func setup() {
         switch mode {
-        case .create:
-            createPasscode()
         case .confirm:
             confirmPasscode()
+        case .create:
+            createPasscode()
         case .remove:
             removePasscode()
         default:
@@ -51,49 +86,14 @@ final class PasscodeViewModel: ObservableObject, PasscodeViewModelProtocol {
         }
     }
 
-    func createPasscode() {
-        if passCode.count == maxDigits {
-            temporaryPasscode = passCode
-            passCode.removeAll()
-            mode = .confirm
-            confirmPasscode()
-        }
-    }
-
-    func confirmPasscode() {
-        if passCode.count == maxDigits {
-            if temporaryPasscode == passCode {
-                Keychain.set(.passcode, passCode)
-                BiometricManager.shared.setPasscodeEnabled(true)
-                onPasscodeOperationCompleted()
-            } else {
-                isPasscodeFailed.toggle()
-            }
-            passCode.removeAll()
-        }
-    }
-
-    func removePasscode() {
-        if passCode.count == maxDigits {
-            if passCode == Keychain.get(.passcode) {
-                Keychain.reset()
-                BiometricManager.shared.setPasscodeEnabled(false)
-                onPasscodeOperationCompleted()
-            } else {
-                isPasscodeFailed.toggle()
-            }
-            passCode.removeAll()
-        }
-    }
-
     func verifyPasscode() {
-        if passCode.count == maxDigits {
-            if passCode == Keychain.get(.passcode) {
+        if passcode.count == maxDigits {
+            if passcode == Keychain.get(.passcode) {
                 onPasscodeOperationCompleted()
             } else {
                 isPasscodeFailed.toggle()
             }
-            passCode.removeAll()
+            passcode.removeAll()
         }
     }
 

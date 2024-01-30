@@ -202,13 +202,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D44824792B67FCB900677566 /* Base */ = {
+		D44824792B67FCB900677566 /* BaseView */ = {
 			isa = PBXGroup;
 			children = (
 				D448247C2B67FD0200677566 /* BaseView.swift */,
 				D448247A2B67FCCF00677566 /* BaseViewModel.swift */,
 			);
-			path = Base;
+			path = BaseView;
 			sourceTree = "<group>";
 		};
 		D4686BB52B5186780048A1F6 /* TestView */ = {
@@ -388,7 +388,7 @@
 		D4F52B012B4C14A5009B8A24 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D44824792B67FCB900677566 /* Base */,
+				D44824792B67FCB900677566 /* BaseView */,
 				D4686BBD2B569B240048A1F6 /* PasscodeView */,
 				D4686BB82B55209F0048A1F6 /* PrivacyView */,
 				D4F849AA2B5163B900C7ED83 /* SplashScreen */,
@@ -879,7 +879,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "money.versal.platform-test";
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.platform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1027,7 +1027,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "money.versal.platform-test";
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.platform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1169,7 +1169,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "money.versal.platform-test";
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.platform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -21,24 +21,24 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
         privacyViewController = UIHostingController(rootView: privacyView)
     }
 
-    func sceneDidDisconnect(_: UIScene) {}
-
     func sceneDidBecomeActive(_: UIScene) {
         hidePrivacyWindow()
     }
+
+    func sceneDidDisconnect(_: UIScene) {}
+
+    func sceneDidEnterBackground(_: UIScene) {}
+
+    func sceneWillEnterForeground(_: UIScene) {}
 
     func sceneWillResignActive(_: UIScene) {
         showPrivacyWindow()
     }
 
-    func sceneWillEnterForeground(_: UIScene) {}
-
-    func sceneDidEnterBackground(_: UIScene) {}
-
     // MARK: Private
     private var privacyView: PrivacyView = .init()
-    private var privacyWindow: UIWindow?
     private var privacyViewController: UIHostingController<PrivacyView>?
+    private var privacyWindow: UIWindow?
 }
 
 extension SceneDelegate: SceneDelegateProtocol {
@@ -48,6 +48,7 @@ extension SceneDelegate: SceneDelegateProtocol {
             privacyView.resign { [weak self] in
                 self?.privacyWindow?.isHidden = true
                 self?.privacyWindow = nil
+                // DeepLink.process()
             }
         }
     }

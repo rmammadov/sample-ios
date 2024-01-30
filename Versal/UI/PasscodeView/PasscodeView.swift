@@ -24,11 +24,11 @@ struct PasscodeView: View {
                 .font(.headline)
                 .padding(.bottom, 16)
                 .font(.title)
-                .foregroundColor(.primary500)
-            PasscodeField(keyWasTyped: {}, maxDigits: passcodeViewModel.maxDigits, passcode: $passcodeViewModel.passCode)
+                .foregroundColor(.versalPrimary500)
+            PasscodeField(keyWasTyped: {}, maxDigits: passcodeViewModel.maxDigits, passcode: $passcodeViewModel.passcode)
                 .padding(.bottom, 48)
                 .shake($passcodeViewModel.isPasscodeFailed) {}
-            KeyPadView(string: $passcodeViewModel.passCode, keyWasPressed: {
+            KeyPadView(string: $passcodeViewModel.passcode, keyWasPressed: {
                 passcodeViewModel.setup()
             })
         }

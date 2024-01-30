@@ -7,31 +7,35 @@
 import Foundation
 
 protocol TestViewModelProtocol {
-    func isFaceIDSupported() -> Bool
-    func isTouchIDSupported() -> Bool
+    func checkIfFaceIDSet()
+    func checkIfPasscodeSet()
+    func checkIfTouchIDSet()
     func enableFaceID(yes: Bool)
     func enableTouchID(yes: Bool)
-    func checkIfPasscodeSet()
-    func checkIfFaceIDSet()
-    func checkIfTouchIDSet()
+    func isFaceIDSupported() -> Bool
+    func isTouchIDSupported() -> Bool
 }
 
 final class TestViewModel: ObservableObject, TestViewModelProtocol {
     static let TAG: String = "TEST_VIEW"
 
-    @Published var isPasscodeViewPresenting = false
-    @Published var isPasscodeSet = BiometricManager.shared.isPasscodeEnabled()
     @Published var isFaceIDSet = BiometricManager.shared.isFaceIDEnabled()
+    @Published var isPasscodeSet = BiometricManager.shared.isPasscodeEnabled()
+    @Published var isPasscodeViewPresenting = false
     @Published var isTouchIDSet = BiometricManager.shared.isTouchIDEnabled()
 
     var passcodePresentationMode: PasscodeMode = .verify
 
-    func isFaceIDSupported() -> Bool {
-        return BiometricManager.shared.isFaceIDSupported()
+    internal func checkIfPasscodeSet() {
+        isPasscodeSet = BiometricManager.shared.isPasscodeEnabled()
     }
 
-    func isTouchIDSupported() -> Bool {
-        return BiometricManager.shared.isTouchIDSupported()
+    internal func checkIfFaceIDSet() {
+        isFaceIDSet = BiometricManager.shared.isFaceIDEnabled()
+    }
+
+    internal func checkIfTouchIDSet() {
+        isTouchIDSet = BiometricManager.shared.isTouchIDEnabled()
     }
 
     func enableFaceID(yes: Bool) {
@@ -56,15 +60,11 @@ final class TestViewModel: ObservableObject, TestViewModelProtocol {
         })
     }
 
-    func checkIfPasscodeSet() {
-        isPasscodeSet = BiometricManager.shared.isPasscodeEnabled()
+    func isFaceIDSupported() -> Bool {
+        return BiometricManager.shared.isFaceIDSupported()
     }
 
-    internal func checkIfFaceIDSet() {
-        isFaceIDSet = BiometricManager.shared.isFaceIDEnabled()
-    }
-
-    internal func checkIfTouchIDSet() {
-        isTouchIDSet = BiometricManager.shared.isTouchIDEnabled()
+    func isTouchIDSupported() -> Bool {
+        return BiometricManager.shared.isTouchIDSupported()
     }
 }
