@@ -13,7 +13,7 @@ struct SplashView: View {
             if splashViewModel.isActive {
                 TestView()
             } else {
-                Color.primary25
+                Color.versalPrimary25
                     .ignoresSafeArea()
                 Image(ImageResource.logoMarkGradient)
                     .resizable()
