@@ -10,9 +10,7 @@ import SwiftUI
 struct VersalApp: App {
     // MARK: Internal
     var body: some Scene {
-        WindowGroup {
-            SplashView()
-        }
+        WindowGroup {}
     }
 
     // MARK: Private

@@ -8,10 +8,12 @@ import SwiftUI
 
 struct SplashView: View {
     // MARK: Internal
+    @EnvironmentObject var appState: AppState
+
     var body: some View {
         ZStack {
             if splashViewModel.isActive {
-                TestView()
+                TestView(appState: appState)
             } else {
                 Color.versalPrimary25
                     .ignoresSafeArea()
