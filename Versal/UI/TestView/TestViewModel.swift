@@ -4,7 +4,7 @@
 // Restricted and proprietary.
 //
 
-import Foundation
+import SwiftUI
 
 protocol TestViewModelProtocol {
     func checkIfFaceIDSet()
@@ -16,7 +16,7 @@ protocol TestViewModelProtocol {
     func isTouchIDSupported() -> Bool
 }
 
-final class TestViewModel: ObservableObject, TestViewModelProtocol {
+final class TestViewModel: BaseViewModel, TestViewModelProtocol {
     static let TAG: String = "TEST_VIEW"
 
     @Published var isFaceIDSet = BiometricManager.shared.isFaceIDEnabled()
@@ -39,6 +39,7 @@ final class TestViewModel: ObservableObject, TestViewModelProtocol {
     }
 
     func enableFaceID(yes: Bool) {
+        updateAppState(viewState: .askForAuthentication)
         BiometricManager.shared.verifyFaceID(verificationCompleted: { [self] success in
             if yes {
                 BiometricManager.shared.setFaceIDEnabled(success)
@@ -46,10 +47,12 @@ final class TestViewModel: ObservableObject, TestViewModelProtocol {
                 BiometricManager.shared.setFaceIDEnabled(!success)
             }
             checkIfFaceIDSet()
+            updateAppState(viewState: .presentContent)
         })
     }
 
     func enableTouchID(yes: Bool) {
+        updateAppState(viewState: .askForAuthentication)
         BiometricManager.shared.verifyTouchID(verificationCompleted: { [self] success in
             if yes {
                 BiometricManager.shared.setTouchIDEnabled(success)
@@ -57,6 +60,7 @@ final class TestViewModel: ObservableObject, TestViewModelProtocol {
                 BiometricManager.shared.setTouchIDEnabled(!success)
             }
             checkIfTouchIDSet()
+            updateAppState(viewState: .presentContent)
         })
     }
 

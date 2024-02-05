@@ -6,23 +6,22 @@
 
 import SwiftUI
 
-protocol SceneDelegateProtocol {
-    func hidePrivacyWindow()
-    func showPrivacyWindow()
-}
-
 class SceneDelegate: NSObject, UIWindowSceneDelegate {
-    // MARK: Internal
+    var appState = AppState.shared
     var window: UIWindow? = UIWindow(frame: UIScreen.main.bounds)
 
     func scene(_ scene: UIScene, willConnectTo _: UISceneSession, options _: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        window = UIWindow(windowScene: windowScene)
-        privacyViewController = UIHostingController(rootView: privacyView)
+
+        let splashView = SplashView().environmentObject(appState)
+        let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = UIHostingController(rootView: splashView)
+        self.window = window
+        window.makeKeyAndVisible()
     }
 
     func sceneDidBecomeActive(_: UIScene) {
-        hidePrivacyWindow()
+        appState.setCurrent(state: .foreground)
     }
 
     func sceneDidDisconnect(_: UIScene) {}
@@ -32,41 +31,6 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
     func sceneWillEnterForeground(_: UIScene) {}
 
     func sceneWillResignActive(_: UIScene) {
-        showPrivacyWindow()
-    }
-
-    // MARK: Private
-    private var privacyView: PrivacyView = .init()
-    private var privacyViewController: UIHostingController<PrivacyView>?
-    private var privacyWindow: UIWindow?
-}
-
-extension SceneDelegate: SceneDelegateProtocol {
-    func hidePrivacyWindow() {
-        if let navigationController = privacyWindow?.rootViewController as? UINavigationController,
-           privacyViewController == navigationController.viewControllers.first {
-            privacyView.resign { [weak self] in
-                self?.privacyWindow?.isHidden = true
-                self?.privacyWindow = nil
-                // DeepLink.process()
-            }
-        }
-    }
-
-    func showPrivacyWindow() {
-        guard let windowScene = window?.windowScene else {
-            return
-        }
-
-        guard let privacyViewController = privacyViewController else { return }
-        let navigationController = UINavigationController(rootViewController: privacyViewController)
-        navigationController.setNavigationBarHidden(true, animated: false)
-
-        privacyWindow?.isHidden = true
-        privacyWindow = nil
-        privacyWindow = UIWindow(windowScene: windowScene)
-        privacyWindow?.rootViewController = navigationController
-        privacyWindow?.windowLevel = .alert + 1
-        privacyWindow?.makeKeyAndVisible()
+        appState.setCurrent(state: .background)
     }
 }

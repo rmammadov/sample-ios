@@ -6,7 +6,7 @@
 
 import Bugsnag
 import IQKeyboardManager
-import UIKit
+import SwiftUI
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]? = nil) -> Bool {
@@ -20,6 +20,14 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         let sceneConfig = UISceneConfiguration(name: nil, sessionRole: connectingSceneSession.role)
         sceneConfig.delegateClass = SceneDelegate.self
         return sceneConfig
+    }
+
+    func applicationDidEnterBackground(_: UIApplication) {
+        // Perform tasks when the app enters the background
+    }
+
+    func applicationWillEnterForeground(_: UIApplication) {
+        // Perform tasks when the app returns to the foreground
     }
 }
 
