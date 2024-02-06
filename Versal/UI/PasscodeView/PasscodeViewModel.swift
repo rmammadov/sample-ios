@@ -63,7 +63,7 @@ final class PasscodeViewModel: ObservableObject, PasscodeViewModelProtocol {
     func removePasscode() {
         if passcode.count == maxDigits {
             if passcode == Keychain.get(.passcode) {
-                Keychain.reset()
+                Keychain.set(.passcode, nil)
                 BiometricManager.shared.setPasscodeEnabled(false)
                 onPasscodeOperationCompleted()
             } else {
