@@ -17,11 +17,19 @@ public enum AuthenticationStates {
     case locked
 }
 
-final class AppState: ObservableObject {
+protocol AppStateProtocol {
+    func setAuthentication(state: AuthenticationStates)
+    func setCurrent(state: AppStates)
+    func login(username: String, password: String)
+    func logout()
+}
+
+final class AppState: ObservableObject, AppStateProtocol {
     static let shared = AppState()
 
     var authenticationState = AuthenticationStates.locked
     @Published var current: AppStates = .background
+    @Published var isLoggedIn = false
 
     func setAuthentication(state: AuthenticationStates) {
         authenticationState = state
@@ -34,5 +42,13 @@ final class AppState: ObservableObject {
                 authenticationState = .locked
             }
         }
+    }
+
+    func login(username _: String, password _: String) {
+        isLoggedIn = true
+    }
+
+    func logout() {
+        isLoggedIn = false
     }
 }

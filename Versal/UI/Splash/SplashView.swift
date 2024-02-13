@@ -11,10 +11,8 @@ struct SplashView: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
-        ZStack {
-            if splashViewModel.isActive {
-                TestView(appState: appState)
-            } else {
+        if splashViewModel.isActive {
+            ZStack {
                 Color.versalPrimary25
                     .ignoresSafeArea()
                 Image(ImageResource.logoMarkGradient)
@@ -22,18 +20,24 @@ struct SplashView: View {
                     .scaledToFit()
                     .frame(width: 150, height: 150)
             }
-        }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + SplashViewModel.splashDuration) {
-                withAnimation {
-                    splashViewModel.isActive = true
+            .onAppear {
+                DispatchQueue.main.asyncAfter(deadline: .now() + SplashViewModel.splashDuration) {
+                    withAnimation {
+                        splashViewModel.isActive = false
+                    }
                 }
+            }
+        } else {
+            if appState.isLoggedIn {
+                MainView(appState: appState)
+            } else {
+                LoginView().environmentObject(appState)
             }
         }
     }
 
     // MARK: Private
-    @StateObject private var splashViewModel = SplashViewModel()
+    @StateObject private var splashViewModel: SplashViewModel = .init()
 }
 
 #Preview {

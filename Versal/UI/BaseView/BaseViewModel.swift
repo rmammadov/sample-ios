@@ -12,7 +12,13 @@ public enum BaseViewStates {
     case presentPrivacyScreen
 }
 
-class BaseViewModel: ObservableObject {
+protocol BaseViewModelProtocol {
+    func updateAppState(viewState: BaseViewStates)
+    func login(username: String, password: String)
+    func logout()
+}
+
+class BaseViewModel: ObservableObject, BaseViewModelProtocol {
     // MARK: Lifecycle
     init(appState: AppState) {
         self.appState = appState
@@ -27,26 +33,34 @@ class BaseViewModel: ObservableObject {
     // MARK: Internal
     @Published var state: BaseViewStates = .presentPrivacyScreen
 
+    var appState: AppState
+
     func updateAppState(viewState: BaseViewStates) {
         switch viewState {
         case .askForAuthentication:
-            appState?.setAuthentication(state: .authenticating)
+            appState.setAuthentication(state: .authenticating)
         case .presentContent:
-            appState?.setAuthentication(state: .authenticated)
-            appState?.setCurrent(state: .foreground)
+            appState.setAuthentication(state: .authenticated)
+            appState.setCurrent(state: .foreground)
         case .presentPrivacyScreen:
-            appState?.setAuthentication(state: .locked)
-            appState?.setCurrent(state: .background)
+            appState.setAuthentication(state: .locked)
+            appState.setCurrent(state: .background)
         }
     }
 
-    // MARK: Private
-    private var appState: AppState?
+    func login(username: String, password: String) {
+        appState.login(username: username, password: password)
+    }
 
+    func logout() {
+        appState.logout()
+    }
+
+    // MARK: Private
     private func updateViewModel() {
-        if appState?.current == .foreground, appState?.authenticationState == .authenticated {
+        if appState.current == .foreground, appState.authenticationState == .authenticated {
             state = .presentContent
-        } else if appState?.current == .background {
+        } else if appState.current == .background {
             state = .presentPrivacyScreen
         } else {
             state = .askForAuthentication

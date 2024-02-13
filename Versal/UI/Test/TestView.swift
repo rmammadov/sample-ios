@@ -40,6 +40,10 @@ struct TestView: View {
                             testViewModel.enableTouchID(yes: newValue)
                         }
                         .padding()
+
+                    SolidRoundedButton(isEnabled: true, title: "Logout", onClick: {
+                        testViewModel.logout()
+                    })
                 }
             }
             .padding(48)

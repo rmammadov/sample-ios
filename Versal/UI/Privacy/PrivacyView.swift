@@ -27,7 +27,7 @@ struct PrivacyView: View {
     }
 
     // MARK: Private
-    @ObservedObject private var privacyViewModel = PrivacyViewModel()
+    @ObservedObject private var privacyViewModel: PrivacyViewModel = .init()
 }
 
 extension PrivacyView {
