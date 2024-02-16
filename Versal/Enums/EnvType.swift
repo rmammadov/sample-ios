@@ -8,8 +8,8 @@ import UIKit
 
 enum EnvType {
     case development
-    case sandbox
     case production
+    case sandbox
 
     // MARK: Internal
     static var current: Self {

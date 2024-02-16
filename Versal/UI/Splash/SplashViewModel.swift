@@ -13,5 +13,5 @@ class SplashViewModel: ObservableObject, SplashViewModelProtocol {
 
     static let splashDuration = 2.5
 
-    @Published var isActive = false
+    @Published var isActive = true
 }

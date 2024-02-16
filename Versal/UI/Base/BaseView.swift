@@ -14,8 +14,6 @@ struct BaseView<Content: View>: View {
     }
 
     // MARK: Internal
-    let content: Content
-
     var body: some View {
         VStack {
             switch viewModel.state {
@@ -36,6 +34,7 @@ struct BaseView<Content: View>: View {
     }
 
     // MARK: Private
+    private let content: Content
     private let privacyView = PrivacyView()
 
     @ObservedObject private var viewModel: BaseViewModel
