@@ -14,7 +14,7 @@ struct TestView: View {
 
     // MARK: Internal
     var body: some View {
-        BaseView(viewModel: testViewModel, content: {
+        BaseView(viewModel: testViewModel, content: { // swiftlint:disable:this closure_body_length
             VStack {
                 if #available(iOS 17.0, *) {
                     Toggle("Enable Passcode", isOn: $testViewModel.isPasscodeSet)

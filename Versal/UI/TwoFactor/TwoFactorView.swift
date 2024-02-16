@@ -25,7 +25,7 @@ struct TwoFactorView: View {
 
             SolidRoundedButton(isEnabled: twoFactorViewModel.isSubmitEnabled, title: "Continue", onClick: {
                 if twoFactorViewModel.verifyCode() {
-                    appState.login(username: "", password: "")
+                    appState.login(email: "", password: "")
                 }
             })
 

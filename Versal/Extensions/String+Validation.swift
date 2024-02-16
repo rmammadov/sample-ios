@@ -7,10 +7,9 @@
 import Foundation
 
 extension String {
-    func isValidEmail() -> Bool {
-        let emailRegex = #"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"#
-        let emailPredicate = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+    private static let emailPredicate = NSPredicate(format: "SELF MATCHES %@", #"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"#)
 
-        return emailPredicate.evaluate(with: self)
+    func isValidEmail() -> Bool {
+        return String.emailPredicate.evaluate(with: self)
     }
 }

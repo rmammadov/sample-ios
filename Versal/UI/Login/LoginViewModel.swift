@@ -20,6 +20,14 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
     @Published var isNextViewActive = false
     @Published var password: String = ""
 
+    func checkLoginData() -> Bool {
+        if email == emailStaticSample, password == passwordStaticSample {
+            return true
+        }
+
+        return false
+    }
+
     func validateLoginForm() {
         if email.isValidEmail(), !password.isEmpty {
             isSubmitEnabled = true
@@ -31,15 +39,7 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
         isFormValid = true
     }
 
-    func checkLoginData() -> Bool {
-        if email == emailStaticSample, password == passwordStaticSample {
-            return true
-        }
-
-        return false
-    }
-
     // MARK: Private
-    private let emailStaticSample = "Tester@versalmoney.com"
+    private let emailStaticSample = "Tester@versal.money"
     private let passwordStaticSample = "123456"
 }

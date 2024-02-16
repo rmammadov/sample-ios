@@ -298,13 +298,13 @@
 			path = Remote;
 			sourceTree = "<group>";
 		};
-		D44824792B67FCB900677566 /* BaseView */ = {
+		D44824792B67FCB900677566 /* Base */ = {
 			isa = PBXGroup;
 			children = (
 				D448247C2B67FD0200677566 /* BaseView.swift */,
 				D448247A2B67FCCF00677566 /* BaseViewModel.swift */,
 			);
-			path = BaseView;
+			path = Base;
 			sourceTree = "<group>";
 		};
 		D4686BB52B5186780048A1F6 /* Test */ = {
@@ -328,8 +328,8 @@
 		D4686BBD2B569B240048A1F6 /* Passcode */ = {
 			isa = PBXGroup;
 			children = (
-				D4686BCA2B56E5010048A1F6 /* PasscodeField */,
 				D4686BC22B56C2350048A1F6 /* KeyPadView */,
+				D4686BCA2B56E5010048A1F6 /* PasscodeField */,
 				D4686BBE2B569B5B0048A1F6 /* PasscodeView.swift */,
 				D4686BC02B569B730048A1F6 /* PasscodeViewModel.swift */,
 			);
@@ -383,7 +383,7 @@
 			path = TwoFactor;
 			sourceTree = "<group>";
 		};
-		D49946762B753D0400DE30E7 /* CustomViews */ = {
+		D49946762B753D0400DE30E7 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
 				D4C428352B79E8AC0039C6C3 /* ErrorMessage.swift */,
@@ -394,14 +394,7 @@
 				D499466D2B7504B600DE30E7 /* SecureTextField.swift */,
 				D499466F2B7510A900DE30E7 /* SolidRoundedButton.swift */,
 			);
-			path = CustomViews;
-			sourceTree = "<group>";
-		};
-		D4C428392B7A93BD0039C6C3 /* FormHelper */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = FormHelper;
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		D4F52AC42B4C0B52009B8A24 = {
@@ -493,7 +486,6 @@
 		D4F52AFE2B4C1487009B8A24 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				D4C428392B7A93BD0039C6C3 /* FormHelper */,
 				D4D2D3522B5FF86E0019E4B4 /* BiometricManager.swift */,
 				D475C9252B503299008FC94A /* DeepLink.swift */,
 				D475C9272B50349F008FC94A /* JSON.swift */,
@@ -527,8 +519,8 @@
 		D4F52B012B4C14A5009B8A24 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D49946762B753D0400DE30E7 /* CustomViews */,
-				D44824792B67FCB900677566 /* BaseView */,
+				D44824792B67FCB900677566 /* Base */,
+				D49946762B753D0400DE30E7 /* Custom */,
 				D4223BD62B7D6779009DA577 /* Home */,
 				D49946622B726FAE00DE30E7 /* Login */,
 				D4223BD52B7D6759009DA577 /* Main */,
@@ -1001,6 +993,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					DEVELOPMENT,
 					"DEBUG=1",
 					"$(inherited)",
 				);
@@ -1149,6 +1142,7 @@
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
+					SANDBOX,
 					"DEBUG=1",
 					"$(inherited)",
 				);
@@ -1294,6 +1288,7 @@
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = PRODUCTION;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

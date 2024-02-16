@@ -13,9 +13,9 @@ public enum BaseViewStates {
 }
 
 protocol BaseViewModelProtocol {
-    func updateAppState(viewState: BaseViewStates)
-    func login(username: String, password: String)
+    func login(email: String, password: String)
     func logout()
+    func updateAppState(viewState: BaseViewStates)
 }
 
 class BaseViewModel: ObservableObject, BaseViewModelProtocol {
@@ -48,8 +48,8 @@ class BaseViewModel: ObservableObject, BaseViewModelProtocol {
         }
     }
 
-    func login(username: String, password: String) {
-        appState.login(username: username, password: password)
+    func login(email: String, password: String) {
+        appState.login(email: email, password: password)
     }
 
     func logout() {

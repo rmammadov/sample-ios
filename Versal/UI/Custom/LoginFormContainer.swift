@@ -15,10 +15,10 @@ struct LoginFormContainer<Content: View>: View {
 
     // MARK: Internal
     var body: some View {
-        ZStack {
+        ZStack { // swiftlint:disable:this closure_body_length
             Color.versalPrimary25
                 .ignoresSafeArea()
-            VStack {
+            VStack { // swiftlint:disable:this closure_body_length
                 Spacer()
 
                 VStack(alignment: .leading) {

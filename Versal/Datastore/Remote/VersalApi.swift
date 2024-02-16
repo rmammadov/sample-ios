@@ -11,11 +11,11 @@ class VersalApi: ObservableObject {
     private init() {
         switch EnvType.current {
         case .development:
-            self.baseURL = URL(string: "https://dashboard.versal.money/")!
+            self.baseURL = URL(string: "https://dev.versal.money/")!
         case .sandbox:
             self.baseURL = URL(string: "https://sandbox.versal.money/")!
         case .production:
-            self.baseURL = URL(string: "https://dev.versal.money/terms/")!
+            self.baseURL = URL(string: "https://dashboard.versal.money/")!
         }
     }
 
@@ -25,20 +25,14 @@ class VersalApi: ObservableObject {
     let baseURL: URL
 
     func getDpaUrl() -> URL {
-        let path = "dpa/"
-
-        return baseURL.appendingPathComponent(path)
+        return baseURL.appendingPathComponent("dpa/")
     }
 
     func getPrivacyUrl() -> URL {
-        let path = "privacy/"
-
-        return baseURL.appendingPathComponent(path)
+        return baseURL.appendingPathComponent("privacy/")
     }
 
     func getTermsUrl() -> URL {
-        let path = "terms/"
-
-        return baseURL.appendingPathComponent(path)
+        return baseURL.appendingPathComponent("terms/")
     }
 }

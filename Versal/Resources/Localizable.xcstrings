@@ -162,7 +162,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Privacy Policy"
+            "value" : "Privacy"
           }
         }
       }
@@ -195,7 +195,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Terms & Conditions"
+            "value" : "Terms"
           }
         }
       }

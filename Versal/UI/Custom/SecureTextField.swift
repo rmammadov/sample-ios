@@ -15,13 +15,13 @@ struct SecureTextField: View {
     @Binding var text: String
 
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading) { // swiftlint:disable:this closure_body_length
             Text(title)
                 .padding(.bottom, 8)
                 .font(.system(size: 14))
                 .font(Font.headline.weight(.medium))
 
-            ZStack(alignment: .trailing) {
+            ZStack(alignment: .trailing) { // swiftlint:disable:this closure_body_length
                 if isSecured {
                     SecureField(placeHolder, text: $text)
                         .focused($isFocused)

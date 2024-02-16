@@ -18,10 +18,10 @@ public enum AuthenticationStates {
 }
 
 protocol AppStateProtocol {
+    func login(email: String, password: String)
+    func logout()
     func setAuthentication(state: AuthenticationStates)
     func setCurrent(state: AppStates)
-    func login(username: String, password: String)
-    func logout()
 }
 
 final class AppState: ObservableObject, AppStateProtocol {
@@ -44,7 +44,7 @@ final class AppState: ObservableObject, AppStateProtocol {
         }
     }
 
-    func login(username _: String, password _: String) {
+    func login(email _: String, password _: String) {
         isLoggedIn = true
     }
 
