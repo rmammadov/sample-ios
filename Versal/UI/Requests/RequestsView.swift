@@ -9,10 +9,16 @@ import SwiftUI
 struct RequestsView: View {
     // MARK: Internal
     var body: some View {
-        ZStack {
-            Text("requests")
+        NavigationView {
+            ZStack {
+                Text("requests")
+            }
+            .navigationTitle("requests")
+            .navigationBarItems(trailing:
+                Button(action: {}, label: {
+                    Image(systemName: "ellipsis")
+                }))
         }
-        .onAppear {}
     }
 
     // MARK: Private

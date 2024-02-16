@@ -4,8 +4,8 @@
 // Restricted and proprietary.
 //
 
-import Foundation
 import LocalAuthentication
+import SwiftUI
 
 private let OFF: String? = nil
 private let ON = "1" // swiftlint:disable:this identifier_name

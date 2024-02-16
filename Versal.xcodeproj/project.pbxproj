@@ -24,7 +24,6 @@
 		D448247B2B67FCCF00677566 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448247A2B67FCCF00677566 /* BaseViewModel.swift */; };
 		D448247D2B67FD0200677566 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448247C2B67FD0200677566 /* BaseView.swift */; };
 		D448247F2B6B94F800677566 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448247E2B6B94F800677566 /* AppState.swift */; };
-		D4686BB72B5187420048A1F6 /* TestViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BB62B5187420048A1F6 /* TestViewModel.swift */; };
 		D4686BBA2B5520C20048A1F6 /* PrivacyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BB92B5520C10048A1F6 /* PrivacyView.swift */; };
 		D4686BBC2B5520D20048A1F6 /* PrivacyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BBB2B5520D20048A1F6 /* PrivacyViewModel.swift */; };
 		D4686BBF2B569B5B0048A1F6 /* PasscodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4686BBE2B569B5B0048A1F6 /* PasscodeView.swift */; };
@@ -72,7 +71,6 @@
 		D4D2D3502B5B3A080019E4B4 /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2D34F2B5B3A080019E4B4 /* View+Animation.swift */; };
 		D4D2D3532B5FF86E0019E4B4 /* BiometricManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2D3522B5FF86E0019E4B4 /* BiometricManager.swift */; };
 		D4F52AD12B4C0B52009B8A24 /* VersalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */; };
-		D4F52AD32B4C0B52009B8A24 /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AD22B4C0B52009B8A24 /* TestView.swift */; };
 		D4F52AD52B4C0B54009B8A24 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F52AD42B4C0B54009B8A24 /* Assets.xcassets */; };
 		D4F52AD82B4C0B54009B8A24 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D4F52AD72B4C0B54009B8A24 /* Preview Assets.xcassets */; };
 		D4F52AE22B4C0B54009B8A24 /* VersalTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AE12B4C0B54009B8A24 /* VersalTests.swift */; };
@@ -125,7 +123,6 @@
 		D448247A2B67FCCF00677566 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		D448247C2B67FD0200677566 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		D448247E2B6B94F800677566 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
-		D4686BB62B5187420048A1F6 /* TestViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewModel.swift; sourceTree = "<group>"; };
 		D4686BB92B5520C10048A1F6 /* PrivacyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyView.swift; sourceTree = "<group>"; };
 		D4686BBB2B5520D20048A1F6 /* PrivacyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyViewModel.swift; sourceTree = "<group>"; };
 		D4686BBE2B569B5B0048A1F6 /* PasscodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasscodeView.swift; sourceTree = "<group>"; };
@@ -173,7 +170,6 @@
 		D4D2D3522B5FF86E0019E4B4 /* BiometricManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricManager.swift; sourceTree = "<group>"; };
 		D4F52ACD2B4C0B52009B8A24 /* Versal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Versal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalApp.swift; sourceTree = "<group>"; };
-		D4F52AD22B4C0B52009B8A24 /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		D4F52AD42B4C0B54009B8A24 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D4F52AD72B4C0B54009B8A24 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D4F52ADD2B4C0B54009B8A24 /* VersalTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VersalTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -305,15 +301,6 @@
 				D448247A2B67FCCF00677566 /* BaseViewModel.swift */,
 			);
 			path = Base;
-			sourceTree = "<group>";
-		};
-		D4686BB52B5186780048A1F6 /* Test */ = {
-			isa = PBXGroup;
-			children = (
-				D4F52AD22B4C0B52009B8A24 /* TestView.swift */,
-				D4686BB62B5187420048A1F6 /* TestViewModel.swift */,
-			);
-			path = Test;
 			sourceTree = "<group>";
 		};
 		D4686BB82B55209F0048A1F6 /* Privacy */ = {
@@ -529,7 +516,6 @@
 				D4223BD72B7D6797009DA577 /* Requests */,
 				D4223BD82B7D67A8009DA577 /* Settings */,
 				D4F849AA2B5163B900C7ED83 /* Splash */,
-				D4686BB52B5186780048A1F6 /* Test */,
 				D49946712B7530BE00DE30E7 /* TwoFactor */,
 			);
 			path = UI;
@@ -877,7 +863,6 @@
 				D475C9102B50245A008FC94A /* UIDevice+Extensions.swift in Sources */,
 				D475C9232B50245A008FC94A /* DateFormatter+Extensions.swift in Sources */,
 				D4223BEA2B7E483F009DA577 /* LoginFormContainer.swift in Sources */,
-				D4F52AD32B4C0B52009B8A24 /* TestView.swift in Sources */,
 				D4686BC12B569B740048A1F6 /* PasscodeViewModel.swift in Sources */,
 				D49946662B72707C00DE30E7 /* LoginViewModel.swift in Sources */,
 				D475C9162B50245A008FC94A /* NSObject+Extensions.swift in Sources */,
@@ -899,7 +884,6 @@
 				D4223BE62B7D68C9009DA577 /* SettingsView.swift in Sources */,
 				D448247D2B67FD0200677566 /* BaseView.swift in Sources */,
 				D4686BC92B56C2A00048A1F6 /* KeyPadView.swift in Sources */,
-				D4686BB72B5187420048A1F6 /* TestViewModel.swift in Sources */,
 				D47FF9132B4C3E4500C03D7D /* EnvType.swift in Sources */,
 				D475C9262B503299008FC94A /* DeepLink.swift in Sources */,
 				D475C9212B50245A008FC94A /* UIColor+Extensions.swift in Sources */,
@@ -1010,6 +994,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG DEVELOPMENT";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Development;
@@ -1159,6 +1144,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG SANDBOX";
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Sandbox;
@@ -1302,6 +1288,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = PRODUCTION;
 				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_EMIT_LOC_STRINGS = YES;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Production;

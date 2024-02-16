@@ -8,4 +8,6 @@ import Foundation
 
 protocol MainViewModelProtocol {}
 
-class MainViewModel: BaseViewModel, MainViewModelProtocol {}
+class MainViewModel: BaseViewModel, MainViewModelProtocol {
+    static let TAG: String = "MAIN_VIEW"
+}

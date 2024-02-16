@@ -13,6 +13,8 @@ protocol TwoFactorViewModelProtocol {
 
 final class TwoFactorViewModel: ObservableObject, TwoFactorViewModelProtocol {
     // MARK: Internal
+    static let TAG: String = "TWO_FACTOR_VIEW"
+
     @Published var code: String = ""
     @Published var isFormValid = true
     @Published var isSubmitEnabled = false

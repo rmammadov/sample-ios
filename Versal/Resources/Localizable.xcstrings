@@ -26,15 +26,6 @@
         }
       }
     },
-    "Enable Face ID" : {
-
-    },
-    "Enable Passcode" : {
-
-    },
-    "Enable Touch ID" : {
-
-    },
     "error_email" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -57,6 +48,39 @@
         }
       }
     },
+    "face_id" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Face ID"
+          }
+        }
+      }
+    },
+    "footer_privacy_form" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacy options can be different based on the device model!"
+          }
+        }
+      }
+    },
+    "header_privacy_form" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Privacy options"
+          }
+        }
+      }
+    },
     "home" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -64,6 +88,39 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Home"
+          }
+        }
+      }
+    },
+    "logout" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Logout"
+          }
+        }
+      }
+    },
+    "message_logout" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Are you sure you want to logout?"
+          }
+        }
+      }
+    },
+    "passcode" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passcode"
           }
         }
       }
@@ -207,6 +264,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Enter your passcode to unlock"
+          }
+        }
+      }
+    },
+    "touch_id" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Touch ID"
           }
         }
       }

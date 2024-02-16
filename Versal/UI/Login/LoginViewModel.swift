@@ -13,6 +13,8 @@ protocol LoginViewModelProtocol {
 
 final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
     // MARK: Internal
+    static let TAG: String = "LOGIN_VIEW"
+
     @Published var email: String = ""
     @Published var isEmailValid = false
     @Published var isFormValid = true
