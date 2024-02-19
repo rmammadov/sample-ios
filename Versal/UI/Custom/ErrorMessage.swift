@@ -7,15 +7,17 @@
 import SwiftUI
 
 struct ErrorMessage: View {
+    // MARK: - Properties
     var message: String
 
+    // MARK: - Body
     var body: some View {
-        HStack(alignment: /*@START_MENU_TOKEN@*/ .center/*@END_MENU_TOKEN@*/, content: {
-            Image("ic_warning")
+        HStack(alignment: .center) {
+            Image(R.image.ic_warning)
             Text(message)
                 .multilineTextAlignment(.center)
                 .font(.system(size: 12))
                 .foregroundColor(.versalError500)
-        })
+        }
     }
 }

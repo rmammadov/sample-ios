@@ -19,7 +19,7 @@
 		D4223BE42B7D68B6009DA577 /* RequestsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4223BE32B7D68B6009DA577 /* RequestsViewModel.swift */; };
 		D4223BE62B7D68C9009DA577 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4223BE52B7D68C9009DA577 /* SettingsView.swift */; };
 		D4223BE82B7D68DF009DA577 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4223BE72B7D68DF009DA577 /* SettingsViewModel.swift */; };
-		D4223BEA2B7E483F009DA577 /* LoginFormContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4223BE92B7E483F009DA577 /* LoginFormContainer.swift */; };
+		D4223BEA2B7E483F009DA577 /* LoginContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4223BE92B7E483F009DA577 /* LoginContainer.swift */; };
 		D4223BEE2B7E5BD6009DA577 /* VersalApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4223BED2B7E5BD6009DA577 /* VersalApi.swift */; };
 		D448247B2B67FCCF00677566 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448247A2B67FCCF00677566 /* BaseViewModel.swift */; };
 		D448247D2B67FD0200677566 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448247C2B67FD0200677566 /* BaseView.swift */; };
@@ -63,11 +63,11 @@
 		D49946702B7510A900DE30E7 /* SolidRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D499466F2B7510A900DE30E7 /* SolidRoundedButton.swift */; };
 		D49946732B75313700DE30E7 /* TwoFactorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49946722B75313700DE30E7 /* TwoFactorView.swift */; };
 		D49946752B75314800DE30E7 /* TwoFactorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49946742B75314800DE30E7 /* TwoFactorViewModel.swift */; };
-		D49946782B753DEC00DE30E7 /* FormTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49946772B753DEC00DE30E7 /* FormTextField.swift */; };
+		D49946782B753DEC00DE30E7 /* PlainTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49946772B753DEC00DE30E7 /* PlainTextField.swift */; };
 		D4C428342B7768070039C6C3 /* ReturnButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C428332B7768070039C6C3 /* ReturnButton.swift */; };
 		D4C428362B79E8AC0039C6C3 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C428352B79E8AC0039C6C3 /* ErrorMessage.swift */; };
 		D4C4283D2B7AA2450039C6C3 /* View+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C4283C2B7AA2450039C6C3 /* View+Navigate.swift */; };
-		D4C4283F2B7B5B620039C6C3 /* FormTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C4283E2B7B5B620039C6C3 /* FormTitle.swift */; };
+		D4C4283F2B7B5B620039C6C3 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C4283E2B7B5B620039C6C3 /* SectionTitle.swift */; };
 		D4D2D3502B5B3A080019E4B4 /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2D34F2B5B3A080019E4B4 /* View+Animation.swift */; };
 		D4D2D3532B5FF86E0019E4B4 /* BiometricManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2D3522B5FF86E0019E4B4 /* BiometricManager.swift */; };
 		D4F52AD12B4C0B52009B8A24 /* VersalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */; };
@@ -118,7 +118,7 @@
 		D4223BE32B7D68B6009DA577 /* RequestsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestsViewModel.swift; sourceTree = "<group>"; };
 		D4223BE52B7D68C9009DA577 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		D4223BE72B7D68DF009DA577 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		D4223BE92B7E483F009DA577 /* LoginFormContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFormContainer.swift; sourceTree = "<group>"; };
+		D4223BE92B7E483F009DA577 /* LoginContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginContainer.swift; sourceTree = "<group>"; };
 		D4223BED2B7E5BD6009DA577 /* VersalApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalApi.swift; sourceTree = "<group>"; };
 		D448247A2B67FCCF00677566 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		D448247C2B67FD0200677566 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -161,11 +161,11 @@
 		D499466F2B7510A900DE30E7 /* SolidRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SolidRoundedButton.swift; sourceTree = "<group>"; };
 		D49946722B75313700DE30E7 /* TwoFactorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFactorView.swift; sourceTree = "<group>"; };
 		D49946742B75314800DE30E7 /* TwoFactorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFactorViewModel.swift; sourceTree = "<group>"; };
-		D49946772B753DEC00DE30E7 /* FormTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTextField.swift; sourceTree = "<group>"; };
+		D49946772B753DEC00DE30E7 /* PlainTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainTextField.swift; sourceTree = "<group>"; };
 		D4C428332B7768070039C6C3 /* ReturnButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReturnButton.swift; sourceTree = "<group>"; };
 		D4C428352B79E8AC0039C6C3 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		D4C4283C2B7AA2450039C6C3 /* View+Navigate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Navigate.swift"; sourceTree = "<group>"; };
-		D4C4283E2B7B5B620039C6C3 /* FormTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormTitle.swift; sourceTree = "<group>"; };
+		D4C4283E2B7B5B620039C6C3 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		D4D2D34F2B5B3A080019E4B4 /* View+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Animation.swift"; sourceTree = "<group>"; };
 		D4D2D3522B5FF86E0019E4B4 /* BiometricManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricManager.swift; sourceTree = "<group>"; };
 		D4F52ACD2B4C0B52009B8A24 /* Versal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Versal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -374,9 +374,9 @@
 			isa = PBXGroup;
 			children = (
 				D4C428352B79E8AC0039C6C3 /* ErrorMessage.swift */,
-				D49946772B753DEC00DE30E7 /* FormTextField.swift */,
-				D4C4283E2B7B5B620039C6C3 /* FormTitle.swift */,
-				D4223BE92B7E483F009DA577 /* LoginFormContainer.swift */,
+				D49946772B753DEC00DE30E7 /* PlainTextField.swift */,
+				D4C4283E2B7B5B620039C6C3 /* SectionTitle.swift */,
+				D4223BE92B7E483F009DA577 /* LoginContainer.swift */,
 				D4C428332B7768070039C6C3 /* ReturnButton.swift */,
 				D499466D2B7504B600DE30E7 /* SecureTextField.swift */,
 				D499466F2B7510A900DE30E7 /* SolidRoundedButton.swift */,
@@ -857,12 +857,12 @@
 				D475C92E2B5034D5008FC94A /* UserDefaults+Extensions.swift in Sources */,
 				D4223BDC2B7D687E009DA577 /* MainViewModel.swift in Sources */,
 				D475C9242B50245A008FC94A /* CodableWrappers+Extensions.swift in Sources */,
-				D4C4283F2B7B5B620039C6C3 /* FormTitle.swift in Sources */,
+				D4C4283F2B7B5B620039C6C3 /* SectionTitle.swift in Sources */,
 				D475C9202B50245A008FC94A /* UIScreen+Extensions.swift in Sources */,
 				D4686BBF2B569B5B0048A1F6 /* PasscodeView.swift in Sources */,
 				D475C9102B50245A008FC94A /* UIDevice+Extensions.swift in Sources */,
 				D475C9232B50245A008FC94A /* DateFormatter+Extensions.swift in Sources */,
-				D4223BEA2B7E483F009DA577 /* LoginFormContainer.swift in Sources */,
+				D4223BEA2B7E483F009DA577 /* LoginContainer.swift in Sources */,
 				D4686BC12B569B740048A1F6 /* PasscodeViewModel.swift in Sources */,
 				D49946662B72707C00DE30E7 /* LoginViewModel.swift in Sources */,
 				D475C9162B50245A008FC94A /* NSObject+Extensions.swift in Sources */,
@@ -880,7 +880,7 @@
 				D475C9282B50349F008FC94A /* JSON.swift in Sources */,
 				D4223BDE2B7D6889009DA577 /* HomeView.swift in Sources */,
 				D4F52AD12B4C0B52009B8A24 /* VersalApp.swift in Sources */,
-				D49946782B753DEC00DE30E7 /* FormTextField.swift in Sources */,
+				D49946782B753DEC00DE30E7 /* PlainTextField.swift in Sources */,
 				D4223BE62B7D68C9009DA577 /* SettingsView.swift in Sources */,
 				D448247D2B67FD0200677566 /* BaseView.swift in Sources */,
 				D4686BC92B56C2A00048A1F6 /* KeyPadView.swift in Sources */,
@@ -1009,7 +1009,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZJ688LZ3D6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
@@ -1025,7 +1025,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = money.versal.platform;
+				PRODUCT_BUNDLE_IDENTIFIER = "money.versal.platform-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1159,7 +1159,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZJ688LZ3D6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
@@ -1175,7 +1175,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = money.versal.platform;
+				PRODUCT_BUNDLE_IDENTIFIER = "money.versal.platform-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1303,7 +1303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = ZJ688LZ3D6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
@@ -1319,7 +1319,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = money.versal.platform;
+				PRODUCT_BUNDLE_IDENTIFIER = "money.versal.platform-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

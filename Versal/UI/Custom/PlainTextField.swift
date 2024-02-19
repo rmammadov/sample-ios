@@ -6,16 +6,21 @@
 
 import SwiftUI
 
-struct FormTextField: View {
+struct PlainTextField: View {
     // MARK: Internal
+
+    // MARK: - Internal Properties
+    @Binding var text: String
+    @FocusState var isFocused: Bool
+
+    let autoCapitalizationType: UITextAutocapitalizationType?
     let errorText: String
     let isNotValid: Bool
-    let placeHolder: String
+    let keyboardType: UIKeyboardType
+    let placeHolder: String?
     let title: String
 
-    @FocusState var isFocused: Bool
-    @Binding var text: String
-
+    // MARK: - Body
     var body: some View {
         VStack(alignment: .leading) {
             Text(title)
@@ -23,10 +28,9 @@ struct FormTextField: View {
                 .font(.system(size: 14))
                 .font(Font.headline.weight(.medium))
 
-            TextField(placeHolder,
+            TextField(placeHolder ?? title,
                       text: $text,
-                      onEditingChanged: { _ in
-                      },
+                      onEditingChanged: { _ in },
                       onCommit: {})
                 .focused($isFocused)
                 .frame(height: 40)
@@ -36,17 +40,25 @@ struct FormTextField: View {
                     .stroke(isContentNotValid() ? Color.red : (isFocused ? .versalPrimary500 : .versalGray100), lineWidth: 1))
                 .font(.system(size: 12))
                 .accentColor(.versalGray100)
+                .keyboardType(keyboardType)
+                .autocapitalization(autoCapitalizationType ?? .none)
 
             if isContentNotValid() {
-                Label(errorText, image: "ic_error")
+                Label(errorText, image: R.image.ic_error.name)
                     .padding(.top, 8)
                     .font(.system(size: 12))
                     .foregroundColor(.versalError500)
             }
         }
+        .contentShape(Rectangle())
+        .onTapGesture {
+            isFocused = true
+        }
     }
 
     // MARK: Private
+
+    // MARK: - Private Methods
     private func isContentNotValid() -> Bool {
         if isNotValid, !text.isEmpty {
             return true

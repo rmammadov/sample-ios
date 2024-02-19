@@ -13,8 +13,8 @@ protocol SettingsViewModelProtocol {
     func enableFaceID(yes: Bool, enabilingFaceIDCompleted: @escaping () -> Void)
     func enablePasscode(yes: Bool)
     func enableTouchID(yes: Bool, enabilingTouchIDCompleted: @escaping () -> Void)
-    func isFaceIDSupported() -> Bool
-    func isTouchIDSupported() -> Bool
+    func isFaceIDEnrolled() -> Bool
+    func isTouchIDEnrolled() -> Bool
     func getUserName() -> String
 }
 
@@ -67,12 +67,16 @@ class SettingsViewModel: ObservableObject, SettingsViewModelProtocol {
         })
     }
 
-    func isFaceIDSupported() -> Bool {
-        return BiometricManager.shared.isFaceIDSupported()
+    func isFaceIDEnrolled() -> Bool {
+        return BiometricManager.shared.isFaceIDEnrolled()
     }
 
-    func isTouchIDSupported() -> Bool {
-        return BiometricManager.shared.isTouchIDSupported()
+    func isTouchIDEnrolled() -> Bool {
+        return BiometricManager.shared.isTouchIDEnrolled()
+    }
+
+    func getBiometricType() -> BiometricType {
+        return BiometricManager.shared.biometricType()
     }
 
     func getUserName() -> String {

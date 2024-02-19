@@ -7,6 +7,13 @@
 import LocalAuthentication
 import SwiftUI
 
+// MARK: Public
+public enum BiometricType {
+    case notAvailable
+    case touch
+    case face
+}
+
 private let OFF: String? = nil
 private let ON = "1" // swiftlint:disable:this identifier_name
 
@@ -19,19 +26,40 @@ public final class BiometricManager {
     // MARK: Public
     public static let shared = BiometricManager()
 
+    public func biometricType() -> BiometricType {
+        let authContext = LAContext()
+        if #available(iOS 11, *) {
+            _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+            switch authContext.biometryType {
+            case .none:
+                return .notAvailable
+            case .touchID:
+                return .touch
+            case .faceID:
+                return .face
+            case .opticID:
+                return .face
+            @unknown default:
+                return .touch
+            }
+        } else {
+            return authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) ? .touch : .notAvailable
+        }
+    }
+
     public func isFaceIDEnabled() -> Bool { return Keychain.get(.faceIDEnabled) == ON }
     public func isPasscodeEnabled() -> Bool { return Keychain.get(.passcodeEnabled) == ON }
     public func isTouchIDEnabled() -> Bool { return Keychain.get(.touchIDEnabled) == ON }
 
-    public func isFaceIDSupported() -> Bool { return isBiometrySupported(LABiometryType.faceID) }
-    public func isTouchIDSupported() -> Bool { return isBiometrySupported(LABiometryType.touchID) }
+    public func isFaceIDEnrolled() -> Bool { return isBiometrySupported(LABiometryType.faceID) }
+    public func isTouchIDEnrolled() -> Bool { return isBiometrySupported(LABiometryType.touchID) }
 
     public func setFaceIDEnabled(_ enabled: Bool) { Keychain.set(.faceIDEnabled, enabled ? ON : OFF) }
     public func setPasscodeEnabled(_ enabled: Bool) { Keychain.set(.passcodeEnabled, enabled ? ON : OFF) }
     public func setTouchIDEnabled(_ enabled: Bool) { Keychain.set(.touchIDEnabled, enabled ? ON : OFF) }
 
     public func verifyFaceID(verificationCompleted: @escaping (Bool) -> Void) {
-        if isFaceIDSupported() {
+        if isFaceIDEnrolled() {
             verifyBiometricAuthentication(completed: { success in
                 verificationCompleted(success)
             })
@@ -41,7 +69,7 @@ public final class BiometricManager {
     }
 
     public func verifyTouchID(verificationCompleted: @escaping (Bool) -> Void) {
-        if isTouchIDSupported() {
+        if isTouchIDEnrolled() {
             verifyBiometricAuthentication(completed: { success in
                 verificationCompleted(success)
             })
@@ -61,7 +89,7 @@ public final class BiometricManager {
     }
 
     private func verifyBiometricAuthentication(completed: @escaping (Bool) -> Void) {
-        let reason = "text_identify_yourself"
+        let reason = NSLocalizedString("text_identify_yourself", bundle: Bundle.main, comment: "")
 
         context?.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, _ in
             DispatchQueue.main.async {

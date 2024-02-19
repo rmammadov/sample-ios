@@ -6,14 +6,16 @@
 
 import SwiftUI
 
-struct FormTitle: View {
+struct SectionTitle: View {
+    // MARK: - Properties
     let text: String
 
+    // MARK: - Body
     var body: some View {
         Text(text)
             .frame(maxWidth: .infinity, alignment: .center)
             .font(.system(size: 28))
-            .foregroundColor(.versalTextBlack)
             .font(Font.headline.weight(.medium))
+            .foregroundColor(.versalTextBlack)
     }
 }
