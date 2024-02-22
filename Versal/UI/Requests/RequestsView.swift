@@ -9,19 +9,15 @@ import SwiftUI
 struct RequestsView: View {
     // MARK: Internal
     var body: some View {
-        NavigationView {
-            ZStack {
-                Text("requests")
-            }
-            .navigationTitle("requests")
-            .navigationBarItems(trailing:
-                Button(action: {}, label: {
-                    Image(systemName: "ellipsis")
-                }))
+        VersalNavigationView(isBackAvailable: $isShowingDetail,
+                             title: NSLocalizedString("requests", bundle: Bundle.main, comment: "")) {
+            ZStack {}
         }
     }
 
     // MARK: Private
+    @State private var isShowingDetail = false
+
     @ObservedObject private var requestsViewModel: RequestsViewModel = .init()
 }
 

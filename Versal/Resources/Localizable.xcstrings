@@ -92,13 +92,24 @@
         }
       }
     },
-    "header_privacy_form" : {
+    "header_privacy_section" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Privacy options"
+          }
+        }
+      }
+    },
+    "header_user_section" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "User details"
           }
         }
       }
