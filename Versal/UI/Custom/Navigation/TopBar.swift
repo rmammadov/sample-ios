@@ -37,17 +37,17 @@ struct TopBar: View {
                 Spacer()
 
                 HStack(alignment: .center) {
-                    Image(R.image.logo_gradient_small)
+                    Image(R.image.logo_mark_gradient)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
-                        .frame(width: 22, height: 22)
+                        .frame(width: 28, height: 28)
                         .foregroundColor(.blue)
 
                     if let title = title {
                         Text(title)
                             .font(.system(size: 20, weight: .semibold))
                             .foregroundColor(.versalTitleTextBlack)
-                            .padding(.leading, 8)
+                            .padding(.leading, 0)
                     }
                 }
 
