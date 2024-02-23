@@ -67,19 +67,23 @@ class SettingsViewModel: ObservableObject, SettingsViewModelProtocol {
         })
     }
 
+    func getUserName() -> String {
+        return "Rahman Mammadov"
+    }
+
     func isFaceIDEnrolled() -> Bool {
         return BiometricManager.shared.isFaceIDEnrolled()
+    }
+
+    func isFaceIDSupported() -> Bool {
+        return BiometricManager.shared.isFaceIDSupported()
     }
 
     func isTouchIDEnrolled() -> Bool {
         return BiometricManager.shared.isTouchIDEnrolled()
     }
 
-    func getBiometricType() -> BiometricType {
-        return BiometricManager.shared.biometricType()
-    }
-
-    func getUserName() -> String {
-        return "Rahman Mammadov"
+    func isTouchIDSupported() -> Bool {
+        return BiometricManager.shared.isTouchIDSupported()
     }
 }

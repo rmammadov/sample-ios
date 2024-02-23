@@ -374,10 +374,10 @@
 			isa = PBXGroup;
 			children = (
 				D4C428352B79E8AC0039C6C3 /* ErrorMessage.swift */,
-				D49946772B753DEC00DE30E7 /* PlainTextField.swift */,
-				D4C4283E2B7B5B620039C6C3 /* SectionTitle.swift */,
 				D4223BE92B7E483F009DA577 /* LoginContainer.swift */,
+				D49946772B753DEC00DE30E7 /* PlainTextField.swift */,
 				D4C428332B7768070039C6C3 /* ReturnButton.swift */,
+				D4C4283E2B7B5B620039C6C3 /* SectionTitle.swift */,
 				D499466D2B7504B600DE30E7 /* SecureTextField.swift */,
 				D499466F2B7510A900DE30E7 /* SolidRoundedButton.swift */,
 			);
@@ -1009,7 +1009,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
-				DEVELOPMENT_TEAM = ZJ688LZ3D6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
@@ -1025,7 +1025,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "money.versal.platform-test";
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.platform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1159,7 +1159,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
-				DEVELOPMENT_TEAM = ZJ688LZ3D6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
@@ -1175,7 +1175,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "money.versal.platform-test";
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.platform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1303,7 +1303,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
-				DEVELOPMENT_TEAM = ZJ688LZ3D6;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
@@ -1319,7 +1319,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "money.versal.platform-test";
+				PRODUCT_BUNDLE_IDENTIFIER = money.versal.platform;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

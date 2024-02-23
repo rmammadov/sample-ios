@@ -13,6 +13,7 @@ public enum Keychain {
         case passcode
         case passcodeEnabled
         case passphrase
+        case opticIDEnabled
         case touchIDEnabled
         case userId
     }

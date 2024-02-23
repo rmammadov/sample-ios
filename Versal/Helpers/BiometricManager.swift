@@ -7,11 +7,11 @@
 import LocalAuthentication
 import SwiftUI
 
-// MARK: Public
-public enum BiometricType {
-    case notAvailable
-    case touch
+private enum BiometricType {
     case face
+    case optic
+    case touch
+    case unavailable
 }
 
 private let OFF: String? = nil
@@ -26,35 +26,21 @@ public final class BiometricManager {
     // MARK: Public
     public static let shared = BiometricManager()
 
-    public func biometricType() -> BiometricType {
-        let authContext = LAContext()
-        if #available(iOS 11, *) {
-            _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
-            switch authContext.biometryType {
-            case .none:
-                return .notAvailable
-            case .touchID:
-                return .touch
-            case .faceID:
-                return .face
-            case .opticID:
-                return .face
-            @unknown default:
-                return .touch
-            }
-        } else {
-            return authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) ? .touch : .notAvailable
-        }
-    }
-
     public func isFaceIDEnabled() -> Bool { return Keychain.get(.faceIDEnabled) == ON }
+    public func isOpticIDEnabled() -> Bool { return Keychain.get(.opticIDEnabled) == ON }
     public func isPasscodeEnabled() -> Bool { return Keychain.get(.passcodeEnabled) == ON }
     public func isTouchIDEnabled() -> Bool { return Keychain.get(.touchIDEnabled) == ON }
 
     public func isFaceIDEnrolled() -> Bool { return isBiometrySupported(LABiometryType.faceID) }
+    public func isOpticIDEnrolled() -> Bool { if #available(iOS 17, *) { return isBiometrySupported(LABiometryType.opticID) } else { return false } }
     public func isTouchIDEnrolled() -> Bool { return isBiometrySupported(LABiometryType.touchID) }
 
+    public func isFaceIDSupported() -> Bool { return biometricType() == .face }
+    public func isOpticIDSupported() -> Bool { return biometricType() == .optic }
+    public func isTouchIDSupported() -> Bool { return biometricType() == .touch }
+
     public func setFaceIDEnabled(_ enabled: Bool) { Keychain.set(.faceIDEnabled, enabled ? ON : OFF) }
+    public func setOpticIDEnabled(_ enabled: Bool) { Keychain.set(.opticIDEnabled, enabled ? ON : OFF) }
     public func setPasscodeEnabled(_ enabled: Bool) { Keychain.set(.passcodeEnabled, enabled ? ON : OFF) }
     public func setTouchIDEnabled(_ enabled: Bool) { Keychain.set(.touchIDEnabled, enabled ? ON : OFF) }
 
@@ -80,6 +66,27 @@ public final class BiometricManager {
 
     // MARK: Private
     private var context: LAContext?
+
+    private func biometricType() -> BiometricType {
+        let authContext = LAContext()
+        if #available(iOS 11, *) {
+            _ = authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil)
+            switch authContext.biometryType {
+            case .none:
+                return .unavailable
+            case .touchID:
+                return .touch
+            case .faceID:
+                return .face
+            case .opticID:
+                return .optic
+            @unknown default:
+                return .touch
+            }
+        } else {
+            return authContext.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) ? .touch : .unavailable
+        }
+    }
 
     private func isBiometrySupported(_ biometryType: LABiometryType) -> Bool {
         if context?.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) ?? false {

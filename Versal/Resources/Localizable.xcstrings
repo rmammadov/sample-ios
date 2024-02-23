@@ -92,17 +92,6 @@
         }
       }
     },
-    "footer_privacy_form" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Privacy options can be different based on the device model!"
-          }
-        }
-      }
-    },
     "header_privacy_form" : {
       "extractionState" : "manual",
       "localizations" : {

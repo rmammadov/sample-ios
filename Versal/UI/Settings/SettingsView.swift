@@ -17,10 +17,6 @@ struct SettingsView: View {
                     .foregroundColor(.versalGray400)
                     .font(.system(size: 10))
                     .font(Font.headline.weight(.regular)),
-                    footer: Text("footer_privacy_form")
-                        .foregroundColor(.versalGray400)
-                        .font(.system(size: 10))
-                        .font(Font.headline.weight(.regular)),
                     content: { // swiftlint:disable:this closure_body_length
                         Toggle(isOn: $settingsViewModel.isPasscodeSet, label: {
                             Text("passcode")
@@ -32,7 +28,7 @@ struct SettingsView: View {
                             settingsViewModel.enablePasscode(yes: newValue)
                         }
 
-                        if settingsViewModel.getBiometricType() == .face {
+                        if settingsViewModel.isFaceIDSupported() {
                             Toggle(isOn: $settingsViewModel.isFaceIDSet, label: {
                                 Text("face_id")
                                     .foregroundColor(.versalTextBlack)
@@ -43,7 +39,9 @@ struct SettingsView: View {
                                 faceID(enable: newValue)
                             }
                             .disabled(!settingsViewModel.isFaceIDEnrolled())
-                        } else if settingsViewModel.getBiometricType() == .touch {
+                        }
+
+                        if settingsViewModel.isTouchIDSupported() {
                             Toggle(isOn: $settingsViewModel.isTouchIDSet, label: {
                                 Text("touch_id")
                                     .foregroundColor(.versalTextBlack)
