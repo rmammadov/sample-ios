@@ -7,10 +7,12 @@
 import SwiftUI
 
 struct ReturnButton: View {
+    // MARK: - Properties
     var isEnabled = false
-    var title: String
     var onClick: () -> Void
+    var title: String
 
+    // MARK: - Body
     var body: some View {
         Button(action: onClick, label: {
             HStack {

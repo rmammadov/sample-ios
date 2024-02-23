@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-struct LoginFormContainer<Content: View>: View {
+struct LoginContainer<Content: View>: View {
     // MARK: Lifecycle
     init(title: String, @ViewBuilder content: () -> Content) {
         self.content = content()
@@ -14,15 +14,18 @@ struct LoginFormContainer<Content: View>: View {
     }
 
     // MARK: Internal
+
+    // MARK: - Body
     var body: some View {
         ZStack { // swiftlint:disable:this closure_body_length
             Color.versalPrimary25
                 .ignoresSafeArea()
+
             VStack { // swiftlint:disable:this closure_body_length
                 Spacer()
 
                 VStack(alignment: .leading) {
-                    FormTitle(text: title)
+                    SectionTitle(text: title)
                         .padding(.bottom, 24)
 
                     content
@@ -36,7 +39,8 @@ struct LoginFormContainer<Content: View>: View {
                 Spacer()
 
                 VStack(alignment: .center, spacing: 8) {
-                    Text("text_copyright")
+                    let textCopyright = NSLocalizedString("text_copyright", bundle: Bundle.main, comment: "") + "\(Date().currentYear())"
+                    Text(textCopyright)
                         .font(.system(size: 10))
                         .foregroundColor(.versalGray400)
                         .font(Font.headline.weight(.regular))
@@ -67,11 +71,12 @@ struct LoginFormContainer<Content: View>: View {
                             .font(Font.headline.weight(.medium))
                     }
                 }
+                .padding(16)
             }
         }
     }
 
     // MARK: Private
-    private let title: String
     private let content: Content
+    private let title: String
 }

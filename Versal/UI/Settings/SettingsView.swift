@@ -11,17 +11,13 @@ struct SettingsView: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
-        NavigationView {
-            Form {
+        NavigationView { // swiftlint:disable:this closure_body_length
+            Form { // swiftlint:disable:this closure_body_length
                 Section(header: Text("header_privacy_form")
                     .foregroundColor(.versalGray400)
                     .font(.system(size: 10))
                     .font(Font.headline.weight(.regular)),
-                    footer: Text("footer_privacy_form")
-                        .foregroundColor(.versalGray400)
-                        .font(.system(size: 10))
-                        .font(Font.headline.weight(.regular)),
-                    content: {
+                    content: { // swiftlint:disable:this closure_body_length
                         Toggle(isOn: $settingsViewModel.isPasscodeSet, label: {
                             Text("passcode")
                                 .foregroundColor(.versalTextBlack)
@@ -32,36 +28,42 @@ struct SettingsView: View {
                             settingsViewModel.enablePasscode(yes: newValue)
                         }
 
-                        Toggle(isOn: $settingsViewModel.isFaceIDSet, label: {
-                            Text("face_id")
-                                .foregroundColor(.versalTextBlack)
-                                .font(.system(size: 14))
-                                .font(Font.headline.weight(.medium))
-                        })
-                        .onChange(of: settingsViewModel.isFaceIDSet) { newValue in
-                            faceID(enable: newValue)
+                        if settingsViewModel.isFaceIDSupported() {
+                            Toggle(isOn: $settingsViewModel.isFaceIDSet, label: {
+                                Text("face_id")
+                                    .foregroundColor(.versalTextBlack)
+                                    .font(.system(size: 14))
+                                    .font(Font.headline.weight(.medium))
+                            })
+                            .onChange(of: settingsViewModel.isFaceIDSet) { newValue in
+                                faceID(enable: newValue)
+                            }
+                            .disabled(!settingsViewModel.isFaceIDEnrolled())
                         }
-                        .disabled(settingsViewModel.isFaceIDSupported())
 
-                        Toggle(isOn: $settingsViewModel.isTouchIDSet, label: {
-                            Text("touch_id")
-                                .foregroundColor(.versalTextBlack)
-                                .font(.system(size: 14))
-                                .font(Font.headline.weight(.medium))
-                        })
-                        .onChange(of: settingsViewModel.isTouchIDSet) { newValue in
-                            touchID(enable: newValue)
+                        if settingsViewModel.isTouchIDSupported() {
+                            Toggle(isOn: $settingsViewModel.isTouchIDSet, label: {
+                                Text("touch_id")
+                                    .foregroundColor(.versalTextBlack)
+                                    .font(.system(size: 14))
+                                    .font(Font.headline.weight(.medium))
+                            })
+                            .onChange(of: settingsViewModel.isTouchIDSet) { newValue in
+                                touchID(enable: newValue)
+                            }
+                            .disabled(!settingsViewModel.isTouchIDEnrolled())
                         }
-                        .disabled(!settingsViewModel.isTouchIDSupported())
                     })
 
                 Section {
-                    SolidRoundedButton(isEnabled: true, title: "Logout", onClick: {
-                        settingsViewModel.isLogoutDialogPresenting.toggle()
-                    })
-                    .alert(isPresented: $settingsViewModel.isLogoutDialogPresenting) {
-                        presentLogoutDialog()
-                    }
+                    SolidRoundedButton(isEnabled: true,
+                                       onClick: {
+                                           settingsViewModel.isLogoutDialogPresenting.toggle()
+                                       },
+                                       title: NSLocalizedString("logout", bundle: Bundle.main, comment: ""))
+                        .alert(isPresented: $settingsViewModel.isLogoutDialogPresenting) {
+                            presentLogoutDialog()
+                        }
                 }
             }
             .navigationTitle(settingsViewModel.getUserName())

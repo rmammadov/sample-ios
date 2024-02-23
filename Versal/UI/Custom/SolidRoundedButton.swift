@@ -7,10 +7,12 @@
 import SwiftUI
 
 struct SolidRoundedButton: View {
+    // MARK: - Properties
     var isEnabled: Bool
-    var title: String
     var onClick: () -> Void
+    var title: String
 
+    // MARK: - Body
     var body: some View {
         Button(action: onClick, label: {
             Text(title)
@@ -25,11 +27,13 @@ struct SolidRoundedButton: View {
 }
 
 struct RoundedButtonStyle: ButtonStyle {
+    // MARK: - Properties
     let backgroundColor: Color
     let backgroundColorDisabled: Color
     let cornerRadius: CGFloat
     let isEnabled: Bool
 
+    // MARK: - Body
     func makeBody(configuration: Self.Configuration) -> some View {
         configuration.label
             .padding()

@@ -12,27 +12,33 @@ struct TwoFactorView: View {
     @Binding var isActive: Bool
 
     var body: some View {
-        LoginFormContainer(title: "2-Step Verification", content: {
-            FormTextField(errorText: "Code is invalid",
-                          isNotValid: !twoFactorViewModel.isFormValid,
-                          placeHolder: "6-Digit Code",
-                          title: "Enter 6-Digit Code",
-                          text: $twoFactorViewModel.code)
+        LoginContainer(title: NSLocalizedString("title_two_factor", bundle: Bundle.main, comment: ""), content: {
+            PlainTextField(text: $twoFactorViewModel.code,
+                           autoCapitalizationType: nil,
+                           errorText: twoFactorViewModel.errorMessageCode,
+                           isNotValid: !twoFactorViewModel.isFormValid,
+                           keyboardType: .numberPad,
+                           placeHolder: NSLocalizedString("6_digit_code", bundle: Bundle.main, comment: ""),
+                           title: NSLocalizedString("title_enter_6_digit_code", bundle: Bundle.main, comment: ""))
                 .onReceive(twoFactorViewModel.$code) { _ in
                     twoFactorViewModel.validateCode()
                 }
                 .padding(.bottom, 24)
 
-            SolidRoundedButton(isEnabled: twoFactorViewModel.isSubmitEnabled, title: "Continue", onClick: {
-                if twoFactorViewModel.verifyCode() {
-                    appState.login(email: "", password: "")
-                }
-            })
+            SolidRoundedButton(isEnabled: twoFactorViewModel.isSubmitEnabled,
+                               onClick: {
+                                   if twoFactorViewModel.verifyCode() {
+                                       appState.login(email: "", password: "")
+                                   }
+                               },
+                               title: NSLocalizedString("btn_title_continue", bundle: Bundle.main, comment: ""))
 
-            ReturnButton(isEnabled: true, title: "Return", onClick: {
-                isActive = false
-            })
-            .padding(.top, 24)
+            ReturnButton(isEnabled: true,
+                         onClick: {
+                             isActive = false
+                         },
+                         title: NSLocalizedString("btn_title_return", bundle: Bundle.main, comment: ""))
+                .padding(.top, 24)
         })
         .onAppear {}
     }

@@ -12,4 +12,8 @@ public extension Date {
         components.setValue(value, for: component)
         return Calendar.current.date(byAdding: components, to: self)!
     }
+
+    func currentYear() -> Int {
+        return Calendar.current.component(.year, from: Date())
+    }
 }

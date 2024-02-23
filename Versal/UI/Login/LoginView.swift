@@ -11,29 +11,37 @@ struct LoginView: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
-        LoginFormContainer(title: "Sign In", content: {
-            FormTextField(errorText: "Email is invalid", isNotValid: !loginViewModel.isEmailValid, placeHolder: "Email", title: "Email", text: $loginViewModel.email)
+        LoginContainer(title: NSLocalizedString("title_sign_in", bundle: Bundle.main, comment: ""), content: {
+            PlainTextField(text: $loginViewModel.email,
+                           autoCapitalizationType: nil,
+                           errorText: loginViewModel.errorMessageEmail,
+                           isNotValid: !loginViewModel.isEmailValid,
+                           keyboardType: .emailAddress,
+                           placeHolder: nil,
+                           title: NSLocalizedString("email", bundle: Bundle.main, comment: ""))
                 .onReceive(loginViewModel.$email) { _ in
                     loginViewModel.validateLoginForm()
                 }
                 .padding(.bottom, 24)
 
-            SecureTextField(placeHolder: "Password", title: "Password", text: $loginViewModel.password)
+            SecureTextField(text: $loginViewModel.password, placeHolder: nil, title: NSLocalizedString("password", bundle: Bundle.main, comment: ""))
                 .onReceive(loginViewModel.$password) { _ in
                     loginViewModel.validateLoginForm()
                 }
                 .padding(.bottom, 24)
 
-            SolidRoundedButton(isEnabled: loginViewModel.isSubmitEnabled, title: "Continue", onClick: {
-                if loginViewModel.checkLoginData() {
-                    loginViewModel.isNextViewActive = true
-                } else {
-                    loginViewModel.isFormValid = false
-                }
-            })
+            SolidRoundedButton(isEnabled: loginViewModel.isSubmitEnabled,
+                               onClick: {
+                                   if loginViewModel.checkLoginData() {
+                                       loginViewModel.isNextViewActive = true
+                                   } else {
+                                       loginViewModel.isFormValid = false
+                                   }
+                               },
+                               title: NSLocalizedString("btn_title_continue", bundle: Bundle.main, comment: ""))
 
             if !loginViewModel.isFormValid {
-                ErrorMessage(message: "Email address and password entered does not match. Please try again.")
+                ErrorMessage(message: loginViewModel.errorMessageLogin)
                     .padding(.top, 24)
             }
         })

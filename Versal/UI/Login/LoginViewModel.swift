@@ -16,6 +16,8 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
     static let TAG: String = "LOGIN_VIEW"
 
     @Published var email: String = ""
+    @Published var errorMessageEmail = NSLocalizedString("error_email", bundle: Bundle.main, comment: "")
+    @Published var errorMessageLogin = NSLocalizedString("error_login", bundle: Bundle.main, comment: "")
     @Published var isEmailValid = false
     @Published var isFormValid = true
     @Published var isSubmitEnabled = false
@@ -42,6 +44,6 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
     }
 
     // MARK: Private
-    private let emailStaticSample = "Tester@versal.money"
+    private let emailStaticSample = "tester@versal.money"
     private let passwordStaticSample = "123456"
 }

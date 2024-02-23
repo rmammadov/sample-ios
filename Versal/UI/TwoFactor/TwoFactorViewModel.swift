@@ -16,6 +16,7 @@ final class TwoFactorViewModel: ObservableObject, TwoFactorViewModelProtocol {
     static let TAG: String = "TWO_FACTOR_VIEW"
 
     @Published var code: String = ""
+    @Published var errorMessageCode = NSLocalizedString("error_code", bundle: Bundle.main, comment: "")
     @Published var isFormValid = true
     @Published var isSubmitEnabled = false
 

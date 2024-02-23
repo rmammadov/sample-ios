@@ -4,6 +4,17 @@
     "" : {
 
     },
+    "6_digit_code" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "6-Digit Code"
+          }
+        }
+      }
+    },
     "btn_title_continue" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -15,6 +26,17 @@
         }
       }
     },
+    "btn_title_return" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Return"
+          }
+        }
+      }
+    },
     "email" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -22,6 +44,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Email"
+          }
+        }
+      }
+    },
+    "error_code" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Code is invalid"
           }
         }
       }
@@ -55,17 +88,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Face ID"
-          }
-        }
-      }
-    },
-    "footer_privacy_form" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Privacy options can be different based on the device model!"
           }
         }
       }
@@ -164,7 +186,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "© Six Clovers, Inc. 2019-2021"
+            "value" : "© Six Clovers, Inc. 2019-"
           }
         }
       }
@@ -213,6 +235,17 @@
         }
       }
     },
+    "title_enter_6_digit_code" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Enter 6-Digit Code"
+          }
+        }
+      }
+    },
     "title_privacy" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -253,6 +286,17 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Terms"
+          }
+        }
+      }
+    },
+    "title_two_factor" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "2-Step Verification"
           }
         }
       }
