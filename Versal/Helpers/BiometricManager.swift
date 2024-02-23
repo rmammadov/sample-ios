@@ -26,14 +26,14 @@ public final class BiometricManager {
     // MARK: Public
     public static let shared = BiometricManager()
 
-    public func isFaceIDEnabled() -> Bool { return Keychain.get(.faceIDEnabled) == ON }
-    public func isOpticIDEnabled() -> Bool { return Keychain.get(.opticIDEnabled) == ON }
+    public func isFaceIDEnabled() -> Bool { return isFaceIDEnrolled() && Keychain.get(.faceIDEnabled) == ON }
+    public func isOpticIDEnabled() -> Bool { return isOpticIDEnrolled() && Keychain.get(.opticIDEnabled) == ON }
     public func isPasscodeEnabled() -> Bool { return Keychain.get(.passcodeEnabled) == ON }
-    public func isTouchIDEnabled() -> Bool { return Keychain.get(.touchIDEnabled) == ON }
+    public func isTouchIDEnabled() -> Bool { return isTouchIDEnrolled() && Keychain.get(.touchIDEnabled) == ON }
 
-    public func isFaceIDEnrolled() -> Bool { return isBiometrySupported(LABiometryType.faceID) }
-    public func isOpticIDEnrolled() -> Bool { if #available(iOS 17, *) { return isBiometrySupported(LABiometryType.opticID) } else { return false } }
-    public func isTouchIDEnrolled() -> Bool { return isBiometrySupported(LABiometryType.touchID) }
+    public func isFaceIDEnrolled() -> Bool { return isFaceIDSupported() && isBiometrySupported(LABiometryType.faceID) }
+    public func isOpticIDEnrolled() -> Bool { if #available(iOS 17, *) { return isOpticIDSupported() && isBiometrySupported(LABiometryType.opticID) } else { return false } }
+    public func isTouchIDEnrolled() -> Bool { return isTouchIDSupported() && isBiometrySupported(LABiometryType.touchID) }
 
     public func isFaceIDSupported() -> Bool { return biometricType() == .face }
     public func isOpticIDSupported() -> Bool { return biometricType() == .optic }

@@ -9,19 +9,15 @@ import SwiftUI
 struct HomeView: View {
     // MARK: Internal
     var body: some View {
-        NavigationView {
-            ZStack {
-                Text("home")
-            }
-            .navigationTitle("home")
-            .navigationBarItems(trailing:
-                Button(action: {}, label: {
-                    Image(systemName: "plus")
-                }))
+        VersalNavigationView(isBackAvailable: $isShowingDetail,
+                             title: NSLocalizedString("home", bundle: Bundle.main, comment: "")) {
+            ZStack {}
         }
     }
 
     // MARK: Private
+    @State private var isShowingDetail = true
+
     @ObservedObject private var homeViewModel: HomeViewModel = .init()
 }
 

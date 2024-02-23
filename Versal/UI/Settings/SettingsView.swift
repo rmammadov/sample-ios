@@ -11,9 +11,39 @@ struct SettingsView: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
-        NavigationView { // swiftlint:disable:this closure_body_length
+        VersalNavigationView(isBackAvailable: $isShowingDetail,
+                             title: NSLocalizedString("settings", bundle: Bundle.main, comment: "")) { // swiftlint:disable:this closure_body_length
             Form { // swiftlint:disable:this closure_body_length
-                Section(header: Text("header_privacy_form")
+                Section(header: Text("header_user_section")
+                    .foregroundColor(.versalGray400)
+                    .font(.system(size: 10))
+                    .font(Font.headline.weight(.regular)),
+                    content: {
+                        HStack(alignment: .center) {
+                            Image("yourImageName") // Replace "yourImageName" with the name of your image asset
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 42, height: 42)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(Color.white, lineWidth: 2)) // Optional: add a border
+                                .shadow(radius: 3)
+
+                            VStack(alignment: .leading) {
+                                Text(settingsViewModel.getUserName())
+                                    .foregroundColor(.versalTextBlack)
+                                    .font(.system(size: 14))
+                                    .font(Font.headline.weight(.medium))
+
+                                Text(settingsViewModel.getUserEmail())
+                                    .foregroundColor(.versalGray400)
+                                    .font(.system(size: 12))
+                                    .font(Font.headline.weight(.regular))
+                            }
+                            .padding(.leading, 12)
+                        }
+                    })
+
+                Section(header: Text("header_privacy_section")
                     .foregroundColor(.versalGray400)
                     .font(.system(size: 10))
                     .font(Font.headline.weight(.regular)),
@@ -66,11 +96,6 @@ struct SettingsView: View {
                         }
                 }
             }
-            .navigationTitle(settingsViewModel.getUserName())
-            .navigationBarItems(trailing:
-                Button(action: {}, label: {
-                    Image(systemName: "gear")
-                }))
             .sheet(isPresented: $settingsViewModel.isPasscodeViewPresenting, content: {
                 PasscodeView(mode: settingsViewModel.passcodePresentationMode, onPasscodeOperationCompleted: {
                     settingsViewModel.isPasscodeViewPresenting.toggle()
@@ -81,6 +106,8 @@ struct SettingsView: View {
     }
 
     // MARK: Private
+    @State private var isShowingDetail = false
+
     @ObservedObject private var settingsViewModel: SettingsViewModel = .init()
 }
 

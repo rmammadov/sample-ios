@@ -67,6 +67,10 @@ class SettingsViewModel: ObservableObject, SettingsViewModelProtocol {
         })
     }
 
+    func getUserEmail() -> String {
+        return "tester@versal.money"
+    }
+
     func getUserName() -> String {
         return "Rahman Mammadov"
     }
