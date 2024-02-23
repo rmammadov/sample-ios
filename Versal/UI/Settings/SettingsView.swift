@@ -8,15 +8,107 @@ import SwiftUI
 
 struct SettingsView: View {
     // MARK: Internal
+    @EnvironmentObject var appState: AppState
+
     var body: some View {
-        ZStack {
-            Text("settings")
+        NavigationView {
+            Form {
+                Section(header: Text("header_privacy_form")
+                    .foregroundColor(.versalGray400)
+                    .font(.system(size: 10))
+                    .font(Font.headline.weight(.regular)),
+                    footer: Text("footer_privacy_form")
+                        .foregroundColor(.versalGray400)
+                        .font(.system(size: 10))
+                        .font(Font.headline.weight(.regular)),
+                    content: {
+                        Toggle(isOn: $settingsViewModel.isPasscodeSet, label: {
+                            Text("passcode")
+                                .foregroundColor(.versalTextBlack)
+                                .font(.system(size: 14))
+                                .font(Font.headline.weight(.medium))
+                        })
+                        .onChange(of: settingsViewModel.isPasscodeSet) { newValue in
+                            settingsViewModel.enablePasscode(yes: newValue)
+                        }
+
+                        Toggle(isOn: $settingsViewModel.isFaceIDSet, label: {
+                            Text("face_id")
+                                .foregroundColor(.versalTextBlack)
+                                .font(.system(size: 14))
+                                .font(Font.headline.weight(.medium))
+                        })
+                        .onChange(of: settingsViewModel.isFaceIDSet) { newValue in
+                            faceID(enable: newValue)
+                        }
+                        .disabled(settingsViewModel.isFaceIDSupported())
+
+                        Toggle(isOn: $settingsViewModel.isTouchIDSet, label: {
+                            Text("touch_id")
+                                .foregroundColor(.versalTextBlack)
+                                .font(.system(size: 14))
+                                .font(Font.headline.weight(.medium))
+                        })
+                        .onChange(of: settingsViewModel.isTouchIDSet) { newValue in
+                            touchID(enable: newValue)
+                        }
+                        .disabled(!settingsViewModel.isTouchIDSupported())
+                    })
+
+                Section {
+                    SolidRoundedButton(isEnabled: true, title: "Logout", onClick: {
+                        settingsViewModel.isLogoutDialogPresenting.toggle()
+                    })
+                    .alert(isPresented: $settingsViewModel.isLogoutDialogPresenting) {
+                        presentLogoutDialog()
+                    }
+                }
+            }
+            .navigationTitle(settingsViewModel.getUserName())
+            .navigationBarItems(trailing:
+                Button(action: {}, label: {
+                    Image(systemName: "gear")
+                }))
+            .sheet(isPresented: $settingsViewModel.isPasscodeViewPresenting, content: {
+                PasscodeView(mode: settingsViewModel.passcodePresentationMode, onPasscodeOperationCompleted: {
+                    settingsViewModel.isPasscodeViewPresenting.toggle()
+                    settingsViewModel.checkIfPasscodeSet()
+                })
+            })
         }
-        .onAppear {}
     }
 
     // MARK: Private
     @ObservedObject private var settingsViewModel: SettingsViewModel = .init()
+}
+
+extension SettingsView {
+    private func faceID(enable: Bool) {
+        appState.updateAppState(viewState: .askForAuthentication)
+        settingsViewModel.enableFaceID(yes: enable, enabilingFaceIDCompleted: {
+            appState.updateAppState(viewState: .presentContent)
+        })
+    }
+
+    private func presentLogoutDialog() -> Alert {
+        return Alert(title: Text("logout"),
+                     message: Text("message_logout"),
+                     primaryButton: .destructive(Text("logout")) {
+                         logout()
+                     },
+                     secondaryButton: .cancel())
+    }
+
+    private func touchID(enable: Bool) {
+        appState.updateAppState(viewState: .askForAuthentication)
+        settingsViewModel.enableTouchID(yes: enable, enabilingTouchIDCompleted: {
+            appState.updateAppState(viewState: .presentContent)
+        })
+    }
+
+    private func logout() {
+        appState.logout()
+    }
 }
 
 #Preview {

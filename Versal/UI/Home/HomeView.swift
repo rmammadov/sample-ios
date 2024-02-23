@@ -9,10 +9,16 @@ import SwiftUI
 struct HomeView: View {
     // MARK: Internal
     var body: some View {
-        ZStack {
-            Text("home")
+        NavigationView {
+            ZStack {
+                Text("home")
+            }
+            .navigationTitle("home")
+            .navigationBarItems(trailing:
+                Button(action: {}, label: {
+                    Image(systemName: "plus")
+                }))
         }
-        .onAppear {}
     }
 
     // MARK: Private

@@ -22,6 +22,7 @@ protocol AppStateProtocol {
     func logout()
     func setAuthentication(state: AuthenticationStates)
     func setCurrent(state: AppStates)
+    func updateAppState(viewState: BaseViewStates)
 }
 
 final class AppState: ObservableObject, AppStateProtocol {
@@ -50,5 +51,18 @@ final class AppState: ObservableObject, AppStateProtocol {
 
     func logout() {
         isLoggedIn = false
+    }
+
+    func updateAppState(viewState: BaseViewStates) {
+        switch viewState {
+        case .askForAuthentication:
+            setAuthentication(state: .authenticating)
+        case .presentContent:
+            setAuthentication(state: .authenticated)
+            setCurrent(state: .foreground)
+        case .presentPrivacyScreen:
+            setAuthentication(state: .locked)
+            setCurrent(state: .background)
+        }
     }
 }

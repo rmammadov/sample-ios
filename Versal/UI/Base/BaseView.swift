@@ -24,9 +24,9 @@ struct BaseView<Content: View>: View {
             case .askForAuthentication:
                 privacyView
                     .onAppear {
-                        viewModel.updateAppState(viewState: .askForAuthentication)
+                        viewModel.appState.updateAppState(viewState: .askForAuthentication)
                         privacyView.resign {
-                            viewModel.updateAppState(viewState: .presentContent)
+                            viewModel.appState.updateAppState(viewState: .presentContent)
                         }
                     }
             }
