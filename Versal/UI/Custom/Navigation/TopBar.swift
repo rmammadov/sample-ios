@@ -7,63 +7,82 @@
 import SwiftUI
 
 struct TopBar: View {
-    @Binding var isBackAvailable: Bool
+    // MARK: Lifecycle
+    init(isBackAvailable: Binding<Bool>,
+         title: String? = nil,
+         leadingButtonAction: (() -> Void)? = nil,
+         leadingButtonIcon: String? = nil,
+         trailingButtonAction: (() -> Void)? = nil,
+         trailingButtonIcon: String? = nil) {
+        self.leadingButtonAction = leadingButtonAction
+        self.leadingButtonIcon = leadingButtonIcon
+        self.title = title
+        self.trailingButtonAction = trailingButtonAction
+        self.trailingButtonIcon = trailingButtonIcon
+        _isBackAvailable = isBackAvailable
+    }
 
-    let leadingButtonAction: (() -> Void)?
-    let leadingButtonIcon: String?
-    let title: String?
-    let trailingButtonAction: (() -> Void)?
-    let trailingButtonIcon: String?
+    // MARK: Internal
+
+    @Binding var isBackAvailable: Bool
 
     var body: some View {
         ZStack { // swiftlint:disable:this closure_body_length
-            Rectangle()
-                .foregroundColor(.versalNavigationWhite)
+            BackgroundStyles.sidebarBackground
                 .frame(height: 44)
 
             HStack { // swiftlint:disable:this closure_body_length
-                if isBackAvailable {
-                    BackButton(isBackAvailable: $isBackAvailable)
-                } else if let leadingButtonAction = leadingButtonAction, let leadingButtonIcon = leadingButtonIcon {
-                    Button(action: leadingButtonAction) {
-                        Image(systemName: leadingButtonIcon)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 24, height: 24)
+                HStack {
+                    if isBackAvailable {
+                        BackButton(isBackAvailable: $isBackAvailable)
+                    } else if let leadingButtonAction = leadingButtonAction, let leadingButtonIcon = leadingButtonIcon {
+                        Button(action: leadingButtonAction) {
+                            Image(systemName: leadingButtonIcon)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 24, height: 24)
+                        }
+                        .padding(.leading, 12)
                     }
-                    .padding(.leading, 12)
-                }
+                }.frame(width: 36)
 
                 Spacer()
 
                 HStack(alignment: .center) {
-                    Image(R.image.logo_mark_gradient)
+                    Image(R.image.logo_circle)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 28, height: 28)
                         .foregroundColor(.blue)
 
                     if let title = title {
-                        Text(title)
-                            .font(.system(size: 20, weight: .semibold))
-                            .foregroundColor(.versalTitleTextBlack)
+                        TextStyles.subtitle(Text(title))
                             .padding(.leading, 0)
                     }
                 }
 
                 Spacer()
 
-                if let trailingButtonAction = trailingButtonAction, let trailingButtonIcon = trailingButtonIcon {
-                    Button(action: trailingButtonAction) {
-                        Image(systemName: trailingButtonIcon)
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 24, height: 24)
+                HStack {
+                    if let trailingButtonAction = trailingButtonAction, let trailingButtonIcon = trailingButtonIcon {
+                        Button(action: trailingButtonAction) {
+                            Image(systemName: trailingButtonIcon)
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .frame(width: 24, height: 24)
+                        }
+                        .padding(.trailing, 12)
                     }
-                    .padding(.trailing, 12)
-                }
+                }.frame(width: 36)
             }
             .frame(height: 44)
         }
     }
+
+    // MARK: Private
+    private var leadingButtonAction: (() -> Void)? = nil
+    private var leadingButtonIcon: String? = nil
+    private var title: String? = nil
+    private var trailingButtonAction: (() -> Void)? = nil
+    private var trailingButtonIcon: String? = nil
 }

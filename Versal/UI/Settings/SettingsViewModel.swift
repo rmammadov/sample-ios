@@ -44,10 +44,10 @@ class SettingsViewModel: ObservableObject, SettingsViewModelProtocol {
     func enablePasscode(yes: Bool) {
         if yes {
             passcodePresentationMode = .create
-            isPasscodeViewPresenting.toggle()
+            isPasscodeViewPresenting = true
         } else {
             passcodePresentationMode = .remove
-            isPasscodeViewPresenting.toggle()
+            isPasscodeViewPresenting = true
         }
     }
 
@@ -73,6 +73,11 @@ class SettingsViewModel: ObservableObject, SettingsViewModelProtocol {
 
     func getUserName() -> String {
         return "Rahman Mammadov"
+    }
+
+    func isPasscodeViewDissmised() {
+        if isPasscodeViewPresenting { isPasscodeViewPresenting = false }
+        checkIfPasscodeSet()
     }
 
     func isFaceIDEnrolled() -> Bool {

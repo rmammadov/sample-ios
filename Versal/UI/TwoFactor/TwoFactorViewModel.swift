@@ -16,9 +16,12 @@ final class TwoFactorViewModel: ObservableObject, TwoFactorViewModelProtocol {
     static let TAG: String = "TWO_FACTOR_VIEW"
 
     @Published var code: String = ""
-    @Published var errorMessageCode = NSLocalizedString("error_code", bundle: Bundle.main, comment: "")
+    @Published var errorMessageCode = "error_code".localized()
     @Published var isFormValid = true
     @Published var isSubmitEnabled = false
+
+    let codeMaxLength = 6
+    let codeMinLength = 3
 
     func validateCode() {
         if code.count >= 6 {

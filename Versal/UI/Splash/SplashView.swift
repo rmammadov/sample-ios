@@ -13,7 +13,7 @@ struct SplashView: View {
     var body: some View {
         if splashViewModel.isActive {
             ZStack {
-                Color.versalPrimary25
+                BackgroundStyles.defaultBackground
                     .ignoresSafeArea()
                 Image(ImageResource.logoMarkGradient)
                     .resizable()
@@ -29,7 +29,7 @@ struct SplashView: View {
             }
         } else {
             if appState.isLoggedIn {
-                MainView(appState: appState)
+                MainView().environmentObject(appState)
             } else {
                 LoginView().environmentObject(appState)
             }

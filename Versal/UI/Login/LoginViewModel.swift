@@ -16,8 +16,8 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
     static let TAG: String = "LOGIN_VIEW"
 
     @Published var email: String = ""
-    @Published var errorMessageEmail = NSLocalizedString("error_email", bundle: Bundle.main, comment: "")
-    @Published var errorMessageLogin = NSLocalizedString("error_login", bundle: Bundle.main, comment: "")
+    @Published var errorMessageEmail = "error_email".localized()
+    @Published var errorMessageLogin = "error_login".localized()
     @Published var isEmailValid = false
     @Published var isFormValid = true
     @Published var isSubmitEnabled = false
@@ -32,15 +32,25 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
         return false
     }
 
-    func validateLoginForm() {
-        if email.isValidEmail(), !password.isEmpty {
+    func didContentHasChanged() {
+        if email.isInputLengthValid(), password.isInputLengthValid() {
             isSubmitEnabled = true
         } else {
             isSubmitEnabled = false
         }
 
-        isEmailValid = email.isValidEmail()
+        isEmailValid = true
         isFormValid = true
+    }
+
+    func validateLoginForm() {
+        isEmailValid = email.isValidEmail()
+
+        if isEmailValid {
+            isFormValid = checkLoginData()
+
+            isNextViewActive = isFormValid == true ? true : false
+        }
     }
 
     // MARK: Private

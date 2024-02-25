@@ -6,17 +6,17 @@
 
 import SwiftUI
 
-struct PlainTextField: View {
+struct CodeTextField: View {
     // MARK: Internal
 
     // MARK: - Internal Properties
     @Binding var text: String
     @FocusState var isFocused: Bool
 
-    let autoCapitalizationType: UITextAutocapitalizationType?
     let errorText: String
     let isNotValid: Bool
-    let keyboardType: UIKeyboardType
+    let maxLength: Int
+    let minLength: Int
     let placeHolder: String?
     let title: String
 
@@ -26,14 +26,21 @@ struct PlainTextField: View {
             TextStyles.textFieldTitle(Text(title))
                 .padding(.bottom, 8)
 
-            TextStyles.defaultTextField(TextField(placeHolder ?? title, text: $text))
+            TextStyles.defaultTextField(TextField(placeHolder ?? title, text: $text)
+                .onChange(of: text) { newValue in
+                    if newValue.count < minLength {
+                        text = String(newValue.prefix(minLength))
+                    } else if newValue.count > maxLength {
+                        text = String(newValue.prefix(maxLength))
+                    }
+                })
                 .focused($isFocused)
                 .modifier(DefaultTextFieldModifier(placeHolder: placeHolder ?? title,
                                                    text: $text,
                                                    isFocused: $isFocused,
                                                    isContentNotValid: { isContentNotValid() },
                                                    keyboardType: .numberPad,
-                                                   autoCapitalizationType: autoCapitalizationType ?? UITextAutocapitalizationType.none))
+                                                   autoCapitalizationType: UITextAutocapitalizationType.none))
 
             if isContentNotValid() {
                 TextStyles.errorLabel(Label(errorText, image: R.image.ic_error.name))

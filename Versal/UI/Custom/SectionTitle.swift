@@ -12,10 +12,7 @@ struct SectionTitle: View {
 
     // MARK: - Body
     var body: some View {
-        Text(text)
+        TextStyles.title(Text(text))
             .frame(maxWidth: .infinity, alignment: .center)
-            .font(.system(size: 28))
-            .font(Font.headline.weight(.medium))
-            .foregroundColor(.versalTextBlack)
     }
 }

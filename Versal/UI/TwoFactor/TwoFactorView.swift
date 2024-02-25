@@ -12,35 +12,33 @@ struct TwoFactorView: View {
     @Binding var isActive: Bool
 
     var body: some View {
-        LoginContainer(title: NSLocalizedString("title_two_factor", bundle: Bundle.main, comment: ""), content: {
-            PlainTextField(text: $twoFactorViewModel.code,
-                           autoCapitalizationType: nil,
-                           errorText: twoFactorViewModel.errorMessageCode,
-                           isNotValid: !twoFactorViewModel.isFormValid,
-                           keyboardType: .numberPad,
-                           placeHolder: NSLocalizedString("6_digit_code", bundle: Bundle.main, comment: ""),
-                           title: NSLocalizedString("title_enter_6_digit_code", bundle: Bundle.main, comment: ""))
-                .onReceive(twoFactorViewModel.$code) { _ in
-                    twoFactorViewModel.validateCode()
-                }
-                .padding(.bottom, 24)
+        BaseView(appState: appState,
+                 content: {
+                     SectionContainer(title: "title_two_factor".localized(),
+                                      content: {
+                                          CodeTextField(text: $twoFactorViewModel.code,
+                                                        errorText: twoFactorViewModel.errorMessageCode,
+                                                        isNotValid: !twoFactorViewModel.isFormValid,
+                                                        maxLength: twoFactorViewModel.codeMaxLength,
+                                                        minLength: twoFactorViewModel.codeMinLength,
+                                                        placeHolder: "6_digit_code".localized(),
+                                                        title: "title_enter_6_digit_code".localized())
+                                              .onReceive(twoFactorViewModel.$code) { _ in
+                                                  twoFactorViewModel.validateCode()
+                                              }
+                                              .padding(.bottom, 24)
 
-            SolidRoundedButton(isEnabled: twoFactorViewModel.isSubmitEnabled,
-                               onClick: {
-                                   if twoFactorViewModel.verifyCode() {
-                                       appState.login(email: "", password: "")
-                                   }
-                               },
-                               title: NSLocalizedString("btn_title_continue", bundle: Bundle.main, comment: ""))
-
-            ReturnButton(isEnabled: true,
-                         onClick: {
-                             isActive = false
-                         },
-                         title: NSLocalizedString("btn_title_return", bundle: Bundle.main, comment: ""))
-                .padding(.top, 24)
-        })
-        .onAppear {}
+                                          SolidRoundedButton(isEnabled: twoFactorViewModel.isSubmitEnabled,
+                                                             onClick: {
+                                                                 if twoFactorViewModel.verifyCode() {
+                                                                     appState.login(email: "", password: "")
+                                                                 }
+                                                             },
+                                                             title: "btn_title_continue".localized())
+                                      }, footer: { FooterContainer() })
+                 }, swipeToDismiss: {
+                     isActive = false
+                 })
     }
 
     // MARK: Private

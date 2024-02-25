@@ -9,6 +9,10 @@ import Foundation
 extension String {
     private static let emailPredicate = NSPredicate(format: "SELF MATCHES %@", #"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"#)
 
+    func isInputLengthValid() -> Bool {
+        return count > 3
+    }
+
     func isValidEmail() -> Bool {
         return String.emailPredicate.evaluate(with: self)
     }

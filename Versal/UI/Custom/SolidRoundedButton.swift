@@ -15,11 +15,8 @@ struct SolidRoundedButton: View {
     // MARK: - Body
     var body: some View {
         Button(action: onClick, label: {
-            Text(title)
+            TextStyles.solidButtonTitle(Text(title))
                 .frame(maxWidth: .infinity)
-                .foregroundColor(.white)
-                .font(.system(size: 14))
-                .font(Font.headline.weight(.medium))
         })
         .buttonStyle(RoundedButtonStyle(backgroundColor: .versalPrimary500, backgroundColorDisabled: .versalGray200, cornerRadius: 8, isEnabled: isEnabled))
         .disabled(!isEnabled)

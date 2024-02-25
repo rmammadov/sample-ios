@@ -8,16 +8,22 @@ import SwiftUI
 
 struct RequestsView: View {
     // MARK: Internal
+    @EnvironmentObject var appState: AppState
+
     var body: some View {
-        VersalNavigationView(isBackAvailable: $isShowingDetail,
-                             title: NSLocalizedString("requests", bundle: Bundle.main, comment: "")) {
-            ZStack {}
-        }
+        BaseView(appState: appState,
+                 content: {
+                     VersalNavigationView(isBackAvailable: $isShowingDetail) {
+                         ZStack {
+                             BackgroundStyles.defaultBackground
+                                 .ignoresSafeArea()
+                         }
+                     }
+                 })
     }
 
     // MARK: Private
     @State private var isShowingDetail = false
-
     @ObservedObject private var requestsViewModel: RequestsViewModel = .init()
 }
 

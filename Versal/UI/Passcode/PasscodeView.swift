@@ -20,11 +20,9 @@ struct PasscodeView: View {
                 .scaledToFit()
                 .frame(width: 150, height: 150)
                 .padding(.bottom, 16)
-            getTitle()
-                .font(.headline)
+            TextStyles.subtitle(getTitle())
+                .multilineTextAlignment(.center)
                 .padding(.bottom, 16)
-                .font(.title)
-                .foregroundColor(.versalPrimary500)
             PasscodeField(keyWasTyped: {}, maxDigits: passcodeViewModel.maxDigits, passcode: $passcodeViewModel.passcode)
                 .padding(.bottom, 48)
                 .shake($passcodeViewModel.isPasscodeFailed) {}

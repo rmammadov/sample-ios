@@ -9,12 +9,14 @@ import SwiftUI
 struct VersalNavigationView<Content: View>: View {
     // MARK: Lifecycle
     init(isBackAvailable: Binding<Bool>,
-         title: String?,
+         isTopBarAvailable: Bool = true,
+         title: String? = nil,
          leadingButtonAction: (() -> Void)? = nil,
          leadingButtonIcon: String? = nil,
          trailingButtonAction: (() -> Void)? = nil,
          trailingButtonIcon: String? = nil,
          @ViewBuilder content: () -> Content) {
+        self.isTopBarAvailable = isTopBarAvailable
         self.content = content()
         self.leadingButtonAction = leadingButtonAction
         self.leadingButtonIcon = leadingButtonIcon
@@ -28,6 +30,7 @@ struct VersalNavigationView<Content: View>: View {
     @Binding var isBackAvailable: Bool
 
     let content: Content
+    let isTopBarAvailable: Bool
     let leadingButtonAction: (() -> Void)?
     let leadingButtonIcon: String?
     let title: String?
@@ -36,12 +39,14 @@ struct VersalNavigationView<Content: View>: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            TopBar(isBackAvailable: $isBackAvailable,
-                   leadingButtonAction: leadingButtonAction,
-                   leadingButtonIcon: leadingButtonIcon,
-                   title: title,
-                   trailingButtonAction: trailingButtonAction,
-                   trailingButtonIcon: trailingButtonIcon)
+            if isTopBarAvailable {
+                TopBar(isBackAvailable: $isBackAvailable,
+                       title: title,
+                       leadingButtonAction: leadingButtonAction,
+                       leadingButtonIcon: leadingButtonIcon,
+                       trailingButtonAction: trailingButtonAction,
+                       trailingButtonIcon: trailingButtonIcon)
+            }
 
             // Place the content inside a NavigationView
             NavigationView {

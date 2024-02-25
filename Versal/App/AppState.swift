@@ -22,18 +22,21 @@ protocol AppStateProtocol {
     func logout()
     func setAuthentication(state: AuthenticationStates)
     func setCurrent(state: AppStates)
-    func updateAppState(viewState: BaseViewStates)
 }
 
 final class AppState: ObservableObject, AppStateProtocol {
     static let shared = AppState()
 
     var authenticationState = AuthenticationStates.locked
+    @Published var contentState: BaseViewStates = .presentPrivacyScreen
     @Published var current: AppStates = .background
     @Published var isLoggedIn = false
 
     func setAuthentication(state: AuthenticationStates) {
         authenticationState = state
+        if state == .authenticated {
+            updateContentState()
+        }
     }
 
     func setCurrent(state: AppStates) {
@@ -42,6 +45,7 @@ final class AppState: ObservableObject, AppStateProtocol {
             if state == .background {
                 authenticationState = .locked
             }
+            updateContentState()
         }
     }
 
@@ -63,6 +67,16 @@ final class AppState: ObservableObject, AppStateProtocol {
         case .presentPrivacyScreen:
             setAuthentication(state: .locked)
             setCurrent(state: .background)
+        }
+    }
+
+    func updateContentState() {
+        if current == .foreground, authenticationState == .authenticated {
+            contentState = .presentContent
+        } else if current == .background {
+            contentState = .presentPrivacyScreen
+        } else {
+            contentState = .askForAuthentication
         }
     }
 }

@@ -8,15 +8,16 @@ import SwiftUI
 
 struct BaseView<Content: View>: View {
     // MARK: Lifecycle
-    init(viewModel: BaseViewModel, @ViewBuilder content: () -> Content) {
+    init(appState: AppState, @ViewBuilder content: () -> Content, swipeToDismiss: @escaping () -> Void = {}) {
+        self.appState = appState
         self.content = content()
-        self.viewModel = viewModel
+        self.swipeToDismiss = swipeToDismiss
     }
 
     // MARK: Internal
     var body: some View {
         VStack {
-            switch viewModel.state {
+            switch appState.contentState {
             case .presentContent:
                 content
             case .presentPrivacyScreen:
@@ -24,18 +25,26 @@ struct BaseView<Content: View>: View {
             case .askForAuthentication:
                 privacyView
                     .onAppear {
-                        viewModel.appState.updateAppState(viewState: .askForAuthentication)
                         privacyView.resign {
-                            viewModel.appState.updateAppState(viewState: .presentContent)
+                            appState.setAuthentication(state: .authenticated)
                         }
                     }
             }
         }
+        .gesture(swipeBackGesture())
     }
 
     // MARK: Private
+    private let appState: AppState
     private let content: Content
     private let privacyView = PrivacyView()
+    private var swipeToDismiss: () -> Void
 
-    @ObservedObject private var viewModel: BaseViewModel
+    private func swipeBackGesture() -> some Gesture {
+        DragGesture().onEnded { gesture in
+            if gesture.translation.width > 100 {
+                swipeToDismiss()
+            }
+        }
+    }
 }
