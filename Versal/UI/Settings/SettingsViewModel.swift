@@ -13,9 +13,12 @@ protocol SettingsViewModelProtocol {
     func enableFaceID(yes: Bool, enabilingFaceIDCompleted: @escaping () -> Void)
     func enablePasscode(yes: Bool)
     func enableTouchID(yes: Bool, enabilingTouchIDCompleted: @escaping () -> Void)
+    func getUserEmail() -> String
+    func getUserFirstName() -> String
+    func getUserLastName() -> String
+    func getUserName() -> String
     func isFaceIDEnrolled() -> Bool
     func isTouchIDEnrolled() -> Bool
-    func getUserName() -> String
 }
 
 class SettingsViewModel: ObservableObject, SettingsViewModelProtocol {
@@ -44,10 +47,10 @@ class SettingsViewModel: ObservableObject, SettingsViewModelProtocol {
     func enablePasscode(yes: Bool) {
         if yes {
             passcodePresentationMode = .create
-            isPasscodeViewPresenting.toggle()
+            isPasscodeViewPresenting = true
         } else {
             passcodePresentationMode = .remove
-            isPasscodeViewPresenting.toggle()
+            isPasscodeViewPresenting = true
         }
     }
 
@@ -71,8 +74,21 @@ class SettingsViewModel: ObservableObject, SettingsViewModelProtocol {
         return "tester@versal.money"
     }
 
+    func getUserFirstName() -> String {
+        return "Rahman"
+    }
+
+    func getUserLastName() -> String {
+        return "Mammadov"
+    }
+
     func getUserName() -> String {
-        return "Rahman Mammadov"
+        return "\(getUserFirstName()) \(getUserLastName())"
+    }
+
+    func isPasscodeViewDissmised() {
+        if isPasscodeViewPresenting { isPasscodeViewPresenting = false }
+        checkIfPasscodeSet()
     }
 
     func isFaceIDEnrolled() -> Bool {

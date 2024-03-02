@@ -13,7 +13,7 @@ struct BackButton: View {
         Button(action: {
             isBackAvailable = false
         }, label: {
-            Image(R.image.ic_return)
+            Image(R.image.ic_back)
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 24, height: 24)

@@ -197,7 +197,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "© Six Clovers, Inc. 2019-"
+            "value" : "© Six Clovers, Inc. 2019-%d"
           }
         }
       }

@@ -11,42 +11,45 @@ struct LoginView: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
-        LoginContainer(title: NSLocalizedString("title_sign_in", bundle: Bundle.main, comment: ""), content: {
-            PlainTextField(text: $loginViewModel.email,
-                           autoCapitalizationType: nil,
-                           errorText: loginViewModel.errorMessageEmail,
-                           isNotValid: !loginViewModel.isEmailValid,
-                           keyboardType: .emailAddress,
-                           placeHolder: nil,
-                           title: NSLocalizedString("email", bundle: Bundle.main, comment: ""))
-                .onReceive(loginViewModel.$email) { _ in
-                    loginViewModel.validateLoginForm()
-                }
-                .padding(.bottom, 24)
+        BaseView(appState: appState, content: { // swiftlint:disable:this closure_body_length
+            VersalNavigationView(isBackAvailable: $loginViewModel.isNextViewActive,
+                                 isTopBarAvailable: true,
+                                 title: nil) {
+                SectionContainer(title: "title_sign_in".localized(),
+                                 content: {
+                                     PlainTextField(text: $loginViewModel.email,
+                                                    autoCapitalizationType: nil,
+                                                    errorText: loginViewModel.errorMessageEmail,
+                                                    isNotValid: !loginViewModel.isEmailValid,
+                                                    keyboardType: .emailAddress,
+                                                    placeHolder: nil,
+                                                    title: "email".localized())
+                                         .onReceive(loginViewModel.$email) { _ in
+                                             loginViewModel.didContentHasChanged()
+                                         }
+                                         .padding(.bottom, 24)
 
-            SecureTextField(text: $loginViewModel.password, placeHolder: nil, title: NSLocalizedString("password", bundle: Bundle.main, comment: ""))
-                .onReceive(loginViewModel.$password) { _ in
-                    loginViewModel.validateLoginForm()
-                }
-                .padding(.bottom, 24)
+                                     SecureTextField(text: $loginViewModel.password, placeHolder: nil, title: "password".localized())
+                                         .onReceive(loginViewModel.$password) { _ in
+                                             loginViewModel.didContentHasChanged()
+                                         }
+                                         .padding(.bottom, 24)
 
-            SolidRoundedButton(isEnabled: loginViewModel.isSubmitEnabled,
-                               onClick: {
-                                   if loginViewModel.checkLoginData() {
-                                       loginViewModel.isNextViewActive = true
-                                   } else {
-                                       loginViewModel.isFormValid = false
-                                   }
-                               },
-                               title: NSLocalizedString("btn_title_continue", bundle: Bundle.main, comment: ""))
+                                     SolidRoundedButton(isEnabled: loginViewModel.isSubmitEnabled,
+                                                        onClick: {
+                                                            loginViewModel.validateLoginForm()
+                                                        },
+                                                        title: "btn_title_continue".localized())
 
-            if !loginViewModel.isFormValid {
-                ErrorMessage(message: loginViewModel.errorMessageLogin)
-                    .padding(.top, 24)
+                                     if !loginViewModel.isFormValid {
+                                         ErrorMessage(message: loginViewModel.errorMessageLogin)
+                                             .padding(.top, 24)
+                                     }
+                                 }, footer: { FooterContainer() })
+                    .onAppear {}
+                    .navigate(to: TwoFactorView(isActive: $loginViewModel.isNextViewActive).environmentObject(appState), when: $loginViewModel.isNextViewActive)
             }
         })
-        .onAppear {}
-        .navigate(to: TwoFactorView(isActive: $loginViewModel.isNextViewActive).environmentObject(appState), when: $loginViewModel.isNextViewActive)
     }
 
     // MARK: Private

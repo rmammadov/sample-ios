@@ -7,38 +7,42 @@
 import SwiftUI
 
 struct MainView: View {
-    // MARK: Lifecycle
-    init(appState: AppState) {
-        self.mainViewModel = .init(appState: appState)
-    }
-
     // MARK: Internal
+    @EnvironmentObject var appState: AppState
+
     var body: some View {
-        BaseView(viewModel: mainViewModel, content: {
-            TabView {
-                HomeView()
-                    .tabItem {
-                        Label("home", image: R.image.ic_home.name)
-                    }
+        BaseView(appState: appState,
+                 content: {
+                     TabView {
+                         HomeView()
+                             .environmentObject(appState)
+                             .tabItem {
+                                 Label("home", image: R.image.ic_home.name)
+                                     .padding(.bottom)
+                             }
 
-                RequestsView()
-                    .tabItem {
-                        Label("requests", image: R.image.ic_requests.name)
-                    }
+                         RequestsView()
+                             .environmentObject(appState)
+                             .tabItem {
+                                 Label("requests", image: R.image.ic_requests.name)
+                                     .padding(.bottom)
+                             }
 
-                SettingsView()
-                    .tabItem {
-                        Label("settings", image: R.image.ic_settings.name)
-                    }
-            }
-            .accentColor(.versalPrimary500)
-        })
+                         SettingsView()
+                             .environmentObject(appState)
+                             .tabItem {
+                                 Label("settings", image: R.image.ic_settings.name)
+                                     .padding(.bottom)
+                             }
+                     }
+                     .accentColor(.versalPrimary500)
+                 })
     }
 
     // MARK: Private
-    @ObservedObject private var mainViewModel: MainViewModel
+    @ObservedObject private var mainViewModel: MainViewModel = .init()
 }
 
 #Preview {
-    MainView(appState: AppState())
+    MainView().environmentObject(AppState())
 }

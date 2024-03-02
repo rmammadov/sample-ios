@@ -18,36 +18,29 @@ struct SecureTextField: View {
     // MARK: - Body
     var body: some View {
         VStack(alignment: .leading) { // swiftlint:disable:this closure_body_length
-            Text(title)
-                .font(.system(size: 14))
-                .font(Font.headline.weight(.medium))
+            TextStyles.textFieldTitle(Text(title))
                 .padding(.bottom, 8)
 
-            ZStack(alignment: .trailing) { // swiftlint:disable:this closure_body_length
+            ZStack(alignment: .trailing) {
                 if isSecured {
-                    SecureField(placeHolder ?? title, text: $text)
-                        .font(.system(size: 12))
-                        .accentColor(.versalGray100)
-                        .foregroundColor(.versalTextBlack)
-                        .frame(height: 40)
-                        .padding(EdgeInsets(.init(top: 0, leading: 12, bottom: 0, trailing: 42)))
-                        .overlay(RoundedRectangle(cornerRadius: 8)
-                            .stroke(isFocused ? .versalPrimary500 : .versalGray100, lineWidth: 1))
-                        .focused($isFocused)
+                    TextStyles.textField(SecureField(placeHolder ?? title, text: $text)
                         .onChange(of: text) { _ in }
+                        .focused($isFocused))
+                        .modifier(DefaultTextFieldModifier(placeHolder: placeHolder ?? title,
+                                                           text: $text,
+                                                           isFocused: $isFocused,
+                                                           isContentNotValid: { false },
+                                                           keyboardType: .default,
+                                                           autoCapitalizationType: UITextAutocapitalizationType.none))
                 } else {
-                    TextField(placeHolder ?? title,
-                              text: $text,
-                              onEditingChanged: { _ in },
-                              onCommit: {})
-                        .font(.system(size: 12))
-                        .accentColor(.versalGray100)
-                        .foregroundColor(.versalTextBlack)
-                        .frame(height: 40)
-                        .padding(EdgeInsets(.init(top: 0, leading: 12, bottom: 0, trailing: 42)))
-                        .overlay(RoundedRectangle(cornerRadius: 8)
-                            .stroke(isFocused ? .versalPrimary500 : .versalGray100, lineWidth: 1))
+                    TextStyles.textField(TextField(placeHolder ?? title, text: $text))
                         .focused($isFocused)
+                        .modifier(DefaultTextFieldModifier(placeHolder: placeHolder ?? title,
+                                                           text: $text,
+                                                           isFocused: $isFocused,
+                                                           isContentNotValid: { false },
+                                                           keyboardType: .default,
+                                                           autoCapitalizationType: UITextAutocapitalizationType.none))
                 }
 
                 Button(action: {

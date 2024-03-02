@@ -96,7 +96,7 @@ public final class BiometricManager {
     }
 
     private func verifyBiometricAuthentication(completed: @escaping (Bool) -> Void) {
-        let reason = NSLocalizedString("text_identify_yourself", bundle: Bundle.main, comment: "")
+        let reason = "text_identify_yourself".localized()
 
         context?.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, _ in
             DispatchQueue.main.async {

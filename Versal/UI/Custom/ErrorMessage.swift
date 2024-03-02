@@ -14,10 +14,8 @@ struct ErrorMessage: View {
     var body: some View {
         HStack(alignment: .center) {
             Image(R.image.ic_warning)
-            Text(message)
+            TextStyles.errorMessage(Text(message))
                 .multilineTextAlignment(.center)
-                .font(.system(size: 12))
-                .foregroundColor(.versalError500)
         }
     }
 }

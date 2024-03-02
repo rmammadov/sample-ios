@@ -19,10 +19,7 @@ struct ReturnButton: View {
                 Image(ImageResource.icReturn)
                     .accentColor(.versalPrimary500)
 
-                Text(title)
-                    .font(.system(size: 14))
-                    .foregroundColor(.versalPrimary500)
-                    .font(Font.headline.weight(.medium))
+                TextStyles.plainButtonTitle(Text(title))
             }
         })
         .disabled(!isEnabled)
