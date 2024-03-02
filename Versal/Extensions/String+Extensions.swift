@@ -7,7 +7,15 @@
 import Foundation
 
 extension String {
-    func localized(comment: String = "") -> String {
-        return NSLocalizedString(self, bundle: Bundle.main, comment: comment)
+    func format(_ arguments: CVarArg...) -> String {
+        return String(format: self, arguments: arguments)
+    }
+
+    func localized() -> String {
+        return NSLocalizedString(self, comment: "")
+    }
+
+    func localized(_ arguments: CVarArg...) -> String {
+        return localized().format(arguments)
     }
 }

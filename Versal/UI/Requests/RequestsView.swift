@@ -15,7 +15,7 @@ struct RequestsView: View {
                  content: {
                      VersalNavigationView(isBackAvailable: $isShowingDetail) {
                          ZStack {
-                             BackgroundStyles.defaultBackground
+                             BackgroundStyles.defaultColor
                                  .ignoresSafeArea()
                          }
                      }

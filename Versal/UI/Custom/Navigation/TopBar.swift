@@ -23,12 +23,11 @@ struct TopBar: View {
     }
 
     // MARK: Internal
-
     @Binding var isBackAvailable: Bool
 
     var body: some View {
         ZStack { // swiftlint:disable:this closure_body_length
-            BackgroundStyles.sidebarBackground
+            BackgroundStyles.sidebarColor
                 .frame(height: 44)
 
             HStack { // swiftlint:disable:this closure_body_length
@@ -49,7 +48,7 @@ struct TopBar: View {
                 Spacer()
 
                 HStack(alignment: .center) {
-                    Image(R.image.logo_circle)
+                    Image(R.image.logo_mark_gradient)
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         .frame(width: 28, height: 28)
@@ -80,9 +79,9 @@ struct TopBar: View {
     }
 
     // MARK: Private
-    private var leadingButtonAction: (() -> Void)? = nil
-    private var leadingButtonIcon: String? = nil
-    private var title: String? = nil
-    private var trailingButtonAction: (() -> Void)? = nil
-    private var trailingButtonIcon: String? = nil
+    private var leadingButtonAction: (() -> Void)?
+    private var leadingButtonIcon: String?
+    private var title: String?
+    private var trailingButtonAction: (() -> Void)?
+    private var trailingButtonIcon: String?
 }

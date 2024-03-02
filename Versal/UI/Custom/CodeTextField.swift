@@ -26,11 +26,9 @@ struct CodeTextField: View {
             TextStyles.textFieldTitle(Text(title))
                 .padding(.bottom, 8)
 
-            TextStyles.defaultTextField(TextField(placeHolder ?? title, text: $text)
+            TextStyles.textField(TextField(placeHolder ?? title, text: $text)
                 .onChange(of: text) { newValue in
-                    if newValue.count < minLength {
-                        text = String(newValue.prefix(minLength))
-                    } else if newValue.count > maxLength {
+                    if newValue.count > maxLength {
                         text = String(newValue.prefix(maxLength))
                     }
                 })

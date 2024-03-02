@@ -10,8 +10,7 @@ struct FooterContainer: View {
     // MARK: - Body
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
-            let textCopyright = "text_copyright".localized() + "\(Date().currentYear())"
-            TextStyles.footerTitle(Text(textCopyright))
+            TextStyles.footerTitle(Text("text_copyright".localized(Date().currentYear())))
                 .padding()
 
             HStack(spacing: 16) {

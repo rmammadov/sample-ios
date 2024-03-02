@@ -13,7 +13,7 @@ struct SplashView: View {
     var body: some View {
         if splashViewModel.isActive {
             ZStack {
-                BackgroundStyles.defaultBackground
+                BackgroundStyles.defaultColor
                     .ignoresSafeArea()
                 Image(ImageResource.logoMarkGradient)
                     .resizable()

@@ -12,18 +12,15 @@ struct UserInitialsView: View {
     // MARK: - Properties
     let firstName: String
     let lastName: String
-    let image: Image?
 
     // MARK: - Body
     var body: some View {
         ZStack {
-            BackgroundStyles.yellowBackground
+            BackgroundStyles.profileColor
                 .cornerRadius(4)
                 .frame(width: 40, height: 40)
 
             TextStyles.initials(Text(getInitials()))
-
-            UserProfileImage(image: image)
         }
     }
 

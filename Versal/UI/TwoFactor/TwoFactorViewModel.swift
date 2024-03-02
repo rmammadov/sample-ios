@@ -21,15 +21,10 @@ final class TwoFactorViewModel: ObservableObject, TwoFactorViewModelProtocol {
     @Published var isSubmitEnabled = false
 
     let codeMaxLength = 6
-    let codeMinLength = 3
+    let codeMinLength = 6
 
     func validateCode() {
-        if code.count >= 6 {
-            isSubmitEnabled = true
-        } else {
-            isSubmitEnabled = false
-        }
-
+        isSubmitEnabled = code.count >= 6
         isFormValid = true
     }
 

@@ -23,7 +23,7 @@ struct SettingsView: View {
                              Section(header: TextStyles.settingsSectionHeader(Text("header_user_section")),
                                      content: {
                                          HStack(alignment: .center) {
-                                             UserInitialsView(firstName: settingsViewModel.getUserName(), lastName: settingsViewModel.getUserEmail(), image: nil)
+                                             UserInitialsView(firstName: settingsViewModel.getUserFirstName(), lastName: settingsViewModel.getUserLastName())
 
                                              VStack(alignment: .leading) {
                                                  TextStyles.settingsUserDetailsName(Text(settingsViewModel.getUserName()))
@@ -77,7 +77,7 @@ struct SettingsView: View {
                                      }
                              }
                          }
-                         .background(BackgroundStyles.defaultBackground.ignoresSafeArea())
+                         .background(BackgroundStyles.defaultColor.ignoresSafeArea())
                          .modifier(FormHiddenBackground())
                          .sheet(isPresented: $settingsViewModel.isPasscodeViewPresenting, content: {
                              PasscodeView(mode: settingsViewModel.passcodePresentationMode, onPasscodeOperationCompleted: {

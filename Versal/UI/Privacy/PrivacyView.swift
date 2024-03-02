@@ -15,7 +15,7 @@ struct PrivacyView: View {
                     privacyViewModel.authenticated()
                 })
             } else {
-                BackgroundStyles.defaultBackground
+                BackgroundStyles.defaultColor
                     .ignoresSafeArea()
                 Image(ImageResource.logoMarkGradient)
                     .resizable()

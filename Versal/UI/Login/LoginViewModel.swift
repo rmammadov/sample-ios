@@ -33,7 +33,7 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
     }
 
     func didContentHasChanged() {
-        if email.isInputLengthValid(), password.isInputLengthValid() {
+        if email.isInputLengthAtLeast(3), password.isInputLengthAtLeast(3) {
             isSubmitEnabled = true
         } else {
             isSubmitEnabled = false
@@ -49,7 +49,7 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
         if isEmailValid {
             isFormValid = checkLoginData()
 
-            isNextViewActive = isFormValid == true ? true : false
+            isNextViewActive = isFormValid == true
         }
     }
 

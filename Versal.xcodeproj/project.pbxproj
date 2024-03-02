@@ -114,6 +114,7 @@
 
 /* Begin PBXFileReference section */
 		0413D7F9446F8E618F8DC110 /* Pods-Versal-VersalUITests.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Versal-VersalUITests.development.xcconfig"; path = "Target Support Files/Pods-Versal-VersalUITests/Pods-Versal-VersalUITests.development.xcconfig"; sourceTree = "<group>"; };
+		05889FA42B92A9FC006C4AFE /* Versal.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Versal.entitlements; sourceTree = "<group>"; };
 		1855B52D0AA04B5FAEDDBD57 /* Pods_Versal.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Versal.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		367D75BBCF6D42AE6C729DD8 /* Pods-Versal.development.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Versal.development.xcconfig"; path = "Target Support Files/Pods-Versal/Pods-Versal.development.xcconfig"; sourceTree = "<group>"; };
 		4BBBF7AE6ACF4931F3EEF1C3 /* Pods-Versal-VersalUITests.production.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Versal-VersalUITests.production.xcconfig"; path = "Target Support Files/Pods-Versal-VersalUITests/Pods-Versal-VersalUITests.production.xcconfig"; sourceTree = "<group>"; };
@@ -430,9 +431,9 @@
 			isa = PBXGroup;
 			children = (
 				D4AB791A2B8FB6AE0091EBC9 /* BackgroundStyles.swift */,
-				D4AB791C2B8FBEE50091EBC9 /* FormHiddenBackground.swift */,
 				D4AB79202B91CA0C0091EBC9 /* DefaultPlaceholderModifier.swift */,
 				D4AB791E2B9060430091EBC9 /* DefaultTextFieldModifier.swift */,
+				D4AB791C2B8FBEE50091EBC9 /* FormHiddenBackground.swift */,
 				D4BC9CE72B8CE46000E7DE52 /* TextStyles.swift */,
 			);
 			path = Style;
@@ -554,6 +555,7 @@
 				D475C8F32B5020EC008FC94A /* Localizable.xcstrings */,
 				D4F52AD72B4C0B54009B8A24 /* Preview Assets.xcassets */,
 				D475C8E72B501A25008FC94A /* R.generated.swift */,
+				05889FA42B92A9FC006C4AFE /* Versal.entitlements */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -1073,6 +1075,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Versal/Resources/Versal.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1223,6 +1226,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Versal/Resources/Versal.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1367,6 +1371,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Versal/Resources/Versal.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;

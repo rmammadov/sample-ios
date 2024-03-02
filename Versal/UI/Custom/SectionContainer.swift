@@ -19,7 +19,7 @@ struct SectionContainer<Content: View, Footer: View>: View {
     // MARK: - Body
     var body: some View {
         ZStack {
-            BackgroundStyles.defaultBackground
+            BackgroundStyles.defaultColor
                 .ignoresSafeArea()
 
             VStack {

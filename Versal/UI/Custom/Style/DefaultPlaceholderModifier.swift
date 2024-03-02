@@ -11,7 +11,7 @@ public struct DefaultPlaceholderModifier: ViewModifier {
     public func body(content: Content) -> some View {
         ZStack(alignment: .leading) {
             if showPlaceHolder {
-                TextStyles.defaultTextFieldPlaceholder(Text(placeholder))
+                TextStyles.textFieldPlaceholder(Text(placeholder))
                     .padding(.horizontal, 12)
             }
             content

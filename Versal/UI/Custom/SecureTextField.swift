@@ -23,7 +23,7 @@ struct SecureTextField: View {
 
             ZStack(alignment: .trailing) {
                 if isSecured {
-                    TextStyles.defaultTextField(SecureField(placeHolder ?? title, text: $text)
+                    TextStyles.textField(SecureField(placeHolder ?? title, text: $text)
                         .onChange(of: text) { _ in }
                         .focused($isFocused))
                         .modifier(DefaultTextFieldModifier(placeHolder: placeHolder ?? title,
@@ -33,7 +33,7 @@ struct SecureTextField: View {
                                                            keyboardType: .default,
                                                            autoCapitalizationType: UITextAutocapitalizationType.none))
                 } else {
-                    TextStyles.defaultTextField(TextField(placeHolder ?? title, text: $text))
+                    TextStyles.textField(TextField(placeHolder ?? title, text: $text))
                         .focused($isFocused)
                         .modifier(DefaultTextFieldModifier(placeHolder: placeHolder ?? title,
                                                            text: $text,
