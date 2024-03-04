@@ -16,22 +16,27 @@ struct BaseView<Content: View>: View {
 
     // MARK: Internal
     var body: some View {
-        VStack {
-            switch appState.contentState {
-            case .presentContent:
-                content
-            case .presentPrivacyScreen:
-                privacyView
-            case .askForAuthentication:
-                privacyView
-                    .onAppear {
-                        privacyView.resign {
-                            appState.setAuthentication(state: .authenticated)
+        ZStack {
+            BackgroundStyles.sidebarColor
+                .ignoresSafeArea()
+
+            VStack {
+                switch appState.contentState {
+                case .presentContent:
+                    content
+                case .presentPrivacyScreen:
+                    privacyView
+                case .askForAuthentication:
+                    privacyView
+                        .onAppear {
+                            privacyView.resign {
+                                appState.setAuthentication(state: .authenticated)
+                            }
                         }
-                    }
+                }
             }
+            .gesture(swipeBackGesture())
         }
-        .gesture(swipeBackGesture())
     }
 
     // MARK: Private

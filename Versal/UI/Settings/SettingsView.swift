@@ -65,19 +65,19 @@ struct SettingsView: View {
                                              .disabled(!settingsViewModel.isTouchIDEnrolled())
                                          }
                                      })
-
-                             Section {
-                                 SolidRoundedButton(isEnabled: true,
-                                                    onClick: {
-                                                        settingsViewModel.isLogoutDialogPresenting.toggle()
-                                                    },
-                                                    title: "logout".localized())
-                                     .alert(isPresented: $settingsViewModel.isLogoutDialogPresenting) {
-                                         presentLogoutDialog()
-                                     }
-                             }
                          }
                          .background(BackgroundStyles.defaultColor.ignoresSafeArea())
+                         .overlay {
+                             SolidRoundedButton(isEnabled: true,
+                                                onClick: {
+                                                    settingsViewModel.isLogoutDialogPresenting.toggle()
+                                                },
+                                                title: "logout".localized())
+                                 .alert(isPresented: $settingsViewModel.isLogoutDialogPresenting) {
+                                     presentLogoutDialog()
+                                 }
+                                 .padding(.horizontal, 20)
+                         }
                          .modifier(FormHiddenBackground())
                          .sheet(isPresented: $settingsViewModel.isPasscodeViewPresenting, content: {
                              PasscodeView(mode: settingsViewModel.passcodePresentationMode, onPasscodeOperationCompleted: {
