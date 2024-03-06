@@ -16,7 +16,7 @@ struct LoginView: View {
         } else {
             BaseView(content: { // swiftlint:disable:this closure_body_length
                          VStack(spacing: 0) {
-                             HeaderContainer(isBackAvailable: .constant(false))
+                             HeaderContainer()
 
                              SectionContainer(title: "title_sign_in".localized(),
                                               content: {

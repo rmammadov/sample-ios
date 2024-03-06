@@ -12,10 +12,16 @@ struct RequestsView: View {
 
     var body: some View {
         BaseView(content: {
-                     VersalNavigationView(isBackAvailable: $isShowingDetail) {
+                     VersalNavigationView {
                          ZStack {
                              BackgroundStyles.defaultColor
                                  .ignoresSafeArea()
+
+                             VStack(spacing: 0) {
+                                 HeaderContainer()
+
+                                 Spacer()
+                             }
                          }
                      }
                      .onAppear { requestsViewModel.listenAppLifecycle(appState: appState) }
