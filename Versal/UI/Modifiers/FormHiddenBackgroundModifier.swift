@@ -6,7 +6,7 @@
 
 import SwiftUI
 
-struct FormHiddenBackground: ViewModifier {
+struct FormHiddenBackgroundModifier: ViewModifier {
     func body(content: Content) -> some View {
         if #available(iOS 16.0, *) {
             content.scrollContentBackground(.hidden)

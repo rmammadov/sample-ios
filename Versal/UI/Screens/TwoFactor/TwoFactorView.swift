@@ -9,11 +9,11 @@ import SwiftUI
 struct TwoFactorView: View {
     // MARK: Internal
     @EnvironmentObject var appState: AppState
+
     @Binding var isActive: Bool
 
     var body: some View {
-        BaseView(appState: appState,
-                 content: {
+        BaseView(content: {
                      SectionContainer(title: "title_two_factor".localized(),
                                       content: {
                                           CodeTextField(text: $twoFactorViewModel.code,
@@ -36,11 +36,14 @@ struct TwoFactorView: View {
                                                              },
                                                              title: "btn_title_continue".localized())
                                       }, footer: { FooterContainer() })
-                 }, swipeToDismiss: {
+                         .onAppear { twoFactorViewModel.listenAppLifecycle(appState: appState) }
+                 },
+                 contentViewModel: twoFactorViewModel,
+                 swipeToDismiss: {
                      isActive = false
                  })
     }
 
     // MARK: Private
-    @ObservedObject private var twoFactorViewModel: TwoFactorViewModel = .init()
+    @StateObject private var twoFactorViewModel: TwoFactorViewModel = .init()
 }

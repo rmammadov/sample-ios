@@ -8,6 +8,6 @@ import Foundation
 
 protocol RequestsViewModelProtocol {}
 
-class RequestsViewModel: ObservableObject, RequestsViewModelProtocol {
+class RequestsViewModel: BaseViewModel, RequestsViewModelProtocol {
     static let TAG: String = "REQUESTS_VIEW"
 }

@@ -11,7 +11,7 @@ protocol LoginViewModelProtocol {
     func validateLoginForm()
 }
 
-final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
+final class LoginViewModel: BaseViewModel, LoginViewModelProtocol {
     // MARK: Internal
     static let TAG: String = "LOGIN_VIEW"
 
@@ -21,7 +21,7 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
     @Published var isEmailValid = false
     @Published var isFormValid = true
     @Published var isSubmitEnabled = false
-    @Published var isNextViewActive = false
+    @Published var isTwoFactorVerificationRequested = false
     @Published var password: String = ""
 
     func checkLoginData() -> Bool {
@@ -49,7 +49,7 @@ final class LoginViewModel: ObservableObject, LoginViewModelProtocol {
         if isEmailValid {
             isFormValid = checkLoginData()
 
-            isNextViewActive = isFormValid == true
+            isTwoFactorVerificationRequested = isFormValid == true
         }
     }
 

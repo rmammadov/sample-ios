@@ -11,10 +11,11 @@ protocol TwoFactorViewModelProtocol {
     func verifyCode() -> Bool
 }
 
-final class TwoFactorViewModel: ObservableObject, TwoFactorViewModelProtocol {
+final class TwoFactorViewModel: BaseViewModel, TwoFactorViewModelProtocol {
     // MARK: Internal
     static let TAG: String = "TWO_FACTOR_VIEW"
 
+    @Published var test: String = ""
     @Published var code: String = ""
     @Published var errorMessageCode = "error_code".localized()
     @Published var isFormValid = true

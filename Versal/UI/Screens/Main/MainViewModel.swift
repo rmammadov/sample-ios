@@ -10,4 +10,6 @@ protocol MainViewModelProtocol {}
 
 class MainViewModel: BaseViewModel, MainViewModelProtocol {
     static let TAG: String = "MAIN_VIEW"
+
+    @Published var selectedTab = 1
 }

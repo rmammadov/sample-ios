@@ -70,9 +70,8 @@
 		D4A5E3D42B8610D700ED886D /* VersalNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5E3D32B8610D700ED886D /* VersalNavigationView.swift */; };
 		D4A5E3D72B8749CF00ED886D /* BackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5E3D62B8749CF00ED886D /* BackButton.swift */; };
 		D4AB791B2B8FB6AE0091EBC9 /* BackgroundStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AB791A2B8FB6AE0091EBC9 /* BackgroundStyles.swift */; };
-		D4AB791D2B8FBEE50091EBC9 /* FormHiddenBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AB791C2B8FBEE50091EBC9 /* FormHiddenBackground.swift */; };
+		D4AB791D2B8FBEE50091EBC9 /* FormHiddenBackgroundModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AB791C2B8FBEE50091EBC9 /* FormHiddenBackgroundModifier.swift */; };
 		D4AB791F2B9060430091EBC9 /* DefaultTextFieldModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AB791E2B9060430091EBC9 /* DefaultTextFieldModifier.swift */; };
-		D4AB79212B91CA0C0091EBC9 /* DefaultPlaceholderModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AB79202B91CA0C0091EBC9 /* DefaultPlaceholderModifier.swift */; };
 		D4AB79232B92268F0091EBC9 /* UserProfileImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AB79222B92268F0091EBC9 /* UserProfileImage.swift */; };
 		D4AB79252B922B210091EBC9 /* UserInitialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4AB79242B922B210091EBC9 /* UserInitialsView.swift */; };
 		D4BC9CE52B8CD8E800E7DE52 /* FooterContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4BC9CE42B8CD8E800E7DE52 /* FooterContainer.swift */; };
@@ -182,9 +181,8 @@
 		D4A5E3D32B8610D700ED886D /* VersalNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalNavigationView.swift; sourceTree = "<group>"; };
 		D4A5E3D62B8749CF00ED886D /* BackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackButton.swift; sourceTree = "<group>"; };
 		D4AB791A2B8FB6AE0091EBC9 /* BackgroundStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundStyles.swift; sourceTree = "<group>"; };
-		D4AB791C2B8FBEE50091EBC9 /* FormHiddenBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormHiddenBackground.swift; sourceTree = "<group>"; };
+		D4AB791C2B8FBEE50091EBC9 /* FormHiddenBackgroundModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormHiddenBackgroundModifier.swift; sourceTree = "<group>"; };
 		D4AB791E2B9060430091EBC9 /* DefaultTextFieldModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextFieldModifier.swift; sourceTree = "<group>"; };
-		D4AB79202B91CA0C0091EBC9 /* DefaultPlaceholderModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPlaceholderModifier.swift; sourceTree = "<group>"; };
 		D4AB79222B92268F0091EBC9 /* UserProfileImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileImage.swift; sourceTree = "<group>"; };
 		D4AB79242B922B210091EBC9 /* UserInitialsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInitialsView.swift; sourceTree = "<group>"; };
 		D4BC9CE42B8CD8E800E7DE52 /* FooterContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterContainer.swift; sourceTree = "<group>"; };
@@ -397,11 +395,9 @@
 			path = TwoFactor;
 			sourceTree = "<group>";
 		};
-		D49946762B753D0400DE30E7 /* Custom */ = {
+		D49946762B753D0400DE30E7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				D4A5E3D52B87497E00ED886D /* Navigation */,
-				D4BC9CE62B8CE3B100E7DE52 /* Style */,
 				D49740072B8E1F4400943C29 /* CodeTextField.swift */,
 				D4C428352B79E8AC0039C6C3 /* ErrorMessage.swift */,
 				D4BC9CE42B8CD8E800E7DE52 /* FooterContainer.swift */,
@@ -414,7 +410,33 @@
 				D4AB79242B922B210091EBC9 /* UserInitialsView.swift */,
 				D4AB79222B92268F0091EBC9 /* UserProfileImage.swift */,
 			);
-			path = Custom;
+			path = Components;
+			sourceTree = "<group>";
+		};
+		D4A3F91A2B9621B100731566 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				D44824792B67FCB900677566 /* Base */,
+				D4223BD62B7D6779009DA577 /* Home */,
+				D49946622B726FAE00DE30E7 /* Login */,
+				D4223BD52B7D6759009DA577 /* Main */,
+				D4686BBD2B569B240048A1F6 /* Passcode */,
+				D4686BB82B55209F0048A1F6 /* Privacy */,
+				D4223BD72B7D6797009DA577 /* Requests */,
+				D4223BD82B7D67A8009DA577 /* Settings */,
+				D4F849AA2B5163B900C7ED83 /* Splash */,
+				D49946712B7530BE00DE30E7 /* TwoFactor */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		D4A3F91B2B96222500731566 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				D4AB791E2B9060430091EBC9 /* DefaultTextFieldModifier.swift */,
+				D4AB791C2B8FBEE50091EBC9 /* FormHiddenBackgroundModifier.swift */,
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 		D4A5E3D52B87497E00ED886D /* Navigation */ = {
@@ -431,9 +453,6 @@
 			isa = PBXGroup;
 			children = (
 				D4AB791A2B8FB6AE0091EBC9 /* BackgroundStyles.swift */,
-				D4AB79202B91CA0C0091EBC9 /* DefaultPlaceholderModifier.swift */,
-				D4AB791E2B9060430091EBC9 /* DefaultTextFieldModifier.swift */,
-				D4AB791C2B8FBEE50091EBC9 /* FormHiddenBackground.swift */,
 				D4BC9CE72B8CE46000E7DE52 /* TextStyles.swift */,
 			);
 			path = Style;
@@ -563,17 +582,11 @@
 		D4F52B012B4C14A5009B8A24 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				D44824792B67FCB900677566 /* Base */,
-				D49946762B753D0400DE30E7 /* Custom */,
-				D4223BD62B7D6779009DA577 /* Home */,
-				D49946622B726FAE00DE30E7 /* Login */,
-				D4223BD52B7D6759009DA577 /* Main */,
-				D4686BBD2B569B240048A1F6 /* Passcode */,
-				D4686BB82B55209F0048A1F6 /* Privacy */,
-				D4223BD72B7D6797009DA577 /* Requests */,
-				D4223BD82B7D67A8009DA577 /* Settings */,
-				D4F849AA2B5163B900C7ED83 /* Splash */,
-				D49946712B7530BE00DE30E7 /* TwoFactor */,
+				D49946762B753D0400DE30E7 /* Components */,
+				D4A3F91B2B96222500731566 /* Modifiers */,
+				D4A5E3D52B87497E00ED886D /* Navigation */,
+				D4A3F91A2B9621B100731566 /* Screens */,
+				D4BC9CE62B8CE3B100E7DE52 /* Style */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -933,10 +946,9 @@
 				D475C9162B50245A008FC94A /* NSObject+Extensions.swift in Sources */,
 				D47FF93A2B4DA01200C03D7D /* Log.swift in Sources */,
 				D49740082B8E1F4400943C29 /* CodeTextField.swift in Sources */,
-				D4AB79212B91CA0C0091EBC9 /* DefaultPlaceholderModifier.swift in Sources */,
 				D49946752B75314800DE30E7 /* TwoFactorViewModel.swift in Sources */,
 				D4C428342B7768070039C6C3 /* ReturnButton.swift in Sources */,
-				D4AB791D2B8FBEE50091EBC9 /* FormHiddenBackground.swift in Sources */,
+				D4AB791D2B8FBEE50091EBC9 /* FormHiddenBackgroundModifier.swift in Sources */,
 				D4223BE22B7D68A7009DA577 /* RequestsView.swift in Sources */,
 				D4C4283D2B7AA2450039C6C3 /* View+Navigate.swift in Sources */,
 				D475C9132B50245A008FC94A /* Data+Extensions.swift in Sources */,

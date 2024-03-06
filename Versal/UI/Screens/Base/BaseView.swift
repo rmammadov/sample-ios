@@ -8,9 +8,9 @@ import SwiftUI
 
 struct BaseView<Content: View>: View {
     // MARK: Lifecycle
-    init(appState: AppState, @ViewBuilder content: () -> Content, swipeToDismiss: @escaping () -> Void = {}) {
-        self.appState = appState
+    init(@ViewBuilder content: () -> Content, contentViewModel: BaseViewModel, swipeToDismiss: @escaping () -> Void = {}) {
         self.content = content()
+        self.contentViewModel = contentViewModel
         self.swipeToDismiss = swipeToDismiss
     }
 
@@ -20,27 +20,28 @@ struct BaseView<Content: View>: View {
             BackgroundStyles.sidebarColor
                 .ignoresSafeArea()
 
-            VStack {
-                switch appState.contentState {
-                case .presentContent:
-                    content
-                case .presentPrivacyScreen:
-                    privacyView
-                case .askForAuthentication:
-                    privacyView
-                        .onAppear {
-                            privacyView.resign {
-                                appState.setAuthentication(state: .authenticated)
-                            }
+            switch contentViewModel.appState?.contentState {
+            case .presentContent:
+                content
+            case .presentPrivacyScreen:
+                privacyView
+            case .askForAuthentication:
+                privacyView
+                    .onAppear {
+                        privacyView.resign {
+                            contentViewModel.appState?.setAuthentication(state: .authenticated)
                         }
-                }
+                    }
+            case .none:
+                content
             }
-            .gesture(swipeBackGesture())
         }
+        .gesture(swipeBackGesture())
     }
 
     // MARK: Private
-    private let appState: AppState
+    @ObservedObject private var contentViewModel: BaseViewModel
+
     private let content: Content
     private let privacyView = PrivacyView()
     private var swipeToDismiss: () -> Void
