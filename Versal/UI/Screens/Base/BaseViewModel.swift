@@ -12,8 +12,14 @@ public enum BaseViewStates {
     case presentPrivacyScreen
 }
 
-protocol BaseViewModelProtocol {}
+protocol BaseViewModelProtocol {
+    func listenAppLifecycle(appState: AppState)
+}
 
 class BaseViewModel: ObservableObject, BaseViewModelProtocol {
-    init() {}
+    @Published var appState: AppState?
+
+    func listenAppLifecycle(appState: AppState) {
+        self.appState = appState
+    }
 }

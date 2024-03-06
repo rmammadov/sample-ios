@@ -21,7 +21,7 @@ protocol SettingsViewModelProtocol {
     func isTouchIDEnrolled() -> Bool
 }
 
-class SettingsViewModel: ObservableObject, SettingsViewModelProtocol {
+class SettingsViewModel: BaseViewModel, SettingsViewModelProtocol {
     static let TAG: String = "SETTINGS_VIEW"
 
     @Published var isFaceIDSet = BiometricManager.shared.isFaceIDEnabled()

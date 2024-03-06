@@ -16,8 +16,7 @@ struct SettingsView: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
-        BaseView(appState: appState,
-                 content: { // swiftlint:disable:this closure_body_length
+        BaseView(content: { // swiftlint:disable:this closure_body_length
                      VersalNavigationView(isBackAvailable: $isShowingDetail) { // swiftlint:disable:this closure_body_length
                          Form { // swiftlint:disable:this closure_body_length
                              Section(header: TextStyles.settingsSectionHeader(Text("header_user_section")),
@@ -35,6 +34,7 @@ struct SettingsView: View {
                                              .padding(.leading, 10)
                                          }
                                      })
+                                     .listRowBackground(Color.versalWhite)
 
                              Section(header: TextStyles.settingsSectionHeader(Text("header_privacy_section")),
                                      content: {
@@ -65,20 +65,23 @@ struct SettingsView: View {
                                              .disabled(!settingsViewModel.isTouchIDEnrolled())
                                          }
                                      })
+                                     .listRowBackground(Color.versalWhite)
+
+                             Section {
+                                 SolidRoundedButton(isEnabled: true,
+                                                    onClick: {
+                                                        settingsViewModel.isLogoutDialogPresenting.toggle()
+                                                    },
+                                                    title: "logout".localized())
+                                     .alert(isPresented: $settingsViewModel.isLogoutDialogPresenting) {
+                                         presentLogoutDialog()
+                                     }
+                             }
+                             .listRowBackground(Color.versalWhite)
+                             .listRowInsets(EdgeInsets(top: 0, leading: -20, bottom: 0, trailing: -20))
                          }
                          .background(BackgroundStyles.defaultColor.ignoresSafeArea())
-                         .overlay {
-                             SolidRoundedButton(isEnabled: true,
-                                                onClick: {
-                                                    settingsViewModel.isLogoutDialogPresenting.toggle()
-                                                },
-                                                title: "logout".localized())
-                                 .alert(isPresented: $settingsViewModel.isLogoutDialogPresenting) {
-                                     presentLogoutDialog()
-                                 }
-                                 .padding(.horizontal, 20)
-                         }
-                         .modifier(FormHiddenBackground())
+                         .modifier(FormHiddenBackgroundModifier())
                          .sheet(isPresented: $settingsViewModel.isPasscodeViewPresenting, content: {
                              PasscodeView(mode: settingsViewModel.passcodePresentationMode, onPasscodeOperationCompleted: {
                                  settingsViewModel.isPasscodeViewDissmised()
@@ -90,12 +93,14 @@ struct SettingsView: View {
                              }
                          }
                      }
-                 })
+                     .onAppear { settingsViewModel.listenAppLifecycle(appState: appState) }
+                 },
+                 contentViewModel: settingsViewModel)
     }
 
     // MARK: Private
     @State private var isShowingDetail = false
-    @ObservedObject private var settingsViewModel: SettingsViewModel = .init()
+    @StateObject private var settingsViewModel: SettingsViewModel = .init()
 }
 
 extension SettingsView {

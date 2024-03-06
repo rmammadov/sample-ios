@@ -11,20 +11,21 @@ struct HomeView: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
-        BaseView(appState: appState,
-                 content: {
+        BaseView(content: {
                      VersalNavigationView(isBackAvailable: $isShowingDetail) {
                          ZStack {
                              BackgroundStyles.defaultColor
                                  .ignoresSafeArea()
                          }
                      }
-                 })
+                     .onAppear { homeViewModel.listenAppLifecycle(appState: appState) }
+                 },
+                 contentViewModel: homeViewModel)
     }
 
     // MARK: Private
     @State private var isShowingDetail = false
-    @ObservedObject private var homeViewModel: HomeViewModel = .init()
+    @StateObject private var homeViewModel: HomeViewModel = .init()
 }
 
 #Preview {

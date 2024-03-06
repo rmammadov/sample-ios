@@ -11,15 +11,15 @@ struct MainView: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
-        BaseView(appState: appState,
-                 content: {
-                     TabView {
+        BaseView(content: {
+                     TabView(selection: $mainViewModel.selectedTab) {
                          HomeView()
                              .environmentObject(appState)
                              .tabItem {
                                  Label("home", image: R.image.ic_home.name)
                                      .padding(.bottom)
                              }
+                             .tag(1)
 
                          RequestsView()
                              .environmentObject(appState)
@@ -27,6 +27,7 @@ struct MainView: View {
                                  Label("requests", image: R.image.ic_requests.name)
                                      .padding(.bottom)
                              }
+                             .tag(2)
 
                          SettingsView()
                              .environmentObject(appState)
@@ -34,13 +35,16 @@ struct MainView: View {
                                  Label("settings", image: R.image.ic_settings.name)
                                      .padding(.bottom)
                              }
+                             .tag(3)
                      }
                      .accentColor(.versalPrimary500)
-                 })
+                     .onAppear { mainViewModel.listenAppLifecycle(appState: appState) }
+                 },
+                 contentViewModel: mainViewModel)
     }
 
     // MARK: Private
-    @ObservedObject private var mainViewModel: MainViewModel = .init()
+    @StateObject private var mainViewModel: MainViewModel = .init()
 }
 
 #Preview {

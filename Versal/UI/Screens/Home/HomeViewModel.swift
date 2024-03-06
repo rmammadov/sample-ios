@@ -8,6 +8,6 @@ import Foundation
 
 protocol HomeViewModelProtocol {}
 
-class HomeViewModel: ObservableObject, HomeViewModelProtocol {
+class HomeViewModel: BaseViewModel, HomeViewModelProtocol {
     static let TAG: String = "HOME_VIEW"
 }

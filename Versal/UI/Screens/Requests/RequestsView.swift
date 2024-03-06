@@ -11,20 +11,21 @@ struct RequestsView: View {
     @EnvironmentObject var appState: AppState
 
     var body: some View {
-        BaseView(appState: appState,
-                 content: {
+        BaseView(content: {
                      VersalNavigationView(isBackAvailable: $isShowingDetail) {
                          ZStack {
                              BackgroundStyles.defaultColor
                                  .ignoresSafeArea()
                          }
                      }
-                 })
+                     .onAppear { requestsViewModel.listenAppLifecycle(appState: appState) }
+                 },
+                 contentViewModel: requestsViewModel)
     }
 
     // MARK: Private
     @State private var isShowingDetail = false
-    @ObservedObject private var requestsViewModel: RequestsViewModel = .init()
+    @StateObject private var requestsViewModel: RequestsViewModel = .init()
 }
 
 #Preview {
