@@ -40,12 +40,12 @@ struct VersalNavigationView<Content: View>: View {
     var body: some View {
         VStack(spacing: 0) {
             if isTopBarAvailable {
-                TopBar(isBackAvailable: $isBackAvailable,
-                       title: title,
-                       leadingButtonAction: leadingButtonAction,
-                       leadingButtonIcon: leadingButtonIcon,
-                       trailingButtonAction: trailingButtonAction,
-                       trailingButtonIcon: trailingButtonIcon)
+                HeaderContainer(isBackAvailable: $isBackAvailable,
+                                title: title,
+                                leadingButtonAction: leadingButtonAction,
+                                leadingButtonIcon: leadingButtonIcon,
+                                trailingButtonAction: trailingButtonAction,
+                                trailingButtonIcon: trailingButtonIcon)
             }
 
             // Place the content inside a NavigationView

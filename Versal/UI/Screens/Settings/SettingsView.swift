@@ -65,20 +65,26 @@ struct SettingsView: View {
                                              .disabled(!settingsViewModel.isTouchIDEnrolled())
                                          }
                                      })
-                                     .listRowBackground(Color.versalWhite)
+                                     .listRowBackground(BackgroundStyles.defaultColor)
+                                     .listRowSeparator(.hidden)
 
                              Section {
-                                 SolidRoundedButton(isEnabled: true,
-                                                    onClick: {
-                                                        settingsViewModel.isLogoutDialogPresenting.toggle()
-                                                    },
-                                                    title: "logout".localized())
-                                     .alert(isPresented: $settingsViewModel.isLogoutDialogPresenting) {
-                                         presentLogoutDialog()
-                                     }
+                                 VStack(alignment: .leading) {
+                                     Divider()
+                                         .overlay(.versalGray100)
+
+                                     IconLabelButton(isEnabled: true,
+                                                     onClick: {
+                                                         settingsViewModel.isLogoutDialogPresenting.toggle()
+                                                     },
+                                                     title: "logout".localized())
+                                         .alert(isPresented: $settingsViewModel.isLogoutDialogPresenting) {
+                                             presentLogoutDialog()
+                                         }
+                                 }
                              }
-                             .listRowBackground(Color.versalWhite)
-                             .listRowInsets(EdgeInsets(top: 0, leading: -20, bottom: 0, trailing: -20))
+                             .listRowBackground(BackgroundStyles.defaultColor)
+                             .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                          }
                          .background(BackgroundStyles.defaultColor.ignoresSafeArea())
                          .modifier(FormHiddenBackgroundModifier())

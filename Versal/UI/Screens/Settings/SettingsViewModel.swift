@@ -45,12 +45,14 @@ class SettingsViewModel: BaseViewModel, SettingsViewModelProtocol {
     }
 
     func enablePasscode(yes: Bool) {
-        if yes {
-            passcodePresentationMode = .create
-            isPasscodeViewPresenting = true
-        } else {
-            passcodePresentationMode = .remove
-            isPasscodeViewPresenting = true
+        if yes != BiometricManager.shared.isPasscodeEnabled() {
+            if yes {
+                passcodePresentationMode = .create
+                isPasscodeViewPresenting = true
+            } else {
+                passcodePresentationMode = .remove
+                isPasscodeViewPresenting = true
+            }
         }
     }
 

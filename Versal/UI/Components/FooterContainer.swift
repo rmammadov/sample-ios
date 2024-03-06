@@ -29,5 +29,6 @@ struct FooterContainer: View {
                 TextStyles.footerLink(Link("title_dpa", destination: VersalApi.shared.getDpaUrl()))
             }
         }
+        .padding(.bottom, 8)
     }
 }
