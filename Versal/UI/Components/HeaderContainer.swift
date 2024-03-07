@@ -6,9 +6,9 @@
 
 import SwiftUI
 
-struct TopBar: View {
+struct HeaderContainer: View {
     // MARK: Lifecycle
-    init(isBackAvailable: Binding<Bool>,
+    init(isBackAvailable: Binding<Bool> = .constant(false),
          title: String? = nil,
          leadingButtonAction: (() -> Void)? = nil,
          leadingButtonIcon: String? = nil,

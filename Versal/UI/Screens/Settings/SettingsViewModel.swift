@@ -10,9 +10,9 @@ protocol SettingsViewModelProtocol {
     func checkIfFaceIDSet()
     func checkIfPasscodeSet()
     func checkIfTouchIDSet()
-    func enableFaceID(yes: Bool, enabilingFaceIDCompleted: @escaping () -> Void)
+    func enableFaceID(yes: Bool, enablingFaceIDCompleted: @escaping () -> Void)
     func enablePasscode(yes: Bool)
-    func enableTouchID(yes: Bool, enabilingTouchIDCompleted: @escaping () -> Void)
+    func enableTouchID(yes: Bool, enablingTouchIDCompleted: @escaping () -> Void)
     func getUserEmail() -> String
     func getUserFirstName() -> String
     func getUserLastName() -> String
@@ -45,29 +45,39 @@ class SettingsViewModel: BaseViewModel, SettingsViewModelProtocol {
     }
 
     func enablePasscode(yes: Bool) {
-        if yes {
-            passcodePresentationMode = .create
-            isPasscodeViewPresenting = true
-        } else {
-            passcodePresentationMode = .remove
-            isPasscodeViewPresenting = true
+        if yes != BiometricManager.shared.isPasscodeEnabled() {
+            if yes {
+                passcodePresentationMode = .create
+                isPasscodeViewPresenting = true
+            } else {
+                passcodePresentationMode = .remove
+                isPasscodeViewPresenting = true
+            }
         }
     }
 
-    func enableFaceID(yes: Bool, enabilingFaceIDCompleted: @escaping () -> Void) {
-        BiometricManager.shared.verifyFaceID(verificationCompleted: { [self] _ in
-            BiometricManager.shared.setFaceIDEnabled(yes)
-            enabilingFaceIDCompleted()
-            checkIfFaceIDSet()
-        })
+    func enableFaceID(yes: Bool, enablingFaceIDCompleted: @escaping () -> Void) {
+        if yes != BiometricManager.shared.isFaceIDEnabled() {
+            BiometricManager.shared.verifyFaceID(verificationCompleted: { [self] success in
+                if success {
+                    BiometricManager.shared.setFaceIDEnabled(yes)
+                    enablingFaceIDCompleted()
+                }
+                checkIfFaceIDSet()
+            })
+        }
     }
 
-    func enableTouchID(yes: Bool, enabilingTouchIDCompleted: @escaping () -> Void) {
-        BiometricManager.shared.verifyTouchID(verificationCompleted: { [self] _ in
-            BiometricManager.shared.setTouchIDEnabled(yes)
-            enabilingTouchIDCompleted()
-            checkIfTouchIDSet()
-        })
+    func enableTouchID(yes: Bool, enablingTouchIDCompleted: @escaping () -> Void) {
+        if yes != BiometricManager.shared.isTouchIDEnabled() {
+            BiometricManager.shared.verifyTouchID(verificationCompleted: { [self] success in
+                if success {
+                    BiometricManager.shared.setTouchIDEnabled(yes)
+                    enablingTouchIDCompleted()
+                }
+                checkIfTouchIDSet()
+            })
+        }
     }
 
     func getUserEmail() -> String {

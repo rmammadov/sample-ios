@@ -98,7 +98,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Privacy options"
+            "value" : "Privacy Options"
           }
         }
       }
@@ -109,7 +109,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "User details"
+            "value" : "User Details"
           }
         }
       }
@@ -208,7 +208,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Identify yourself!"
+            "value" : "Verified By Biometrics"
           }
         }
       }

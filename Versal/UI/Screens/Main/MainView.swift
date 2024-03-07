@@ -17,7 +17,6 @@ struct MainView: View {
                              .environmentObject(appState)
                              .tabItem {
                                  Label("home", image: R.image.ic_home.name)
-                                     .padding(.bottom)
                              }
                              .tag(1)
 
@@ -25,7 +24,6 @@ struct MainView: View {
                              .environmentObject(appState)
                              .tabItem {
                                  Label("requests", image: R.image.ic_requests.name)
-                                     .padding(.bottom)
                              }
                              .tag(2)
 
@@ -33,11 +31,11 @@ struct MainView: View {
                              .environmentObject(appState)
                              .tabItem {
                                  Label("settings", image: R.image.ic_settings.name)
-                                     .padding(.bottom)
                              }
                              .tag(3)
                      }
                      .accentColor(.versalPrimary500)
+                     .padding(.bottom, 8)
                      .onAppear { mainViewModel.listenAppLifecycle(appState: appState) }
                  },
                  contentViewModel: mainViewModel)
