@@ -491,7 +491,6 @@
 				D4F52AFC2B4C146E009B8A24 /* Enums */,
 				D4F52AFD2B4C147A009B8A24 /* Extensions */,
 				D4F52AFE2B4C1487009B8A24 /* Helpers */,
-				D4F52AFF2B4C1490009B8A24 /* Modules */,
 				D4F52B002B4C1498009B8A24 /* Resources */,
 				D4F52B012B4C14A5009B8A24 /* UI */,
 			);
@@ -558,13 +557,6 @@
 				D47FF9392B4DA01200C03D7D /* Log.swift */,
 			);
 			path = Helpers;
-			sourceTree = "<group>";
-		};
-		D4F52AFF2B4C1490009B8A24 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Modules;
 			sourceTree = "<group>";
 		};
 		D4F52B002B4C1498009B8A24 /* Resources */ = {
@@ -1096,7 +1088,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MWL9SGS376;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
@@ -1247,7 +1239,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MWL9SGS376;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
@@ -1392,7 +1384,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Versal/Resources\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = MWL9SGS376;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;

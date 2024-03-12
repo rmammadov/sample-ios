@@ -15,6 +15,17 @@
         }
       }
     },
+    "application_name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Versal"
+          }
+        }
+      }
+    },
     "btn_title_continue" : {
       "extractionState" : "manual",
       "localizations" : {
