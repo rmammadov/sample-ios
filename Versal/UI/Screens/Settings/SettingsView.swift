@@ -18,88 +18,93 @@ struct SettingsView: View {
     var body: some View {
         BaseView(content: { // swiftlint:disable:this closure_body_length
                      VersalNavigationView { // swiftlint:disable:this closure_body_length
-                         VStack(spacing: 0) { // swiftlint:disable:this closure_body_length
-                             HeaderContainer()
+                         ZStack { // swiftlint:disable:this closure_body_length
+                             BackgroundStyles.defaultColor
+                                 .ignoresSafeArea()
 
-                             Form { // swiftlint:disable:this closure_body_length
-                                 Section(header: TextStyles.settingsSectionHeader(Text("header_user_section")),
-                                         content: {
-                                             HStack(alignment: .center) {
-                                                 UserInitialsView(firstName: settingsViewModel.getUserFirstName(), lastName: settingsViewModel.getUserLastName())
+                             VStack(spacing: 0) { // swiftlint:disable:this closure_body_length
+                                 HeaderContainer()
 
-                                                 VStack(alignment: .leading) {
-                                                     TextStyles.settingsUserDetailsName(Text(settingsViewModel.getUserName()))
-                                                         .frame(height: 20)
+                                 Form { // swiftlint:disable:this closure_body_length
+                                     Section(header: TextStyles.settingsSectionHeader(Text("header_user_section")),
+                                             content: {
+                                                 HStack(alignment: .center) {
+                                                     UserInitialsView(firstName: settingsViewModel.getUserFirstName(), lastName: settingsViewModel.getUserLastName())
 
-                                                     TextStyles.settingsUserDetailsEmail(Text(settingsViewModel.getUserEmail()))
-                                                         .frame(height: 16)
+                                                     VStack(alignment: .leading) {
+                                                         TextStyles.settingsUserDetailsName(Text(settingsViewModel.getUserName()))
+                                                             .frame(height: 20)
+
+                                                         TextStyles.settingsUserDetailsEmail(Text(settingsViewModel.getUserEmail()))
+                                                             .frame(height: 16)
+                                                     }
+                                                     .padding(.leading, 10)
                                                  }
-                                                 .padding(.leading, 10)
-                                             }
-                                         })
-                                         .listRowBackground(Color.versalWhite)
-
-                                 Section(header: TextStyles.settingsSectionHeader(Text("header_privacy_section")),
-                                         content: {
-                                             Toggle(isOn: $settingsViewModel.isPasscodeSet, label: {
-                                                 TextStyles.settingsItemTitle(Text("passcode"))
                                              })
-                                             .onChange(of: settingsViewModel.isPasscodeSet) { newValue in
-                                                 settingsViewModel.enablePasscode(yes: newValue)
-                                             }
+                                             .listRowBackground(Color.versalWhite)
 
-                                             if settingsViewModel.isFaceIDSupported() {
-                                                 Toggle(isOn: $settingsViewModel.isFaceIDSet, label: {
-                                                     TextStyles.settingsItemTitle(Text("face_id"))
+                                     Section(header: TextStyles.settingsSectionHeader(Text("header_privacy_section")),
+                                             content: {
+                                                 Toggle(isOn: $settingsViewModel.isPasscodeSet, label: {
+                                                     TextStyles.settingsItemTitle(Text("passcode"))
                                                  })
-                                                 .onChange(of: settingsViewModel.isFaceIDSet) { newValue in
-                                                     faceID(enable: newValue)
+                                                 .onChange(of: settingsViewModel.isPasscodeSet) { newValue in
+                                                     settingsViewModel.enablePasscode(yes: newValue)
                                                  }
-                                                 .disabled(!settingsViewModel.isFaceIDEnrolled())
-                                             }
 
-                                             if settingsViewModel.isTouchIDSupported() {
-                                                 Toggle(isOn: $settingsViewModel.isTouchIDSet, label: {
-                                                     TextStyles.settingsItemTitle(Text("touch_id"))
-                                                 })
-                                                 .onChange(of: settingsViewModel.isTouchIDSet) { newValue in
-                                                     touchID(enable: newValue)
+                                                 if settingsViewModel.isFaceIDSupported() {
+                                                     Toggle(isOn: $settingsViewModel.isFaceIDSet, label: {
+                                                         TextStyles.settingsItemTitle(Text("face_id"))
+                                                     })
+                                                     .onChange(of: settingsViewModel.isFaceIDSet) { newValue in
+                                                         faceID(enable: newValue)
+                                                     }
+                                                     .disabled(!settingsViewModel.isFaceIDEnrolled())
                                                  }
-                                                 .disabled(!settingsViewModel.isTouchIDEnrolled())
-                                             }
-                                         })
-                                         .listRowBackground(BackgroundStyles.defaultColor)
-                                         .listRowSeparator(.hidden)
 
-                                 Section {
-                                     VStack(alignment: .leading) {
-                                         Divider()
-                                             .overlay(.versalGray100)
+                                                 if settingsViewModel.isTouchIDSupported() {
+                                                     Toggle(isOn: $settingsViewModel.isTouchIDSet, label: {
+                                                         TextStyles.settingsItemTitle(Text("touch_id"))
+                                                     })
+                                                     .onChange(of: settingsViewModel.isTouchIDSet) { newValue in
+                                                         touchID(enable: newValue)
+                                                     }
+                                                     .disabled(!settingsViewModel.isTouchIDEnrolled())
+                                                 }
+                                             })
+                                             .listRowBackground(BackgroundStyles.defaultColor)
+                                             .listRowSeparator(.hidden)
 
-                                         IconLabelButton(image: R.image.ic_logout,
-                                                         isEnabled: true,
-                                                         onClick: {
-                                                             settingsViewModel.isLogoutDialogPresenting.toggle()
-                                                         },
-                                                         title: "logout".localized())
-                                             .alert(isPresented: $settingsViewModel.isLogoutDialogPresenting) {
-                                                 presentLogoutDialog()
-                                             }
+                                     Section {
+                                         VStack(alignment: .leading) {
+                                             Divider()
+                                                 .overlay(.versalGray100)
+
+                                             IconLabelButton(image: R.image.ic_logout,
+                                                             isEnabled: true,
+                                                             onClick: {
+                                                                 settingsViewModel.isLogoutDialogPresenting.toggle()
+                                                             },
+                                                             title: "logout".localized())
+                                                 .alert(isPresented: $settingsViewModel.isLogoutDialogPresenting) {
+                                                     presentLogoutDialog()
+                                                 }
+                                         }
                                      }
+                                     .listRowBackground(BackgroundStyles.defaultColor)
+                                     .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                                  }
-                                 .listRowBackground(BackgroundStyles.defaultColor)
-                                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
-                             }
-                             .background(BackgroundStyles.defaultColor.ignoresSafeArea())
-                             .modifier(FormHiddenBackgroundModifier())
-                             .sheet(isPresented: $settingsViewModel.isPasscodeViewPresenting, content: {
-                                 PasscodeView(mode: settingsViewModel.passcodePresentationMode, onPasscodeOperationCompleted: {
-                                     settingsViewModel.isPasscodeViewDissmised()
+                                 .background(BackgroundStyles.defaultColor.ignoresSafeArea())
+                                 .modifier(FormHiddenBackgroundModifier())
+                                 .sheet(isPresented: $settingsViewModel.isPasscodeViewPresenting, content: {
+                                     PasscodeView(mode: settingsViewModel.passcodePresentationMode, onPasscodeOperationCompleted: {
+                                         settingsViewModel.isPasscodeViewDissmised()
+                                     })
                                  })
-                             })
-                             .onChange(of: settingsViewModel.isPasscodeViewPresenting) { isPresenting in
-                                 if !isPresenting {
-                                     settingsViewModel.isPasscodeViewDissmised()
+                                 .onChange(of: settingsViewModel.isPasscodeViewPresenting) { isPresenting in
+                                     if !isPresenting {
+                                         settingsViewModel.isPasscodeViewDissmised()
+                                     }
                                  }
                              }
                          }
