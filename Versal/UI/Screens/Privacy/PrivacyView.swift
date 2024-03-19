@@ -17,7 +17,7 @@ struct PrivacyView: View {
             } else {
                 BackgroundStyles.defaultColor
                     .ignoresSafeArea()
-                Image(ImageResource.logoMarkGradient)
+                Image(R.image.logo_mark_gradient)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 150, height: 150)

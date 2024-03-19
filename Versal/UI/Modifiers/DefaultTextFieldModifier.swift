@@ -21,8 +21,9 @@ struct DefaultTextFieldModifier: ViewModifier {
                 .frame(height: 40)
                 .padding(.horizontal, 12)
                 .overlay(RoundedRectangle(cornerRadius: 8)
-                    .stroke(isContentNotValid() ? Color.red : (isFocused.wrappedValue ? .versalPrimary500 : .versalGray100), lineWidth: 1))
-                .accentColor(.versalGray100)
+                    .stroke(isContentNotValid() ? ElementStyles.textFielError : (isFocused.wrappedValue ? ElementStyles.textFielActive : ElementStyles.textFielInactive),
+                            lineWidth: 1))
+                .accentColor(R.color.versalGray100.color())
                 .keyboardType(keyboardType)
                 .autocapitalization(autoCapitalizationType ?? .none)
                 .focused(isFocused)

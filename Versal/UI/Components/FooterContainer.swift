@@ -18,13 +18,13 @@ struct FooterContainer: View {
 
                 Circle()
                     .frame(width: 2, height: 2)
-                    .foregroundColor(.versalGray400)
+                    .foregroundColor(R.color.versalGray400.color())
 
                 TextStyles.footerLink(Link("title_privacy", destination: VersalApi.shared.getPrivacyUrl()))
 
                 Circle()
                     .frame(width: 2, height: 2)
-                    .foregroundColor(.versalGray400)
+                    .foregroundColor(R.color.versalGray400.color())
 
                 TextStyles.footerLink(Link("title_dpa", destination: VersalApi.shared.getDpaUrl()))
             }

@@ -46,8 +46,8 @@ struct SecureTextField: View {
                 Button(action: {
                     isSecured.toggle()
                 }, label: {
-                    Image(isSecured ? ImageResource.icEyeOff : ImageResource.icEye)
-                        .accentColor(.versalGray100)
+                    Image(isSecured ? R.image.ic_eye_off : R.image.ic_eye)
+                        .accentColor(R.color.versalGray100.color())
                 })
                 .padding(.trailing)
             }

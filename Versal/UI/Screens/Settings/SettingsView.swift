@@ -41,7 +41,7 @@ struct SettingsView: View {
                                                      .padding(.leading, 10)
                                                  }
                                              })
-                                             .listRowBackground(Color.versalWhite)
+                                             .listRowBackground(ElementStyles.backgroundColor)
 
                                      Section(header: TextStyles.settingsSectionHeader(Text("header_privacy_section")),
                                              content: {
@@ -78,7 +78,7 @@ struct SettingsView: View {
                                      Section {
                                          VStack(alignment: .leading) {
                                              Divider()
-                                                 .overlay(.versalGray100)
+                                                 .overlay(ElementStyles.dividerColor)
 
                                              IconLabelButton(image: R.image.ic_logout,
                                                              isEnabled: true,

@@ -16,8 +16,8 @@ struct ReturnButton: View {
     var body: some View {
         Button(action: onClick, label: {
             HStack {
-                Image(ImageResource.icReturn)
-                    .accentColor(.versalPrimary500)
+                Image(R.image.ic_return)
+                    .accentColor(R.color.versalPrimary500.color())
 
                 TextStyles.plainButtonTitle(Text(title))
             }
