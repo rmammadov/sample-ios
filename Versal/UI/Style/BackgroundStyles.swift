@@ -8,14 +8,14 @@ import SwiftUI
 
 enum BackgroundStyles {
     static var defaultColor: Color {
-        Color.versalPrimary25
+        R.color.versalPrimary25.color()
     }
 
     static var profileColor: Color {
-        Color.versalSidebarYellow
+        R.color.versalSidebarYellow.color()
     }
 
     static var sidebarColor: Color {
-        Color.versalPrimary25 // Color.versalSidebarBackground
+        R.color.versalPrimary25.color() // R.color.versalSidebarBackground.color()
     }
 }

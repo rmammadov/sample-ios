@@ -12,7 +12,6 @@ target 'Versal' do
   pod 'GRDB.swift'
   pod 'IQKeyboardManager'
   pod 'Moya', '~> 15.0'
-  pod 'R.swift'
   pod 'SQLCipher', '~>4.0'
   pod 'SwiftFormat/CLI', '~> 0.49'
   pod 'SwiftLint'

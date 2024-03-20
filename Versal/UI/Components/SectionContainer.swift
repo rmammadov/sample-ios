@@ -32,9 +32,9 @@ struct SectionContainer<Content: View, Footer: View>: View {
                     content
                 }
                 .padding(24)
-                .background(.versalWhite)
+                .background(R.color.versalWhite.color())
                 .overlay(RoundedRectangle(cornerRadius: 4)
-                    .stroke(.versalGray100, lineWidth: 1))
+                    .stroke(R.color.versalGray100.color(), lineWidth: 1))
                 .padding(16)
 
                 Spacer()

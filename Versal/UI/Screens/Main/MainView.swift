@@ -34,7 +34,7 @@ struct MainView: View {
                              }
                              .tag(3)
                      }
-                     .accentColor(.versalPrimary500)
+                     .accentColor(ElementStyles.primaryColor)
                      .padding(.bottom, 8)
                      .onAppear { mainViewModel.listenAppLifecycle(appState: appState) }
                  },

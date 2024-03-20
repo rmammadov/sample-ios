@@ -19,7 +19,7 @@ struct KeyPadButton: View {
         Button(action: { action(key) }, label: {
             Color.clear
                 .overlay(RoundedRectangle(cornerRadius: 12)
-                    .stroke(.versalPrimary500))
+                    .stroke(ElementStyles.primaryColor))
                 .overlay(TextStyles.keyPadButtonTitle(Text(key)))
                 .opacity(key == "." ? 0.0 : 1.0)
         })

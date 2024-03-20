@@ -18,7 +18,10 @@ struct SolidRoundedButton: View {
             TextStyles.solidButtonTitle(Text(title))
                 .frame(maxWidth: .infinity)
         })
-        .buttonStyle(RoundedButtonStyle(backgroundColor: .versalPrimary500, backgroundColorDisabled: .versalGray200, cornerRadius: 8, isEnabled: isEnabled))
+        .buttonStyle(RoundedButtonStyle(backgroundColor: R.color.versalPrimary500.color(),
+                                        backgroundColorDisabled: R.color.versalGray200.color(),
+                                        cornerRadius: 8,
+                                        isEnabled: isEnabled))
         .disabled(!isEnabled)
     }
 }

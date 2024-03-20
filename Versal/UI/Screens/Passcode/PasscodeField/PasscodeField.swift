@@ -28,7 +28,7 @@ public struct PasscodeField: View {
             ForEach(0 ..< maxDigits, id: \.self) { index in
                 Image(systemName: getImageName(at: index))
                     .font(.system(size: 30, weight: .thin, design: .default))
-                    .foregroundColor(.versalPrimary500)
+                    .foregroundColor(ElementStyles.primaryColor)
                 Spacer()
             }
         }

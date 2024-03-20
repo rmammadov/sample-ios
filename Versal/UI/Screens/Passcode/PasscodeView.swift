@@ -15,7 +15,7 @@ struct PasscodeView: View {
     // MARK: Internal
     var body: some View {
         VStack {
-            Image(ImageResource.logoMarkGradient)
+            Image(R.image.logo_mark_gradient)
                 .resizable()
                 .scaledToFit()
                 .frame(width: 150, height: 150)
