@@ -25,7 +25,6 @@ class SettingsViewModel: BaseViewModel, SettingsViewModelProtocol {
     static let TAG: String = "SETTINGS_VIEW"
 
     @Published var isFaceIDSet = BiometricManager.shared.isFaceIDEnabled()
-    @Published var isLogoutDialogPresenting = false
     @Published var isPasscodeSet = BiometricManager.shared.isPasscodeEnabled()
     @Published var isPasscodeViewPresenting = false
     @Published var isTouchIDSet = BiometricManager.shared.isTouchIDEnabled()

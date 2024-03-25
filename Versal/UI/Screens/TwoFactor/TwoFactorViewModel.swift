@@ -30,6 +30,8 @@ final class TwoFactorViewModel: BaseViewModel, TwoFactorViewModelProtocol {
     }
 
     func verifyCode() -> Bool {
+        viewState = .progress
+        progressViewModel.progressState = .inProgress
         if code == codeStaticSample {
             return true
         }

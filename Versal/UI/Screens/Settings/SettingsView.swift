@@ -83,12 +83,9 @@ struct SettingsView: View {
                                              IconLabelButton(image: R.image.ic_logout,
                                                              isEnabled: true,
                                                              onClick: {
-                                                                 settingsViewModel.isLogoutDialogPresenting.toggle()
+                                                                 settingsViewModel.viewState = .alert
                                                              },
                                                              title: "logout".localized())
-                                                 .alert(isPresented: $settingsViewModel.isLogoutDialogPresenting) {
-                                                     presentLogoutDialog()
-                                                 }
                                          }
                                      }
                                      .listRowBackground(BackgroundStyles.defaultColor)
@@ -111,7 +108,10 @@ struct SettingsView: View {
                      }
                      .onAppear { settingsViewModel.listenAppLifecycle(appState: appState) }
                  },
-                 contentViewModel: settingsViewModel)
+                 contentViewModel: settingsViewModel,
+                 viewState: $settingsViewModel.viewState,
+                 dialogViewModel: getLogoutDialogViewModel(),
+                 progressDialogViewModel: getProgressDialogViewModel())
     }
 
     // MARK: Private
@@ -127,13 +127,19 @@ extension SettingsView {
         })
     }
 
-    private func presentLogoutDialog() -> Alert {
-        return Alert(title: Text("logout"),
-                     message: Text("message_logout"),
-                     primaryButton: .destructive(Text("logout")) {
-                         logout()
-                     },
-                     secondaryButton: .cancel())
+    func getProgressDialogViewModel() -> ProgressDialogViewModel {
+        settingsViewModel.progressViewModel.tryAgainButtonAction = {}
+        return settingsViewModel.progressViewModel
+    }
+
+    func getLogoutDialogViewModel() -> DialogViewModel {
+        settingsViewModel.dialogViewModel.title = "logout".localized()
+        settingsViewModel.dialogViewModel.message = "message_logout".localized()
+        settingsViewModel.dialogViewModel.negativeButtonTitle = "cancel".localized()
+        settingsViewModel.dialogViewModel.negativeButtonAction = { settingsViewModel.viewState = .normal }
+        settingsViewModel.dialogViewModel.positiveButtonTitle = "logout".localized()
+        settingsViewModel.dialogViewModel.positiveButtonAction = { logout() }
+        return settingsViewModel.dialogViewModel
     }
 
     private func touchID(enable: Bool) {

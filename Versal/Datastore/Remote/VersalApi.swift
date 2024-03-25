@@ -4,6 +4,7 @@
 // Restricted and proprietary.
 //
 
+import Moya
 import SwiftUI
 
 class VersalApi: ObservableObject {
@@ -34,5 +35,57 @@ class VersalApi: ObservableObject {
 
     func getTermsUrl() -> URL {
         return baseURL.appendingPathComponent("terms/")
+    }
+}
+
+enum VersalApiTarget {
+    case login(LoginPayload)
+    case logout
+    case verify(TwoFactorPayload)
+}
+
+extension VersalApiTarget: TargetType {
+    var baseURL: URL {
+        return VersalApi.shared.baseURL
+    }
+
+    var path: String {
+        switch self {
+        case .login:
+            return "m/login/"
+        case .logout:
+            return "m/logout/"
+        case .verify:
+            return "m/verify/"
+        }
+    }
+
+    var method: Moya.Method {
+        switch self {
+        case .logout: return .post
+        case .login: return .post
+        case .verify: return .post
+        }
+    }
+
+    var task: Task {
+        switch self {
+        case let .login(loginPayload): return .requestCustomJSONEncodable(loginPayload, encoder: JSON.encoder)
+        case .logout: return .requestPlain
+        case let .verify(twoFactorPayload): return .requestCustomJSONEncodable(twoFactorPayload, encoder: JSON.encoder)
+        }
+    }
+
+    var headers: [String: String]? {
+        return ["Content-Type": "application/json"]
+    }
+    
+    public var validationType: Moya.ValidationType {
+        return .successCodes
+    }
+
+    var sampleData: Data {
+        // Implement sample data for testing if necessary
+        return Data()
     }
 }

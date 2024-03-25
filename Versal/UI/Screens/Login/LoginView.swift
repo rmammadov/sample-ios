@@ -40,7 +40,8 @@ struct LoginView: View {
 
                                                   SolidRoundedButton(isEnabled: loginViewModel.isSubmitEnabled,
                                                                      onClick: {
-                                                                         loginViewModel.validateLoginForm()
+//                                                                         loginViewModel.validateLoginForm()
+                                                                         loginViewModel.testRequestVersal()
                                                                      },
                                                                      title: "btn_title_continue".localized())
 
@@ -52,10 +53,20 @@ struct LoginView: View {
                                  .onAppear { loginViewModel.listenAppLifecycle(appState: appState) }
                          }
                      },
-                     contentViewModel: loginViewModel)
+                     contentViewModel: loginViewModel,
+                     viewState: $loginViewModel.viewState,
+                     progressDialogViewModel: getProgressDialogViewModel())
         }
     }
 
     // MARK: Private
     @StateObject private var loginViewModel: LoginViewModel = .init()
+    @State private var temporaryShowProgress = false
+}
+
+extension LoginView {
+    func getProgressDialogViewModel() -> ProgressDialogViewModel {
+        loginViewModel.progressViewModel.tryAgainButtonAction = { loginViewModel.testRequestVersal() }
+        return loginViewModel.progressViewModel
+    }
 }

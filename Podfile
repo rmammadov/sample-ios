@@ -9,7 +9,6 @@ target 'Versal' do
   pod 'Firebase'
   pod 'Firebase/Analytics'
   pod 'FirebasePerformance'
-  pod 'GRDB.swift'
   pod 'IQKeyboardManager'
   pod 'Moya', '~> 15.0'
   pod 'SQLCipher', '~>4.0'

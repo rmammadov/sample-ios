@@ -25,6 +25,19 @@
 		D4223BE82B7D68DF009DA577 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4223BE72B7D68DF009DA577 /* SettingsViewModel.swift */; };
 		D4223BEA2B7E483F009DA577 /* SectionContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4223BE92B7E483F009DA577 /* SectionContainer.swift */; };
 		D4223BEE2B7E5BD6009DA577 /* VersalApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4223BED2B7E5BD6009DA577 /* VersalApi.swift */; };
+		D43357622BAC70D300AEA382 /* TransparentRoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43357612BAC70D300AEA382 /* TransparentRoundedButton.swift */; };
+		D43357642BAC70EC00AEA382 /* CustomAlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43357632BAC70EC00AEA382 /* CustomAlertDialog.swift */; };
+		D43357662BAC70FE00AEA382 /* ProgressDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43357652BAC70FE00AEA382 /* ProgressDialog.swift */; };
+		D433576C2BADDD7600AEA382 /* VersalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D433576B2BADDD7600AEA382 /* VersalError.swift */; };
+		D433576F2BADDD8100AEA382 /* VersalService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D433576E2BADDD8100AEA382 /* VersalService.swift */; };
+		D433577A2BADE2DC00AEA382 /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43357792BADE2DC00AEA382 /* DatabaseManager.swift */; };
+		D43357832BAE16EF00AEA382 /* LoginPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43357822BAE16EF00AEA382 /* LoginPayload.swift */; };
+		D43357852BAE170200AEA382 /* TwoFactorPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43357842BAE170200AEA382 /* TwoFactorPayload.swift */; };
+		D43357872BAE175000AEA382 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43357862BAE175000AEA382 /* User.swift */; };
+		D43357892BAE176100AEA382 /* UserFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43357882BAE176100AEA382 /* UserFlags.swift */; };
+		D433578E2BB16A3800AEA382 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D433578D2BB16A3800AEA382 /* Coordinator.swift */; };
+		D43357912BB1B69700AEA382 /* Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43357902BB1B69700AEA382 /* Platform.swift */; };
+		D43357942BB1B74E00AEA382 /* ErrorCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43357932BB1B74E00AEA382 /* ErrorCode.swift */; };
 		D448247B2B67FCCF00677566 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448247A2B67FCCF00677566 /* BaseViewModel.swift */; };
 		D448247D2B67FD0200677566 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448247C2B67FD0200677566 /* BaseView.swift */; };
 		D448247F2B6B94F800677566 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D448247E2B6B94F800677566 /* AppState.swift */; };
@@ -141,6 +154,20 @@
 		D4223BE72B7D68DF009DA577 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		D4223BE92B7E483F009DA577 /* SectionContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionContainer.swift; sourceTree = "<group>"; };
 		D4223BED2B7E5BD6009DA577 /* VersalApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalApi.swift; sourceTree = "<group>"; };
+		D43357612BAC70D300AEA382 /* TransparentRoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransparentRoundedButton.swift; sourceTree = "<group>"; };
+		D43357632BAC70EC00AEA382 /* CustomAlertDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlertDialog.swift; sourceTree = "<group>"; };
+		D43357652BAC70FE00AEA382 /* ProgressDialog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressDialog.swift; sourceTree = "<group>"; };
+		D433576B2BADDD7600AEA382 /* VersalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalError.swift; sourceTree = "<group>"; };
+		D433576E2BADDD8100AEA382 /* VersalService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersalService.swift; sourceTree = "<group>"; };
+		D43357792BADE2DC00AEA382 /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		D433577C2BADE36E00AEA382 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		D43357822BAE16EF00AEA382 /* LoginPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPayload.swift; sourceTree = "<group>"; };
+		D43357842BAE170200AEA382 /* TwoFactorPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoFactorPayload.swift; sourceTree = "<group>"; };
+		D43357862BAE175000AEA382 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D43357882BAE176100AEA382 /* UserFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserFlags.swift; sourceTree = "<group>"; };
+		D433578D2BB16A3800AEA382 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		D43357902BB1B69700AEA382 /* Platform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Platform.swift; sourceTree = "<group>"; };
+		D43357932BB1B74E00AEA382 /* ErrorCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorCode.swift; sourceTree = "<group>"; };
 		D448247A2B67FCCF00677566 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		D448247C2B67FD0200677566 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		D448247E2B6B94F800677566 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -278,6 +305,7 @@
 		732AF659D901A622AF6AD414 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D433577C2BADE36E00AEA382 /* libsqlite3.tbd */,
 				1855B52D0AA04B5FAEDDBD57 /* Pods_Versal.framework */,
 				A7E4874E1E91F96DA7421C46 /* Pods_Versal_VersalUITests.framework */,
 				AC18FD4B74EA77773A014D0A /* Pods_VersalTests.framework */,
@@ -324,6 +352,11 @@
 		D4223BEB2B7E5B92009DA577 /* Datastore */ = {
 			isa = PBXGroup;
 			children = (
+				D43357702BADDE6A00AEA382 /* Coordinator */,
+				D43357732BADDE9300AEA382 /* Database */,
+				D43357802BADE3D400AEA382 /* Model */,
+				D43357722BADDE8A00AEA382 /* Local */,
+				D43357812BADE3EB00AEA382 /* Payload */,
 				D4223BEC2B7E5BAB009DA577 /* Remote */,
 			);
 			path = Datastore;
@@ -333,8 +366,73 @@
 			isa = PBXGroup;
 			children = (
 				D4223BED2B7E5BD6009DA577 /* VersalApi.swift */,
+				D433576B2BADDD7600AEA382 /* VersalError.swift */,
+				D433576E2BADDD8100AEA382 /* VersalService.swift */,
 			);
 			path = Remote;
+			sourceTree = "<group>";
+		};
+		D433575F2BAC703100AEA382 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D4BDB7932B98B077008974C3 /* IconLabelButton.swift */,
+				D4C428332B7768070039C6C3 /* ReturnButton.swift */,
+				D499466F2B7510A900DE30E7 /* SolidRoundedButton.swift */,
+				D43357612BAC70D300AEA382 /* TransparentRoundedButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D43357602BAC703900AEA382 /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				D43357632BAC70EC00AEA382 /* CustomAlertDialog.swift */,
+				D43357652BAC70FE00AEA382 /* ProgressDialog.swift */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
+		D43357702BADDE6A00AEA382 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D433578D2BB16A3800AEA382 /* Coordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		D43357722BADDE8A00AEA382 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				D43357932BB1B74E00AEA382 /* ErrorCode.swift */,
+				D43357902BB1B69700AEA382 /* Platform.swift */,
+			);
+			path = Local;
+			sourceTree = "<group>";
+		};
+		D43357732BADDE9300AEA382 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				D43357792BADE2DC00AEA382 /* DatabaseManager.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		D43357802BADE3D400AEA382 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D43357862BAE175000AEA382 /* User.swift */,
+				D43357882BAE176100AEA382 /* UserFlags.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D43357812BADE3EB00AEA382 /* Payload */ = {
+			isa = PBXGroup;
+			children = (
+				D43357822BAE16EF00AEA382 /* LoginPayload.swift */,
+				D43357842BAE170200AEA382 /* TwoFactorPayload.swift */,
+			);
+			path = Payload;
 			sourceTree = "<group>";
 		};
 		D44824792B67FCB900677566 /* Base */ = {
@@ -416,17 +514,16 @@
 		D49946762B753D0400DE30E7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				D433575F2BAC703100AEA382 /* Buttons */,
+				D43357602BAC703900AEA382 /* Dialogs */,
 				D49740072B8E1F4400943C29 /* CodeTextField.swift */,
 				D4C428352B79E8AC0039C6C3 /* ErrorMessage.swift */,
 				D4BC9CE42B8CD8E800E7DE52 /* FooterContainer.swift */,
 				D4A5E3D12B860E2A00ED886D /* HeaderContainer.swift */,
-				D4BDB7932B98B077008974C3 /* IconLabelButton.swift */,
 				D49946772B753DEC00DE30E7 /* PlainTextField.swift */,
-				D4C428332B7768070039C6C3 /* ReturnButton.swift */,
 				D4223BE92B7E483F009DA577 /* SectionContainer.swift */,
 				D4C4283E2B7B5B620039C6C3 /* SectionTitle.swift */,
 				D499466D2B7504B600DE30E7 /* SecureTextField.swift */,
-				D499466F2B7510A900DE30E7 /* SolidRoundedButton.swift */,
 				D4AB79242B922B210091EBC9 /* UserInitialsView.swift */,
 				D4AB79222B92268F0091EBC9 /* UserProfileImage.swift */,
 			);
@@ -908,15 +1005,19 @@
 				D4686BC72B56C2830048A1F6 /* KeyPadRow.swift in Sources */,
 				D4AB79232B92268F0091EBC9 /* UserProfileImage.swift in Sources */,
 				D475C9222B50245A008FC94A /* UIImage+Extensions.swift in Sources */,
+				D43357852BAE170200AEA382 /* TwoFactorPayload.swift in Sources */,
 				D4212D032B7BB13100D309A3 /* String+Validation.swift in Sources */,
 				D4A5E3D72B8749CF00ED886D /* BackButton.swift in Sources */,
 				D475C9182B50245A008FC94A /* Extensions.swift in Sources */,
 				D475C90E2B50245A008FC94A /* Date+Extensions.swift in Sources */,
+				D43357662BAC70FE00AEA382 /* ProgressDialog.swift in Sources */,
 				D475C9112B50245A008FC94A /* UIImageView+Extensions.swift in Sources */,
 				D4686BBA2B5520C20048A1F6 /* PrivacyView.swift in Sources */,
 				D475C92A2B5034B1008FC94A /* Keychain.swift in Sources */,
 				D4C428362B79E8AC0039C6C3 /* ErrorMessage.swift in Sources */,
+				D43357912BB1B69700AEA382 /* Platform.swift in Sources */,
 				D4AB791F2B9060430091EBC9 /* DefaultTextFieldModifier.swift in Sources */,
+				D43357832BAE16EF00AEA382 /* LoginPayload.swift in Sources */,
 				D4223BDA2B7D6870009DA577 /* MainView.swift in Sources */,
 				D4686BC52B56C26A0048A1F6 /* KeyPadButton.swift in Sources */,
 				D499466E2B7504B600DE30E7 /* SecureTextField.swift in Sources */,
@@ -924,16 +1025,22 @@
 				D475C91F2B50245A008FC94A /* Bundle+Extensions.swift in Sources */,
 				D4AB791B2B8FB6AE0091EBC9 /* BackgroundStyles.swift in Sources */,
 				D4F849AE2B516ACD00C7ED83 /* SplashView.swift in Sources */,
+				D43357942BB1B74E00AEA382 /* ErrorCode.swift in Sources */,
 				0515C5AA2BAA8ACF00BEFAC1 /* ElementStyles.swift in Sources */,
 				D448247F2B6B94F800677566 /* AppState.swift in Sources */,
+				D433578E2BB16A3800AEA382 /* Coordinator.swift in Sources */,
 				D475C92E2B5034D5008FC94A /* UserDefaults+Extensions.swift in Sources */,
 				0528AA032BAA5C90003B83D5 /* ColorResource+Extensions.swift in Sources */,
 				D4223BDC2B7D687E009DA577 /* MainViewModel.swift in Sources */,
 				D475C9242B50245A008FC94A /* CodableWrappers+Extensions.swift in Sources */,
 				D4BC9CE82B8CE46000E7DE52 /* TextStyles.swift in Sources */,
+				D43357642BAC70EC00AEA382 /* CustomAlertDialog.swift in Sources */,
 				D4C4283F2B7B5B620039C6C3 /* SectionTitle.swift in Sources */,
+				D43357872BAE175000AEA382 /* User.swift in Sources */,
+				D433577A2BADE2DC00AEA382 /* DatabaseManager.swift in Sources */,
 				D475C9202B50245A008FC94A /* UIScreen+Extensions.swift in Sources */,
 				D4686BBF2B569B5B0048A1F6 /* PasscodeView.swift in Sources */,
+				D43357892BAE176100AEA382 /* UserFlags.swift in Sources */,
 				D4A5E3D42B8610D700ED886D /* VersalNavigationView.swift in Sources */,
 				D475C9102B50245A008FC94A /* UIDevice+Extensions.swift in Sources */,
 				D475C9232B50245A008FC94A /* DateFormatter+Extensions.swift in Sources */,
@@ -948,6 +1055,7 @@
 				D4AB791D2B8FBEE50091EBC9 /* FormHiddenBackgroundModifier.swift in Sources */,
 				D4223BE22B7D68A7009DA577 /* RequestsView.swift in Sources */,
 				D4C4283D2B7AA2450039C6C3 /* View+Navigate.swift in Sources */,
+				D433576F2BADDD8100AEA382 /* VersalService.swift in Sources */,
 				D475C9132B50245A008FC94A /* Data+Extensions.swift in Sources */,
 				D4F849B02B516AE100C7ED83 /* SplashViewModel.swift in Sources */,
 				D497400A2B8E842500943C29 /* String+Extensions.swift in Sources */,
@@ -962,6 +1070,7 @@
 				D49946782B753DEC00DE30E7 /* PlainTextField.swift in Sources */,
 				D4223BE62B7D68C9009DA577 /* SettingsView.swift in Sources */,
 				D448247D2B67FD0200677566 /* BaseView.swift in Sources */,
+				D43357622BAC70D300AEA382 /* TransparentRoundedButton.swift in Sources */,
 				D4686BC92B56C2A00048A1F6 /* KeyPadView.swift in Sources */,
 				D47FF9132B4C3E4500C03D7D /* EnvType.swift in Sources */,
 				D475C9262B503299008FC94A /* DeepLink.swift in Sources */,
@@ -974,6 +1083,7 @@
 				D4686BCE2B5915990048A1F6 /* PasscodeField.swift in Sources */,
 				D49946642B72706B00DE30E7 /* LoginView.swift in Sources */,
 				D4223BEE2B7E5BD6009DA577 /* VersalApi.swift in Sources */,
+				D433576C2BADDD7600AEA382 /* VersalError.swift in Sources */,
 				D4F849AC2B51667500C7ED83 /* SceneDelegate.swift in Sources */,
 				D49946732B75313700DE30E7 /* TwoFactorView.swift in Sources */,
 			);
@@ -1069,7 +1179,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1092,7 +1202,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = MWL9SGS376;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
@@ -1222,7 +1332,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1245,7 +1355,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = MWL9SGS376;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;
@@ -1369,7 +1479,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -1392,7 +1502,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
-				DEVELOPMENT_TEAM = MWL9SGS376;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Versal/Resources/Info.plist;

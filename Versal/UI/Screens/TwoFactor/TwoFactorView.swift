@@ -44,9 +44,21 @@ struct TwoFactorView: View {
                  contentViewModel: twoFactorViewModel,
                  swipeToDismiss: {
                      isActive = false
-                 })
+                 },
+                 viewState: $twoFactorViewModel.viewState,
+                 progressDialogViewModel: getProgressDialogViewModel())
     }
 
     // MARK: Private
     @StateObject private var twoFactorViewModel: TwoFactorViewModel = .init()
+}
+
+extension TwoFactorView {
+    func getProgressDialogViewModel() -> ProgressDialogViewModel {
+        twoFactorViewModel.progressViewModel.tryAgainButtonAction = { if twoFactorViewModel.verifyCode() {
+            appState.login(email: "", password: "")
+        }
+        }
+        return twoFactorViewModel.progressViewModel
+    }
 }

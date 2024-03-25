@@ -7,6 +7,18 @@
 import SwiftUI
 
 enum TextStyles {
+    static let dialogBody: (Text) -> Text = { text in
+        text
+            .font(.custom("DMSans-Regular", size: 14))
+            .foregroundColor(R.color.versalBlack.color())
+    }
+
+    static let dialogTitle: (Text) -> Text = { text in
+        text
+            .font(.custom("DMSans-Medium", size: 24))
+            .foregroundColor(R.color.versalBlack.color())
+    }
+
     static let errorMessage: (Text) -> Text = { text in
         text
             .font(.custom("DMSans-Regular", size: 12))
@@ -89,6 +101,12 @@ enum TextStyles {
         text
             .font(.custom("DMSans-Medium", size: 28))
             .foregroundColor(R.color.versalBlack.color())
+    }
+
+    static let transparentButtonTitle: (Text) -> Text = { text in
+        text
+            .font(.custom("DMSans-Medium", size: 14))
+            .foregroundColor(R.color.versalPrimary500.color())
     }
 
     static func errorLabel<Label: View>(_ label: Label) -> some View {

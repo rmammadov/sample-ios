@@ -18,6 +18,10 @@ protocol BaseViewModelProtocol {
 
 class BaseViewModel: ObservableObject, BaseViewModelProtocol {
     @Published var appState: AppState?
+    @Published var viewState: CurrentViewState = .normal
+
+    let dialogViewModel = DialogViewModel()
+    let progressViewModel = ProgressDialogViewModel()
 
     func listenAppLifecycle(appState: AppState) {
         self.appState = appState

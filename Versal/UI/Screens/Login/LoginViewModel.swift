@@ -4,6 +4,7 @@
 // Restricted and proprietary.
 //
 
+import Moya
 import SwiftUI
 
 protocol LoginViewModelProtocol {
@@ -48,8 +49,24 @@ final class LoginViewModel: BaseViewModel, LoginViewModelProtocol {
 
         if isEmailValid {
             isFormValid = checkLoginData()
-
             isTwoFactorVerificationRequested = isFormValid == true
+        }
+    }
+
+    func testRequestVersal() {
+        viewState = .progress
+        let provider = MoyaProvider<VersalApiTarget>()
+        progressViewModel.progressState = .inProgress
+        provider.request(.dpa) { result in
+            switch result {
+            case let .success(response):
+                // Handle successful response
+                print(response)
+                self.progressViewModel.progressState = .success
+            case let .failure(error):
+                // Handle error
+                self.progressViewModel.progressState = .failure
+            }
         }
     }
 
