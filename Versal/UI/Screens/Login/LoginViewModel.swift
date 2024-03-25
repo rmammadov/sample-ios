@@ -53,23 +53,6 @@ final class LoginViewModel: BaseViewModel, LoginViewModelProtocol {
         }
     }
 
-    func testRequestVersal() {
-        viewState = .progress
-        let provider = MoyaProvider<VersalApiTarget>()
-        progressViewModel.progressState = .inProgress
-        provider.request(.dpa) { result in
-            switch result {
-            case let .success(response):
-                // Handle successful response
-                print(response)
-                self.progressViewModel.progressState = .success
-            case let .failure(error):
-                // Handle error
-                self.progressViewModel.progressState = .failure
-            }
-        }
-    }
-
     // MARK: Private
     private let emailStaticSample = "tester@versal.money"
     private let passwordStaticSample = "123456"

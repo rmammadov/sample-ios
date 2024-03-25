@@ -40,8 +40,7 @@ struct LoginView: View {
 
                                                   SolidRoundedButton(isEnabled: loginViewModel.isSubmitEnabled,
                                                                      onClick: {
-//                                                                         loginViewModel.validateLoginForm()
-                                                                         loginViewModel.testRequestVersal()
+                                                                         loginViewModel.validateLoginForm()
                                                                      },
                                                                      title: "btn_title_continue".localized())
 
