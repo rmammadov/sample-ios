@@ -8,12 +8,15 @@ import Foundation
 
 public struct TwoFactorPayload: Codable {
     // MARK: Lifecycle
-    public init(challenge: String?, otp: String?) {
+    public init(accountId: UUID, challenge: String?, otp: String?) {
+        self.accountId = accountId
         self.challenge = challenge
         self.otp = otp
     }
 
     // MARK: Public
+    public var accountId: UUID?
     public var challenge: String?
     public var otp: String?
+    public var token: String?
 }

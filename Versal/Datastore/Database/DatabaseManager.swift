@@ -17,4 +17,8 @@ public class DatabaseManager {
     
     // MARK: Private
     private static var singleton: DatabaseManager?
+    
+    public func reset() {
+        
+    }
 }

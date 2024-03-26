@@ -9,11 +9,13 @@ import Foundation
 public enum Keychain {
     // MARK: Public
     public enum Key: String, CaseIterable {
+        case accountId
         case faceIDEnabled
         case passcode
         case passcodeEnabled
         case passphrase
         case opticIDEnabled
+        case token
         case touchIDEnabled
         case userId
     }

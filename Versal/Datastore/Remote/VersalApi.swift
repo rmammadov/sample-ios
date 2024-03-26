@@ -38,18 +38,19 @@ class VersalApi: ObservableObject {
     }
 }
 
-enum VersalApiTarget {
+public enum VersalApiTarget {
     case login(LoginPayload)
     case logout
     case verify(TwoFactorPayload)
+    case sync(SyncPayload)
 }
 
 extension VersalApiTarget: TargetType {
-    var baseURL: URL {
+    public var baseURL: URL {
         return VersalApi.shared.baseURL
     }
 
-    var path: String {
+    public var path: String {
         switch self {
         case .login:
             return "m/login/"
@@ -57,26 +58,30 @@ extension VersalApiTarget: TargetType {
             return "m/logout/"
         case .verify:
             return "m/verify/"
+        case .sync:
+            return "sync"
         }
     }
 
-    var method: Moya.Method {
+    public var method: Moya.Method {
         switch self {
         case .logout: return .post
         case .login: return .post
         case .verify: return .post
+        case .sync: return .post
         }
     }
 
-    var task: Task {
+    public var task: Task {
         switch self {
         case let .login(loginPayload): return .requestCustomJSONEncodable(loginPayload, encoder: JSON.encoder)
         case .logout: return .requestPlain
         case let .verify(twoFactorPayload): return .requestCustomJSONEncodable(twoFactorPayload, encoder: JSON.encoder)
+        case let .sync(syncPayload): return .requestCustomJSONEncodable(syncPayload, encoder: JSON.encoder)
         }
     }
 
-    var headers: [String: String]? {
+    public var headers: [String: String]? {
         return ["Content-Type": "application/json"]
     }
     
@@ -84,7 +89,7 @@ extension VersalApiTarget: TargetType {
         return .successCodes
     }
 
-    var sampleData: Data {
+    public var sampleData: Data {
         // Implement sample data for testing if necessary
         return Data()
     }
