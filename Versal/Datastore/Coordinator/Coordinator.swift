@@ -5,8 +5,8 @@
 //
 
 import Foundation
-import Then
 import Promises
+import Then
 
 public class Coordinator {
     // MARK: Lifecycle
@@ -21,35 +21,29 @@ public class Coordinator {
         }
         return singleton
     }
-    
-    public func login(_ loginPayload: LoginPayload) -> Promise<LoginPayload> {
-        return Promise { seal,<#arg#>  in
-            async {
-                do {
-                    self.reset()
-                    let loginPayload = try await self.service.login(loginPayload)
-                    self.authenticated(loginPayload.token!, loginPayload.accountId!)
-                    seal.fulfill(loginPayload)
-                } catch {
-                    seal.reject(error)
-                }
-            }
+
+    public func login(_ loginPayload: LoginPayload) async throws -> LoginPayload {
+        reset()
+        let loginPayload = try await service.login(loginPayload)
+        return loginPayload
+    }
+
+    public func logout() async throws -> Bool {
+        do {
+            let result = try await service.logout()
+            reset()
+            return result
+        } catch {
+            throw LogoutError.logoutFailed
         }
     }
 
-    public func logout() {
-        return service.logout().retry(3).finally { self.reset() }
+    public func verifyAccount(_ verifyAccountPayload: TwoFactorPayload) async throws -> TwoFactorPayload {
+        reset()
+        let verifyAccountPayload = try await service.verifyAccount(verifyAccountPayload)
+        return verifyAccountPayload
     }
-    
-    public func verifyAccount(_ verifyAccountPayload: TwoFactorPayload) -> Promise<TwoFactorPayload> {
-        return async {
-            self.reset()
-            let verifyAccountPayload = try awaitPromise(self.service.verifyAccount(verifyAccountPayload))
-            self.authenticated(verifyAccountPayload.token!, verifyAccountPayload.accountId!)
-            return verifyAccountPayload
-        }
-    }
-    
+
     public func reset() {
         service.setToken(nil)
         service.setAccountId(nil)
@@ -57,13 +51,19 @@ public class Coordinator {
         Keychain.reset()
         db.reset()
     }
-    
+
+    // MARK: Internal
+    enum LogoutError: Error {
+        case logoutFailed
+    }
+
     // MARK: Private
     private static let semaphore = DispatchSemaphore(value: 1)
     private static var singleton: Coordinator?
+
     private let db: DatabaseManager
     private let service = VersalService()
-    
+
     private func authenticated(_ token: String, _ accountId: UUID) {
         service.setToken(token)
         service.setAccountId(accountId)

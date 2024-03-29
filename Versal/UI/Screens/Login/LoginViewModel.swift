@@ -4,16 +4,15 @@
 // Restricted and proprietary.
 //
 
-import Moya
 import SwiftUI
 
 protocol LoginViewModelProtocol {
-    func checkLoginData() -> Bool
-    func validateLoginForm()
+    func didContentHasChanged()
+    func login() async
+    func validateLoginForm() async
 }
 
 final class LoginViewModel: BaseViewModel, LoginViewModelProtocol {
-    // MARK: Internal
     static let TAG: String = "LOGIN_VIEW"
 
     @Published var email: String = ""
@@ -25,13 +24,7 @@ final class LoginViewModel: BaseViewModel, LoginViewModelProtocol {
     @Published var isTwoFactorVerificationRequested = false
     @Published var password: String = ""
 
-    func checkLoginData() -> Bool {
-        if email == emailStaticSample, password == passwordStaticSample {
-            return true
-        }
-
-        return false
-    }
+    var loginPayload: LoginPayload?
 
     func didContentHasChanged() {
         if email.isInputLengthAtLeast(3), password.isInputLengthAtLeast(3) {
@@ -44,16 +37,23 @@ final class LoginViewModel: BaseViewModel, LoginViewModelProtocol {
         isFormValid = true
     }
 
-    func validateLoginForm() {
-        isEmailValid = email.isValidEmail()
-
-        if isEmailValid {
-            isFormValid = checkLoginData()
-            isTwoFactorVerificationRequested = isFormValid == true
+    func login() async {
+        viewState = .progress
+        progressViewModel.progressState = .inProgress
+        do {
+            loginPayload = try await Coordinator().login(LoginPayload(email: email, password: password))
+            progressViewModel.progressState = .success
+            isTwoFactorVerificationRequested = true
+        } catch {
+            progressViewModel.progressState = .failure
         }
     }
 
-    // MARK: Private
-    private let emailStaticSample = "tester@versal.money"
-    private let passwordStaticSample = "123456"
+    func validateLoginForm() async {
+        isEmailValid = email.isValidEmail()
+
+        if isEmailValid {
+            await login()
+        }
+    }
 }

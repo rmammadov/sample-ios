@@ -10,6 +10,7 @@ struct SettingsView: View {
     // MARK: Lifecycle
     init() {
         UITableView.appearance().backgroundColor = .clear
+        settingsViewModel.listenAppLifecycle(appState: appState)
     }
 
     // MARK: Internal
@@ -128,7 +129,7 @@ extension SettingsView {
     }
 
     func getProgressDialogViewModel() -> ProgressDialogViewModel {
-        settingsViewModel.progressViewModel.tryAgainButtonAction = {}
+        settingsViewModel.progressViewModel.tryAgainButtonAction = { logout() }
         return settingsViewModel.progressViewModel
     }
 
@@ -150,7 +151,7 @@ extension SettingsView {
     }
 
     private func logout() {
-        appState.logout()
+        Task { await settingsViewModel.logout() }
     }
 }
 

@@ -8,6 +8,7 @@ import Foundation
 
 protocol TwoFactorViewModelProtocol {
     func validateCode()
+    func requestVerification() async
     func verifyCode() -> Bool
 }
 
@@ -15,11 +16,12 @@ final class TwoFactorViewModel: BaseViewModel, TwoFactorViewModelProtocol {
     // MARK: Internal
     static let TAG: String = "TWO_FACTOR_VIEW"
 
-    @Published var test: String = ""
     @Published var code: String = ""
     @Published var errorMessageCode = "error_code".localized()
     @Published var isFormValid = true
     @Published var isSubmitEnabled = false
+
+    var challengeToken: String?
 
     let codeMaxLength = 6
     let codeMinLength = 6
@@ -29,9 +31,23 @@ final class TwoFactorViewModel: BaseViewModel, TwoFactorViewModelProtocol {
         isFormValid = true
     }
 
-    func verifyCode() -> Bool {
+    func requestVerification() {
         viewState = .progress
         progressViewModel.progressState = .inProgress
+    }
+
+    func requestVerification() async {
+        viewState = .progress
+        progressViewModel.progressState = .inProgress
+        do {
+            let result = try await Coordinator().verifyAccount(TwoFactorPayload(challenge: challengeToken, otp: code))
+            progressViewModel.progressState = .success
+        } catch {
+            progressViewModel.progressState = .failure
+        }
+    }
+
+    func verifyCode() -> Bool {
         if code == codeStaticSample {
             return true
         }

@@ -19,6 +19,7 @@ protocol SettingsViewModelProtocol {
     func getUserName() -> String
     func isFaceIDEnrolled() -> Bool
     func isTouchIDEnrolled() -> Bool
+    func logout() async
 }
 
 class SettingsViewModel: BaseViewModel, SettingsViewModelProtocol {
@@ -114,5 +115,17 @@ class SettingsViewModel: BaseViewModel, SettingsViewModelProtocol {
 
     func isTouchIDSupported() -> Bool {
         return BiometricManager.shared.isTouchIDSupported()
+    }
+
+    func logout() async {
+        viewState = .progress
+        progressViewModel.progressState = .inProgress
+        do {
+            let result = try await Coordinator().logout()
+            progressViewModel.progressState = .success
+            appState?.logout()
+        } catch {
+            progressViewModel.progressState = .failure
+        }
     }
 }

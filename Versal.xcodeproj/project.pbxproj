@@ -98,6 +98,8 @@
 		D4C428362B79E8AC0039C6C3 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C428352B79E8AC0039C6C3 /* ErrorMessage.swift */; };
 		D4C4283D2B7AA2450039C6C3 /* View+Navigate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C4283C2B7AA2450039C6C3 /* View+Navigate.swift */; };
 		D4C4283F2B7B5B620039C6C3 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C4283E2B7B5B620039C6C3 /* SectionTitle.swift */; };
+		D4C79E2B2BB6D8A80030860A /* MoyaProvider+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C79E2A2BB6D8A80030860A /* MoyaProvider+Request.swift */; };
+		D4C79E2D2BB6D8DC0030860A /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C79E2C2BB6D8DC0030860A /* JSONDecoder.swift */; };
 		D4D2D3502B5B3A080019E4B4 /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2D34F2B5B3A080019E4B4 /* View+Animation.swift */; };
 		D4D2D3532B5FF86E0019E4B4 /* BiometricManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2D3522B5FF86E0019E4B4 /* BiometricManager.swift */; };
 		D4F52AD12B4C0B52009B8A24 /* VersalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */; };
@@ -228,6 +230,8 @@
 		D4C428352B79E8AC0039C6C3 /* ErrorMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
 		D4C4283C2B7AA2450039C6C3 /* View+Navigate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Navigate.swift"; sourceTree = "<group>"; };
 		D4C4283E2B7B5B620039C6C3 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
+		D4C79E2A2BB6D8A80030860A /* MoyaProvider+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Request.swift"; sourceTree = "<group>"; };
+		D4C79E2C2BB6D8DC0030860A /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
 		D4D2D34F2B5B3A080019E4B4 /* View+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Animation.swift"; sourceTree = "<group>"; };
 		D4D2D3522B5FF86E0019E4B4 /* BiometricManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricManager.swift; sourceTree = "<group>"; };
 		D4F52ACD2B4C0B52009B8A24 /* Versal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Versal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -367,6 +371,7 @@
 		D4223BEC2B7E5BAB009DA577 /* Remote */ = {
 			isa = PBXGroup;
 			children = (
+				D433579B2BB476E000AEA382 /* Base */,
 				D4223BED2B7E5BD6009DA577 /* VersalApi.swift */,
 				D433576B2BADDD7600AEA382 /* VersalError.swift */,
 				D433576E2BADDD8100AEA382 /* VersalService.swift */,
@@ -436,6 +441,15 @@
 				D43357972BB313F200AEA382 /* SyncPayload.swift */,
 			);
 			path = Payload;
+			sourceTree = "<group>";
+		};
+		D433579B2BB476E000AEA382 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D4C79E2A2BB6D8A80030860A /* MoyaProvider+Request.swift */,
+				D4C79E2C2BB6D8DC0030860A /* JSONDecoder.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		D44824792B67FCB900677566 /* Base */ = {
@@ -1014,6 +1028,7 @@
 				D475C9182B50245A008FC94A /* Extensions.swift in Sources */,
 				D475C90E2B50245A008FC94A /* Date+Extensions.swift in Sources */,
 				D43357662BAC70FE00AEA382 /* ProgressDialog.swift in Sources */,
+				D4C79E2D2BB6D8DC0030860A /* JSONDecoder.swift in Sources */,
 				D475C9112B50245A008FC94A /* UIImageView+Extensions.swift in Sources */,
 				D4686BBA2B5520C20048A1F6 /* PrivacyView.swift in Sources */,
 				D475C92A2B5034B1008FC94A /* Keychain.swift in Sources */,
@@ -1077,6 +1092,7 @@
 				D43357622BAC70D300AEA382 /* TransparentRoundedButton.swift in Sources */,
 				D4686BC92B56C2A00048A1F6 /* KeyPadView.swift in Sources */,
 				D47FF9132B4C3E4500C03D7D /* EnvType.swift in Sources */,
+				D4C79E2B2BB6D8A80030860A /* MoyaProvider+Request.swift in Sources */,
 				D475C9262B503299008FC94A /* DeepLink.swift in Sources */,
 				D475C9212B50245A008FC94A /* UIColor+Extensions.swift in Sources */,
 				D4223BE42B7D68B6009DA577 /* RequestsViewModel.swift in Sources */,

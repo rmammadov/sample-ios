@@ -12,7 +12,7 @@ struct LoginView: View {
 
     var body: some View {
         if loginViewModel.isTwoFactorVerificationRequested {
-            TwoFactorView(isActive: $loginViewModel.isTwoFactorVerificationRequested)
+            TwoFactorView(loginViewModel.loginPayload?.challenge, isActive: $loginViewModel.isTwoFactorVerificationRequested).environmentObject(appState)
         } else {
             BaseView(content: { // swiftlint:disable:this closure_body_length
                          VStack(spacing: 0) {
@@ -40,7 +40,7 @@ struct LoginView: View {
 
                                                   SolidRoundedButton(isEnabled: loginViewModel.isSubmitEnabled,
                                                                      onClick: {
-                                                                         loginViewModel.validateLoginForm()
+                                                                         login()
                                                                      },
                                                                      title: "btn_title_continue".localized())
 
@@ -64,8 +64,14 @@ struct LoginView: View {
 }
 
 extension LoginView {
-    func getProgressDialogViewModel() -> ProgressDialogViewModel {
-        loginViewModel.progressViewModel.tryAgainButtonAction = { loginViewModel.testRequestVersal() }
+    private func getProgressDialogViewModel() -> ProgressDialogViewModel {
+        loginViewModel.progressViewModel.tryAgainButtonAction = { login() }
         return loginViewModel.progressViewModel
+    }
+
+    private func login() {
+        Task {
+            await loginViewModel.validateLoginForm()
+        }
     }
 }

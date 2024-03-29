@@ -84,7 +84,7 @@ extension VersalApiTarget: TargetType {
     public var headers: [String: String]? {
         return ["Content-Type": "application/json"]
     }
-    
+
     public var validationType: Moya.ValidationType {
         return .successCodes
     }

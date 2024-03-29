@@ -7,6 +7,14 @@
 import SwiftUI
 
 struct TwoFactorView: View {
+    // MARK: Lifecycle
+
+    init(_ challengeToken: String?, isActive: Binding<Bool>) {
+        self._isActive = isActive
+        self.twoFactorViewModel = TwoFactorViewModel()
+        twoFactorViewModel.challengeToken = challengeToken
+    }
+
     // MARK: Internal
     @EnvironmentObject var appState: AppState
     @Binding var isActive: Bool
@@ -50,7 +58,7 @@ struct TwoFactorView: View {
     }
 
     // MARK: Private
-    @StateObject private var twoFactorViewModel: TwoFactorViewModel = .init()
+    @ObservedObject private var twoFactorViewModel: TwoFactorViewModel
 }
 
 extension TwoFactorView {

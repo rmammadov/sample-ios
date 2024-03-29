@@ -1,5 +1,5 @@
 PODS:
-  - Alamofire (5.8.1)
+  - Alamofire (5.9.0)
   - Bugsnag (6.28.0)
   - Firebase (10.20.0):
     - Firebase/Core (= 10.20.0)
@@ -173,7 +173,7 @@ SPEC REPOS:
     - SwiftLint
 
 SPEC CHECKSUMS:
-  Alamofire: 3ca42e259043ee0dc5c0cdd76c4bc568b8e42af7
+  Alamofire: 02b772c9910e8eba1a079227c32fbd9e46c90a24
   Bugsnag: dd258f499a0a041e3ffc856c8d0c802e02fe3026
   Firebase: 10c8cb12fb7ad2ae0c09ffc86cd9c1ab392a0031
   FirebaseABTesting: 1d5d49804bcfc5fa782bc2491a8c1364e2cf7241
@@ -198,6 +198,6 @@ SPEC CHECKSUMS:
   SwiftFormat: a8623113c7adcbeb4289a013cac68ec801e1ed24
   SwiftLint: c1de071d9d08c8aba837545f6254315bc900e211
 
-PODFILE CHECKSUM: 1b487580c4bab361acf7c2427b98d53db0fe3bb6
+PODFILE CHECKSUM: d36d71b0dc5e7a790596ece477a0087179e8d2bf
 
 COCOAPODS: 1.14.3

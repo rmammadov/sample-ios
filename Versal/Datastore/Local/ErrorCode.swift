@@ -1,9 +1,7 @@
 //
-//  ErrorCode.swift
-//  Versal
+// Copyright (C) 2019-2024 Six Clovers, Inc. - All rights reserved.
 //
-//  Created by Rahman Mammadov on 25.03.24.
+// Restricted and proprietary.
 //
 
 import Foundation
-

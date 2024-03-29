@@ -19,11 +19,10 @@ public struct LoginPayload: Codable {
     }
 
     // MARK: Public
-    public var accountId: UUID?
     public var applicationVersion: String?
     public var email: String?
     public var password: String?
     public var platformType: Platform?
     public var platformVersion: String?
-    public var token: String?
+    public var challenge: String?
 }

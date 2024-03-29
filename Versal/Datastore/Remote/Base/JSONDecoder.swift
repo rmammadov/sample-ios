@@ -1,8 +1,15 @@
 //
-//  JSONDecoder.swift
-//  Versal
+// Copyright (C) 2019-2024 Six Clovers, Inc. - All rights reserved.
 //
-//  Created by Rahman Mammadov on 29.03.24.
+// Restricted and proprietary.
 //
 
 import Foundation
+
+extension JSONDecoder {
+    static var `default`: JSONDecoder {
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        return decoder
+    }
+}
