@@ -8,7 +8,8 @@ import Foundation
 
 protocol TwoFactorViewModelProtocol {
     func validateCode()
-    func requestVerification() async
+    func submitVerification() async
+    func updateAppState()
     func verifyCode() -> Bool
 }
 
@@ -31,12 +32,7 @@ final class TwoFactorViewModel: BaseViewModel, TwoFactorViewModelProtocol {
         isFormValid = true
     }
 
-    func requestVerification() {
-        viewState = .progress
-        progressViewModel.progressState = .inProgress
-    }
-
-    func requestVerification() async {
+    func submitVerification() async {
         viewState = .progress
         progressViewModel.progressState = .inProgress
         do {
@@ -45,8 +41,17 @@ final class TwoFactorViewModel: BaseViewModel, TwoFactorViewModelProtocol {
         } catch {
             progressViewModel.progressState = .failure
         }
+        
+        updateAppState()
     }
-
+    
+    func updateAppState() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            viewState = .normal
+            self.appState.updateLoginState()
+        }
+    }
+    
     func verifyCode() -> Bool {
         if code == codeStaticSample {
             return true

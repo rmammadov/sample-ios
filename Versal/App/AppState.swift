@@ -30,7 +30,7 @@ final class AppState: ObservableObject, AppStateProtocol {
     var authenticationState = AuthenticationStates.locked
     @Published var contentState: BaseViewStates = .presentPrivacyScreen
     @Published var current: AppStates = .background
-    @Published var isLoggedIn = false
+    @Published var isLoggedIn = UserDefaults.standard.isUserLogedIn
 
     func setAuthentication(state: AuthenticationStates) {
         authenticationState = state
@@ -47,14 +47,6 @@ final class AppState: ObservableObject, AppStateProtocol {
             }
             updateContentState()
         }
-    }
-
-    func login(email _: String, password _: String) {
-        isLoggedIn = true
-    }
-
-    func logout() {
-        isLoggedIn = false
     }
 
     func updateAppState(viewState: BaseViewStates) {
@@ -78,5 +70,9 @@ final class AppState: ObservableObject, AppStateProtocol {
         } else {
             contentState = .askForAuthentication
         }
+    }
+    
+    func updateLoginState() {
+        isLoggedIn = UserDefaults.standard.isUserLogedIn
     }
 }

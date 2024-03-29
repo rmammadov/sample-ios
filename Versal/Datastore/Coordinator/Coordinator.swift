@@ -41,6 +41,7 @@ public class Coordinator {
     public func verifyAccount(_ verifyAccountPayload: TwoFactorPayload) async throws -> TwoFactorPayload {
         reset()
         let verifyAccountPayload = try await service.verifyAccount(verifyAccountPayload)
+        self.authenticated(verifyAccountPayload.token, verifyAccountPayload.userId)
         return verifyAccountPayload
     }
 

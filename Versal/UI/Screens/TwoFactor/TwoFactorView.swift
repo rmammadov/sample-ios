@@ -13,6 +13,7 @@ struct TwoFactorView: View {
         self._isActive = isActive
         self.twoFactorViewModel = TwoFactorViewModel()
         twoFactorViewModel.challengeToken = challengeToken
+        twoFactorViewModel.listenAppLifecycle(appState: appState)
     }
 
     // MARK: Internal
@@ -40,9 +41,7 @@ struct TwoFactorView: View {
 
                                               SolidRoundedButton(isEnabled: twoFactorViewModel.isSubmitEnabled,
                                                                  onClick: {
-                                                                     if twoFactorViewModel.verifyCode() {
-                                                                         appState.login(email: "", password: "")
-                                                                     }
+                                                  submitVerification()
                                                                  },
                                                                  title: "btn_title_continue".localized())
                                           }, footer: { FooterContainer() })
@@ -62,11 +61,16 @@ struct TwoFactorView: View {
 }
 
 extension TwoFactorView {
-    func getProgressDialogViewModel() -> ProgressDialogViewModel {
-        twoFactorViewModel.progressViewModel.tryAgainButtonAction = { if twoFactorViewModel.verifyCode() {
-            appState.login(email: "", password: "")
-        }
+    private func getProgressDialogViewModel() -> ProgressDialogViewModel {
+        twoFactorViewModel.progressViewModel.tryAgainButtonAction = {
+            submitVerification()
         }
         return twoFactorViewModel.progressViewModel
+    }
+    
+    private func submitVerification() {
+        if twoFactorViewModel.verifyCode() {
+            Task {twoFactorViewModel.submitVerification()}
+        }
     }
 }

@@ -20,6 +20,7 @@ protocol SettingsViewModelProtocol {
     func isFaceIDEnrolled() -> Bool
     func isTouchIDEnrolled() -> Bool
     func logout() async
+    func updateAppState()
 }
 
 class SettingsViewModel: BaseViewModel, SettingsViewModelProtocol {
@@ -123,9 +124,17 @@ class SettingsViewModel: BaseViewModel, SettingsViewModelProtocol {
         do {
             let result = try await Coordinator().logout()
             progressViewModel.progressState = .success
-            appState?.logout()
         } catch {
             progressViewModel.progressState = .failure
+        }
+        
+        updateAppState()
+    }
+    
+    func updateAppState() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            viewState = .normal
+            self.appState.updateLoginState()
         }
     }
 }
