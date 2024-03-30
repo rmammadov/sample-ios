@@ -8,7 +8,6 @@ import SwiftUI
 
 struct TwoFactorView: View {
     // MARK: Lifecycle
-
     init(_ challengeToken: String?, isActive: Binding<Bool>) {
         self._isActive = isActive
         self.twoFactorViewModel = TwoFactorViewModel()
@@ -41,7 +40,7 @@ struct TwoFactorView: View {
 
                                               SolidRoundedButton(isEnabled: twoFactorViewModel.isSubmitEnabled,
                                                                  onClick: {
-                                                  submitVerification()
+                                                                     submitVerification()
                                                                  },
                                                                  title: "btn_title_continue".localized())
                                           }, footer: { FooterContainer() })
@@ -67,10 +66,10 @@ extension TwoFactorView {
         }
         return twoFactorViewModel.progressViewModel
     }
-    
+
     private func submitVerification() {
         if twoFactorViewModel.verifyCode() {
-            Task {twoFactorViewModel.submitVerification()}
+            Task { await twoFactorViewModel.submitVerification() }
         }
     }
 }

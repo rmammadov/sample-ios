@@ -47,6 +47,8 @@ final class LoginViewModel: BaseViewModel, LoginViewModelProtocol {
         } catch {
             progressViewModel.progressState = .failure
         }
+
+        updateViewStateWithDelay()
     }
 
     func validateLoginForm() async {

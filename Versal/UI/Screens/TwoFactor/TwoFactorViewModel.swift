@@ -9,7 +9,6 @@ import Foundation
 protocol TwoFactorViewModelProtocol {
     func validateCode()
     func submitVerification() async
-    func updateAppState()
     func verifyCode() -> Bool
 }
 
@@ -41,17 +40,11 @@ final class TwoFactorViewModel: BaseViewModel, TwoFactorViewModelProtocol {
         } catch {
             progressViewModel.progressState = .failure
         }
-        
-        updateAppState()
+
+        updateViewStateWithDelay()
+        appState?.updateLoginState()
     }
-    
-    func updateAppState() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            viewState = .normal
-            self.appState.updateLoginState()
-        }
-    }
-    
+
     func verifyCode() -> Bool {
         if code == codeStaticSample {
             return true

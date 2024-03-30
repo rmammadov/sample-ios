@@ -14,6 +14,8 @@ public enum BaseViewStates {
 
 protocol BaseViewModelProtocol {
     func listenAppLifecycle(appState: AppState)
+    func setProgress(state: ProgressDialogState)
+    func updateViewStateWithDelay()
 }
 
 class BaseViewModel: ObservableObject, BaseViewModelProtocol {
@@ -25,5 +27,18 @@ class BaseViewModel: ObservableObject, BaseViewModelProtocol {
 
     func listenAppLifecycle(appState: AppState) {
         self.appState = appState
+    }
+
+    func setProgress(state: ProgressDialogState) {
+        if viewState != .progress {
+            viewState = .progress
+        }
+        progressViewModel.progressState = state
+    }
+
+    func updateViewStateWithDelay() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+            self.viewState = .normal
+        }
     }
 }

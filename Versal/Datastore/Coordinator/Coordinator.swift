@@ -41,7 +41,7 @@ public class Coordinator {
     public func verifyAccount(_ verifyAccountPayload: TwoFactorPayload) async throws -> TwoFactorPayload {
         reset()
         let verifyAccountPayload = try await service.verifyAccount(verifyAccountPayload)
-        self.authenticated(verifyAccountPayload.token, verifyAccountPayload.userId)
+        authenticated(verifyAccountPayload.token!, verifyAccountPayload.userId!)
         return verifyAccountPayload
     }
 
@@ -65,7 +65,7 @@ public class Coordinator {
     private let db: DatabaseManager
     private let service = VersalService()
 
-    private func authenticated(_ token: String, _ accountId: UUID) {
+    private func authenticated(_ token: String, _ accountId: String) {
         service.setToken(token)
         service.setAccountId(accountId)
         UserDefaults.standard.isUserLogedIn = true
