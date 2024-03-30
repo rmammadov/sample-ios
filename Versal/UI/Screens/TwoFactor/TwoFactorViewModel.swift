@@ -32,13 +32,12 @@ final class TwoFactorViewModel: BaseViewModel, TwoFactorViewModelProtocol {
     }
 
     func submitVerification() async {
-        viewState = .progress
-        progressViewModel.progressState = .inProgress
+        setProgress(state: .inProgress)
         do {
             let result = try await Coordinator().verifyAccount(TwoFactorPayload(challenge: challengeToken, otp: code))
-            progressViewModel.progressState = .success
+            setProgress(state: .success)
         } catch {
-            progressViewModel.progressState = .failure
+            setProgress(state: .failure)
         }
 
         updateViewStateWithDelay()

@@ -38,14 +38,13 @@ final class LoginViewModel: BaseViewModel, LoginViewModelProtocol {
     }
 
     func login() async {
-        viewState = .progress
-        progressViewModel.progressState = .inProgress
+        setProgress(state: .inProgress)
         do {
             loginPayload = try await Coordinator().login(LoginPayload(email: email, password: password))
-            progressViewModel.progressState = .success
+            setProgress(state: .success)
             isTwoFactorVerificationRequested = true
         } catch {
-            progressViewModel.progressState = .failure
+            setProgress(state: .failure)
         }
 
         updateViewStateWithDelay()
