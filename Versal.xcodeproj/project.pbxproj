@@ -72,7 +72,6 @@
 		D475C92E2B5034D5008FC94A /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D475C92D2B5034D5008FC94A /* UserDefaults+Extensions.swift */; };
 		D47FF9132B4C3E4500C03D7D /* EnvType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47FF9122B4C3E4500C03D7D /* EnvType.swift */; };
 		D47FF9282B4C581100C03D7D /* CodableWrappers in Frameworks */ = {isa = PBXBuildFile; productRef = D47FF9272B4C581100C03D7D /* CodableWrappers */; };
-		D47FF92B2B4C585100C03D7D /* Then in Frameworks */ = {isa = PBXBuildFile; productRef = D47FF92A2B4C585100C03D7D /* Then */; };
 		D47FF93A2B4DA01200C03D7D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47FF9392B4DA01200C03D7D /* Log.swift */; };
 		D49740082B8E1F4400943C29 /* CodeTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49740072B8E1F4400943C29 /* CodeTextField.swift */; };
 		D497400A2B8E842500943C29 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49740092B8E842500943C29 /* String+Extensions.swift */; };
@@ -256,7 +255,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D47FF92B2B4C585100C03D7D /* Then in Frameworks */,
 				05B090E42BAA539000712660 /* RswiftLibrary in Frameworks */,
 				D47FF9282B4C581100C03D7D /* CodableWrappers in Frameworks */,
 				5945DDB427D48F4B67020807 /* Pods_Versal.framework in Frameworks */,
@@ -749,7 +747,6 @@
 			name = Versal;
 			packageProductDependencies = (
 				D47FF9272B4C581100C03D7D /* CodableWrappers */,
-				D47FF92A2B4C585100C03D7D /* Then */,
 				05B090E32BAA539000712660 /* RswiftLibrary */,
 			);
 			productName = Versal;
@@ -829,7 +826,6 @@
 			mainGroup = D4F52AC42B4C0B52009B8A24;
 			packageReferences = (
 				D47FF9262B4C581100C03D7D /* XCRemoteSwiftPackageReference "CodableWrappers" */,
-				D47FF9292B4C585100C03D7D /* XCRemoteSwiftPackageReference "Then" */,
 				05B090E22BAA536400712660 /* XCRemoteSwiftPackageReference "R" */,
 			);
 			productRefGroup = D4F52ACE2B4C0B52009B8A24 /* Products */;
@@ -1661,14 +1657,6 @@
 				minimumVersion = 2.0.7;
 			};
 		};
-		D47FF9292B4C585100C03D7D /* XCRemoteSwiftPackageReference "Then" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/devxoul/Then";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1686,11 +1674,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = D47FF9262B4C581100C03D7D /* XCRemoteSwiftPackageReference "CodableWrappers" */;
 			productName = CodableWrappers;
-		};
-		D47FF92A2B4C585100C03D7D /* Then */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = D47FF9292B4C585100C03D7D /* XCRemoteSwiftPackageReference "Then" */;
-			productName = Then;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
