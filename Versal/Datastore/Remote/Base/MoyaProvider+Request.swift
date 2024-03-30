@@ -19,12 +19,21 @@ extension MoyaProvider {
                 provider.request(target) { result in
                     switch result {
                     case let .success(response):
-                        guard let res = try? JSONDecoder.default.decode(T.self, from: response.data) else {
-                            continuation.resume(throwing: MoyaError.jsonMapping(response))
+                        guard (200 ... 299).contains(response.statusCode) else {
+                            Log.breadcrumb("\(target.method.rawValue) \(target.path)")
+                            Log.warn(MoyaError.statusCode(response))
+                            continuation.resume(throwing: MoyaError.statusCode(response))
                             return
                         }
-                        continuation.resume(returning: res)
+                        do {
+                            let res = try JSONDecoder().decode(T.self, from: response.data)
+                            continuation.resume(returning: res)
+                        } catch {
+                            continuation.resume(throwing: MoyaError.underlying(error, response))
+                        }
                     case let .failure(error):
+                        Log.breadcrumb("\(target.method.rawValue) \(target.path)")
+                        Log.warn(error)
                         continuation.resume(throwing: error)
                     }
                 }
