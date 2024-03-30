@@ -9,13 +9,11 @@ import Moya
 extension MoyaProvider {
     class MoyaConcurrency {
         // MARK: Lifecycle
-
         init(provider: MoyaProvider) {
             self.provider = provider
         }
 
         // MARK: Internal
-
         func request<T: Decodable>(_ target: Target) async throws -> T {
             return try await withCheckedThrowingContinuation { continuation in
                 provider.request(target) { result in
@@ -34,7 +32,6 @@ extension MoyaProvider {
         }
 
         // MARK: Private
-
         private let provider: MoyaProvider
     }
 

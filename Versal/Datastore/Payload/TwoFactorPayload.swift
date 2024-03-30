@@ -14,8 +14,8 @@ public struct TwoFactorPayload: Codable {
     }
 
     // MARK: Public
-    public var userId: String?
+    public var userId: UUID?
     public var challenge: String?
     public var otp: String?
-    public var token: String?
+    public var token: UUID?
 }

@@ -65,7 +65,7 @@ public class Coordinator {
     private let db: DatabaseManager
     private let service = VersalService()
 
-    private func authenticated(_ token: String, _ accountId: String) {
+    private func authenticated(_ token: UUID, _ accountId: UUID) {
         service.setToken(token)
         service.setAccountId(accountId)
         UserDefaults.standard.isUserLogedIn = true

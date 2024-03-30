@@ -28,13 +28,13 @@ public class VersalService {
         return try await provider.async.request(.verify(verifyAccountPayload))
     }
 
-    public func setAccountId(_ accountId: String?) {
-        Keychain.set(.accountId, accountId)
+    public func setAccountId(_ accountId: UUID?) {
+        Keychain.set(.accountId, accountId?.uuidString)
     }
 
-    public func setToken(_ token: String?) {
-        Keychain.set(.token, token)
-        Self.token = token
+    public func setToken(_ token: UUID?) {
+        Keychain.set(.token, token?.uuidString)
+        Self.token = token?.uuidString
     }
 
     public func sync() async throws -> SyncPayload {
