@@ -66,8 +66,6 @@ extension TwoFactorView {
     }
 
     private func submitVerification() {
-        if twoFactorViewModel.verifyCode() {
-            Task { await twoFactorViewModel.submitVerification() }
-        }
+        Task { await twoFactorViewModel.submitVerification() }
     }
 }

@@ -43,22 +43,10 @@ final class TwoFactorViewModel: BaseViewModel, TwoFactorViewModelProtocol {
             setProgress(state: .success)
         } catch {
             setProgress(state: .failure)
+            isFormValid = false
         }
 
         updateViewStateWithDelay()
         appState?.updateLoginState()
     }
-
-    func verifyCode() -> Bool {
-        if code == codeStaticSample {
-            return true
-        }
-
-        isFormValid = false
-
-        return false
-    }
-
-    // MARK: Private
-    private let codeStaticSample = "123456"
 }
