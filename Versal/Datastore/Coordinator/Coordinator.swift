@@ -5,8 +5,6 @@
 //
 
 import Foundation
-import Promises
-import Then
 
 public class Coordinator {
     // MARK: Lifecycle
