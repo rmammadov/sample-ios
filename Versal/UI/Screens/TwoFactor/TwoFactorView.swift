@@ -8,11 +8,9 @@ import SwiftUI
 
 struct TwoFactorView: View {
     // MARK: Lifecycle
-    init(_ challengeToken: String?, isActive: Binding<Bool>) {
+    init(viewModel: TwoFactorViewModel, isActive: Binding<Bool>) {
         self._isActive = isActive
-        self.twoFactorViewModel = TwoFactorViewModel()
-        twoFactorViewModel.challengeToken = challengeToken
-        twoFactorViewModel.listenAppLifecycle(appState: appState)
+        self.twoFactorViewModel = viewModel
     }
 
     // MARK: Internal

@@ -13,6 +13,11 @@ protocol TwoFactorViewModelProtocol {
 }
 
 final class TwoFactorViewModel: BaseViewModel, TwoFactorViewModelProtocol {
+    // MARK: Lifecycle
+    init(challengeToken: String?) {
+        self.challengeToken = challengeToken
+    }
+
     // MARK: Internal
     static let TAG: String = "TWO_FACTOR_VIEW"
 

@@ -12,7 +12,8 @@ struct LoginView: View {
 
     var body: some View {
         if loginViewModel.isTwoFactorVerificationRequested {
-            TwoFactorView(loginViewModel.loginPayload?.challenge, isActive: $loginViewModel.isTwoFactorVerificationRequested).environmentObject(appState)
+            TwoFactorView(viewModel: TwoFactorViewModel(challengeToken: loginViewModel.loginPayload?.challenge), isActive: $loginViewModel.isTwoFactorVerificationRequested)
+                .environmentObject(appState)
         } else {
             BaseView(content: { // swiftlint:disable:this closure_body_length
                          VStack(spacing: 0) {

@@ -10,7 +10,6 @@ struct SettingsView: View {
     // MARK: Lifecycle
     init() {
         UITableView.appearance().backgroundColor = .clear
-        settingsViewModel.listenAppLifecycle(appState: appState)
     }
 
     // MARK: Internal
