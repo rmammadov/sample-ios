@@ -9,7 +9,6 @@ import Foundation
 protocol TwoFactorViewModelProtocol {
     func validateCode()
     func submitVerification() async
-    func verifyCode() -> Bool
 }
 
 final class TwoFactorViewModel: BaseViewModel, TwoFactorViewModelProtocol {
