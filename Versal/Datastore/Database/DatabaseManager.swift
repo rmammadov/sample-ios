@@ -10,7 +10,7 @@ public class DatabaseManager {
     // MARK: Public
     public static func instance() -> DatabaseManager? {
         if singleton == nil {
-            singleton = try? DatabaseManager()
+            singleton = DatabaseManager()
         }
         return singleton
     }

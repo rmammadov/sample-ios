@@ -16,6 +16,12 @@ enum ProgressDialogState {
 class ProgressDialogViewModel: ObservableObject {
     @Published var progressState: ProgressDialogState?
     @Published var tryAgainButtonAction: (() -> Void)?
+
+    func updateProgressState(_ newState: ProgressDialogState?) {
+        Task { @MainActor in
+            self.progressState = newState
+        }
+    }
 }
 
 struct ProgressDialog: View {

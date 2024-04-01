@@ -358,8 +358,8 @@
 			children = (
 				D43357702BADDE6A00AEA382 /* Coordinator */,
 				D43357732BADDE9300AEA382 /* Database */,
-				D43357802BADE3D400AEA382 /* Model */,
 				D43357722BADDE8A00AEA382 /* Local */,
+				D43357802BADE3D400AEA382 /* Model */,
 				D43357812BADE3EB00AEA382 /* Payload */,
 				D4223BEC2B7E5BAB009DA577 /* Remote */,
 			);
@@ -410,6 +410,7 @@
 			children = (
 				D43357932BB1B74E00AEA382 /* ErrorCode.swift */,
 				D43357902BB1B69700AEA382 /* Platform.swift */,
+				D43357882BAE176100AEA382 /* UserFlags.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -426,7 +427,6 @@
 			isa = PBXGroup;
 			children = (
 				D43357862BAE175000AEA382 /* User.swift */,
-				D43357882BAE176100AEA382 /* UserFlags.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";

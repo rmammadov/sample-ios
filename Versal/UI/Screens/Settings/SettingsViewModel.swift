@@ -120,7 +120,7 @@ class SettingsViewModel: BaseViewModel, SettingsViewModelProtocol {
     func logout() async {
         setProgress(state: .inProgress)
         do {
-            let result = try await Coordinator().logout()
+            _ = try await Coordinator().logout()
             setProgress(state: .success)
         } catch {
             setProgress(state: .failure)

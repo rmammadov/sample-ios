@@ -26,18 +26,14 @@ class BaseViewModel: ObservableObject, BaseViewModelProtocol {
     let progressViewModel = ProgressDialogViewModel()
 
     func listenAppLifecycle(appState: AppState) {
-        Task { @MainActor in
-            self.appState = appState
-        }
+        self.appState = appState
     }
 
     func setProgress(state: ProgressDialogState) {
-        Task { @MainActor in
-            if self.viewState != .progress {
-                self.viewState = .progress
-            }
-            self.progressViewModel.progressState = state
+        if viewState != .progress {
+            viewState = .progress
         }
+        progressViewModel.updateProgressState(state)
     }
 
     func updateViewStateWithDelay() {

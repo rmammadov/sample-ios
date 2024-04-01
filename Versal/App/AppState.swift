@@ -33,46 +33,56 @@ final class AppState: ObservableObject, AppStateProtocol {
     @Published var isLoggedIn = UserDefaults.standard.isUserLogedIn
 
     func setAuthentication(state: AuthenticationStates) {
-        authenticationState = state
-        if state == .authenticated {
-            updateContentState()
+        Task { @MainActor in
+            authenticationState = state
+            if state == .authenticated {
+                updateContentState()
+            }
         }
     }
 
     func setCurrent(state: AppStates) {
-        if authenticationState != .authenticating {
-            current = state
-            if state == .background {
-                authenticationState = .locked
+        Task { @MainActor in
+            if authenticationState != .authenticating {
+                current = state
+                if state == .background {
+                    authenticationState = .locked
+                }
+                updateContentState()
             }
-            updateContentState()
         }
     }
 
     func updateAppState(viewState: BaseViewStates) {
-        switch viewState {
-        case .askForAuthentication:
-            setAuthentication(state: .authenticating)
-        case .presentContent:
-            setAuthentication(state: .authenticated)
-            setCurrent(state: .foreground)
-        case .presentPrivacyScreen:
-            setAuthentication(state: .locked)
-            setCurrent(state: .background)
+        Task { @MainActor in
+            switch viewState {
+            case .askForAuthentication:
+                setAuthentication(state: .authenticating)
+            case .presentContent:
+                setAuthentication(state: .authenticated)
+                setCurrent(state: .foreground)
+            case .presentPrivacyScreen:
+                setAuthentication(state: .locked)
+                setCurrent(state: .background)
+            }
         }
     }
 
     func updateContentState() {
-        if current == .foreground, authenticationState == .authenticated {
-            contentState = .presentContent
-        } else if current == .background {
-            contentState = .presentPrivacyScreen
-        } else {
-            contentState = .askForAuthentication
+        Task { @MainActor in
+            if current == .foreground, authenticationState == .authenticated {
+                contentState = .presentContent
+            } else if current == .background {
+                contentState = .presentPrivacyScreen
+            } else {
+                contentState = .askForAuthentication
+            }
         }
     }
 
     func updateLoginState() {
-        isLoggedIn = UserDefaults.standard.isUserLogedIn
+        Task { @MainActor in
+            isLoggedIn = UserDefaults.standard.isUserLogedIn
+        }
     }
 }

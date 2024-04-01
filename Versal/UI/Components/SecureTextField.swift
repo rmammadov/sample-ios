@@ -17,14 +17,13 @@ struct SecureTextField: View {
 
     // MARK: - Body
     var body: some View {
-        VStack(alignment: .leading) { // swiftlint:disable:this closure_body_length
+        VStack(alignment: .leading) {
             TextStyles.textFieldTitle(Text(title))
                 .padding(.bottom, 8)
 
             ZStack(alignment: .trailing) {
                 if isSecured {
                     TextStyles.textField(SecureField(placeHolder ?? title, text: $text)
-                        .onChange(of: text) { _ in }
                         .focused($isFocused))
                         .modifier(DefaultTextFieldModifier(placeHolder: placeHolder ?? title,
                                                            text: $text,

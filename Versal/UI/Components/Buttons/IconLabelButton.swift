@@ -28,7 +28,8 @@ struct IconLabelButton: View {
             }
             .padding(.vertical, 8)
         })
-        .buttonStyle(RoundedButtonStyle(backgroundColor: BackgroundStyles.defaultColor, backgroundColorDisabled: R.color.versalGray200.color(), cornerRadius: 4,
+        .buttonStyle(RoundedButtonStyle(backgroundColor: BackgroundStyles.defaultColor, backgroundColorDisabled: R.color.versalGray200.color(),
+                                        cornerRadius: 4,
                                         isEnabled: isEnabled))
         .disabled(!isEnabled)
     }
