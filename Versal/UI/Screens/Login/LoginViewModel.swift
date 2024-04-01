@@ -51,7 +51,9 @@ final class LoginViewModel: BaseViewModel, LoginViewModelProtocol {
     }
 
     func validateLoginForm() async {
-        isEmailValid = email.isValidEmail()
+        Task { @MainActor in
+            isEmailValid = email.isValidEmail()
+        }
 
         if isEmailValid {
             await login()

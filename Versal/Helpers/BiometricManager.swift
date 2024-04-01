@@ -99,7 +99,7 @@ public final class BiometricManager {
         let reason = "text_identify_yourself".localized()
 
         context?.evaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, localizedReason: reason) { success, _ in
-            DispatchQueue.main.async {
+            Task { @MainActor in
                 completed(success)
             }
         }

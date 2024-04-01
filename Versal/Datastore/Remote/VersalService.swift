@@ -6,8 +6,6 @@
 
 import Foundation
 import Moya
-import Promises
-import UIKit
 
 public class VersalService {
     // MARK: Lifecycle
@@ -42,9 +40,6 @@ public class VersalService {
     }
 
     // MARK: Internal
-    typealias Failure = (_: VersalError) -> Void
-    typealias Success<T> = (_: T) -> Void
-
     func login(_ loginPayload: LoginPayload) async throws -> LoginPayload {
         return try await provider.async.request(.login(loginPayload))
     }
