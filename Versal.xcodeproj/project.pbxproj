@@ -99,6 +99,7 @@
 		D4C4283F2B7B5B620039C6C3 /* SectionTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C4283E2B7B5B620039C6C3 /* SectionTitle.swift */; };
 		D4C79E2B2BB6D8A80030860A /* MoyaProvider+Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C79E2A2BB6D8A80030860A /* MoyaProvider+Request.swift */; };
 		D4C79E2D2BB6D8DC0030860A /* JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C79E2C2BB6D8DC0030860A /* JSONDecoder.swift */; };
+		D4C79E3C2BBC322A0030860A /* UserPayload.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C79E3B2BBC322A0030860A /* UserPayload.swift */; };
 		D4D2D3502B5B3A080019E4B4 /* View+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2D34F2B5B3A080019E4B4 /* View+Animation.swift */; };
 		D4D2D3532B5FF86E0019E4B4 /* BiometricManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D2D3522B5FF86E0019E4B4 /* BiometricManager.swift */; };
 		D4F52AD12B4C0B52009B8A24 /* VersalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4F52AD02B4C0B52009B8A24 /* VersalApp.swift */; };
@@ -231,6 +232,7 @@
 		D4C4283E2B7B5B620039C6C3 /* SectionTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitle.swift; sourceTree = "<group>"; };
 		D4C79E2A2BB6D8A80030860A /* MoyaProvider+Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Request.swift"; sourceTree = "<group>"; };
 		D4C79E2C2BB6D8DC0030860A /* JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDecoder.swift; sourceTree = "<group>"; };
+		D4C79E3B2BBC322A0030860A /* UserPayload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPayload.swift; sourceTree = "<group>"; };
 		D4D2D34F2B5B3A080019E4B4 /* View+Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Animation.swift"; sourceTree = "<group>"; };
 		D4D2D3522B5FF86E0019E4B4 /* BiometricManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricManager.swift; sourceTree = "<group>"; };
 		D4F52ACD2B4C0B52009B8A24 /* Versal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Versal.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -410,7 +412,6 @@
 			children = (
 				D43357932BB1B74E00AEA382 /* ErrorCode.swift */,
 				D43357902BB1B69700AEA382 /* Platform.swift */,
-				D43357882BAE176100AEA382 /* UserFlags.swift */,
 			);
 			path = Local;
 			sourceTree = "<group>";
@@ -427,6 +428,7 @@
 			isa = PBXGroup;
 			children = (
 				D43357862BAE175000AEA382 /* User.swift */,
+				D43357882BAE176100AEA382 /* UserFlags.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -437,6 +439,7 @@
 				D43357822BAE16EF00AEA382 /* LoginPayload.swift */,
 				D43357972BB313F200AEA382 /* SyncPayload.swift */,
 				D43357842BAE170200AEA382 /* TwoFactorPayload.swift */,
+				D4C79E3B2BBC322A0030860A /* UserPayload.swift */,
 			);
 			path = Payload;
 			sourceTree = "<group>";
@@ -1014,6 +1017,7 @@
 			files = (
 				D4A5E3D22B860E2A00ED886D /* HeaderContainer.swift in Sources */,
 				D4F52AFB2B4C1417009B8A24 /* AppDelegate.swift in Sources */,
+				D4C79E3C2BBC322A0030860A /* UserPayload.swift in Sources */,
 				D4BC9CE52B8CD8E800E7DE52 /* FooterContainer.swift in Sources */,
 				D4686BC72B56C2830048A1F6 /* KeyPadRow.swift in Sources */,
 				D4AB79232B92268F0091EBC9 /* UserProfileImage.swift in Sources */,

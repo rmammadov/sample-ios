@@ -39,6 +39,8 @@ class VersalApi: ObservableObject {
 }
 
 public enum VersalApiTarget {
+    case getAccount
+    case getAccountImage(UUID)
     case login(LoginPayload)
     case logout
     case verify(TwoFactorPayload)
@@ -52,6 +54,10 @@ extension VersalApiTarget: TargetType {
 
     public var path: String {
         switch self {
+        case .getAccount:
+            return "account"
+        case let .getAccountImage(accountId):
+            return "account/\(accountId.uuidString)/profile.jpg"
         case .login:
             return "m/login/"
         case .logout:
@@ -65,6 +71,8 @@ extension VersalApiTarget: TargetType {
 
     public var method: Moya.Method {
         switch self {
+        case .getAccount: return .get
+        case .getAccountImage: return .get
         case .logout: return .post
         case .login: return .post
         case .verify: return .post
@@ -74,6 +82,8 @@ extension VersalApiTarget: TargetType {
 
     public var task: Task {
         switch self {
+        case .getAccount: return .requestPlain
+        case .getAccountImage: return .requestPlain
         case let .login(loginPayload): return .requestCustomJSONEncodable(loginPayload, encoder: JSON.encoder)
         case .logout: return .requestPlain
         case let .verify(twoFactorPayload): return .requestCustomJSONEncodable(twoFactorPayload, encoder: JSON.encoder)

@@ -4,6 +4,7 @@
 // Restricted and proprietary.
 //
 
+import UIKit
 import Moya
 
 extension MoyaProvider {
@@ -39,6 +40,54 @@ extension MoyaProvider {
                 }
             }
         }
+        
+        func requestBool(_ target: Target) async throws -> Bool {
+            return try await withCheckedThrowingContinuation { continuation in
+                provider.request(target) { result in
+                    switch result {
+                    case let .success(response):
+                        guard (200...299).contains(response.statusCode) else {
+                            continuation.resume(throwing: MoyaError.statusCode(response))
+                            return
+                        }
+                        do {
+                            let res = try JSONDecoder().decode([String: Bool].self, from: response.data)
+                            if let success = res["success"] {
+                                continuation.resume(returning: success)
+                            } else {
+                                continuation.resume(throwing: MoyaError.jsonMapping(response))
+                            }
+                        } catch {
+                            continuation.resume(throwing: MoyaError.underlying(error, response))
+                        }
+                    case let .failure(error):
+                        continuation.resume(throwing: error)
+                    }
+                }
+            }
+        }
+
+        func requestImage(_ target: Target) async throws -> UIImage {
+            return try await withCheckedThrowingContinuation { continuation in
+                provider.request(target) { result in
+                    switch result {
+                    case let .success(response):
+                        guard (200...299).contains(response.statusCode) else {
+                            continuation.resume(throwing: MoyaError.statusCode(response))
+                            return
+                        }
+                        if let image = UIImage(data: response.data) {
+                            continuation.resume(returning: image)
+                        } else {
+                            continuation.resume(throwing: MoyaError.imageMapping(response))
+                        }
+                    case let .failure(error):
+                        continuation.resume(throwing: error)
+                    }
+                }
+            }
+        }
+
 
         // MARK: Private
         private let provider: MoyaProvider
